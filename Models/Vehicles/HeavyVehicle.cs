@@ -46,7 +46,12 @@ namespace AutoAuctionProjekt.Classes
         public override string ToString()
         {
             //TODO: V6 - ToString for HeavyVehicle
-            throw new NotImplementedException();
+
+            // Først kalder vi baseklassens ToString-metode for at få dens beskrivelse.
+            string baseDescription = base.ToString();
+
+            // Tilføj oplysninger om køretøjets dimensioner til beskrivelsen.
+            return $"{baseDescription}, Dimensions: {VehicleDimensions}";
         }
     }
 }

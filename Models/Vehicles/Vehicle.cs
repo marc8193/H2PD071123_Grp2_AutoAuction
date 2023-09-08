@@ -85,7 +85,9 @@ namespace AutoAuctionProjekt.Classes
         public enum FuelTypeEnum
         {
             Diesel,
-            Benzin
+            Petrol,
+            Hybrid,
+            Electric
         }
         /// <summary>
         /// Engery class Enum, field and proberty
@@ -107,7 +109,79 @@ namespace AutoAuctionProjekt.Classes
         private EnergyClassEnum GetEnergyClass()
         {
             //TODO: V4 - Implement GetEnergyClass
-            throw new NotImplementedException();
+           
+                if (Year < 2010)
+                {
+                    switch (FuelType)
+                    {
+                        case FuelTypeEnum.Electric:
+                        case FuelTypeEnum.Hybrid:
+                            return EnergyClassEnum.A;
+
+                        case FuelTypeEnum.Diesel:
+                            switch (KmPerLiter)
+                            {
+                                case var km when km >= 23:
+                                    return EnergyClassEnum.A;
+                                case var km when km >= 18:
+                                    return EnergyClassEnum.B;
+                                case var km when km >= 13:
+                                    return EnergyClassEnum.C;
+                                default:
+                                    return EnergyClassEnum.D;
+                            }
+
+                        case FuelTypeEnum.Petrol:
+                            switch (KmPerLiter)
+                            {
+                                case var km when km >= 18:
+                                    return EnergyClassEnum.A;
+                                case var km when km >= 14:
+                                    return EnergyClassEnum.B;
+                                case var km when km >= 10:
+                                    return EnergyClassEnum.C;
+                                default:
+                                    return EnergyClassEnum.D;
+                            }
+                    }
+                }
+                else // For køretøjer efter 2010
+                {
+                if (FuelType == FuelTypeEnum.Diesel)
+                {
+                    switch (KmPerLiter)
+                    {
+                        case var km when km >= 25:
+                            return EnergyClassEnum.A;
+                        case var km when km >= 20:
+                            return EnergyClassEnum.B;
+                        case var km when km >= 13:
+                            return EnergyClassEnum.C;
+                        default:
+                            return EnergyClassEnum.D;
+                    } 
+                }
+                else if (FuelType==FuelTypeEnum.Petrol)
+                           
+                    switch (KmPerLiter)
+                        {
+                            case var km when km >= 20:
+                                return EnergyClassEnum.A;
+                            case var km when km >= 16:
+                                return EnergyClassEnum.B;
+                            case var km when km >= 12:
+                                return EnergyClassEnum.C;
+                            default:
+                                return EnergyClassEnum.D;
+                        }
+                    }
+                    }
+                }
+
+                // Default return value if no condition is met
+                return EnergyClassEnum.D;
+            }
+
         }
         /// <summary>
         /// Returns the vehicle in a string with relivant information.
