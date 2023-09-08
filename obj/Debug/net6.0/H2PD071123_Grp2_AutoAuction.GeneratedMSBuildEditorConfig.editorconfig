@@ -17,5 +17,5 @@ build_property.ProjectDir = /home/mhl/Projects/H2PD071123_Grp2_AutoAuction/
 [/home/mhl/Projects/H2PD071123_Grp2_AutoAuction/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/mhl/Projects/H2PD071123_Grp2_AutoAuction/Views/MainWindow.axaml]
+[/home/mhl/Projects/H2PD071123_Grp2_AutoAuction/Src/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
