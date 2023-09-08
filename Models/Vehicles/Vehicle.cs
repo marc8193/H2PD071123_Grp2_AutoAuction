@@ -176,12 +176,12 @@ namespace AutoAuctionProjekt.Classes
                         }
                     }
                    
+                // Default return value if no condition is met
+                return EnergyClassEnum.D;
         }
     
     }
 
-                // Default return value if no condition is met
-                return EnergyClassEnum.D;
             }
 
         
