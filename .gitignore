@@ -12,6 +12,7 @@
 *.sln
 .idea/
 Out/
+obj/
 
 # User-specific files (Xunit - Unittest)
 Unittest/bin
