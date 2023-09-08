@@ -1,3 +1,3 @@
 dotnet new sln
 dotnet sln add Src
-H1PD021123_Grp1_ERP.sln
+H2PD071123_Grp2_AutoAuction.sln
