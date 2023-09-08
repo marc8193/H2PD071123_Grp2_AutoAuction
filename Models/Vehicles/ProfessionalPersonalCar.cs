@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,8 +23,25 @@ namespace AutoAuctionProjekt.Classes
             : base(name, km, registrationNumber, year, newPrice, true, engineSize, kmPerLiter, fuelType, numberOfSeat, trunkDimentions)
         {
             //TODO: V16 - ProfessionalPersonalCar constructor. DriversLicense should be 'B' if load capasity is below 750 otherwise it should be 'BE'
+            HasSafetyBar = hasSafetyBar;
+            LoadCapacity = loadCapacity;
+            if (LoadCapacity < 750)
+            {
+                DriversLisence = "B";
+            }
+            else
+            {
+                DriversLisence = "BE";
+            }
+
             //TODO: V17 - Add to database and set ID
-            throw new NotImplementedException();
+            dbContext.ProfessionalPersonalCars.Add(this);
+            dbContext.SaveChanges();
+
+            // Indstil ID til den tildelte ID fra databasen
+            ID = this.ID; // Antager, at ID er en egenskab i klassen
+
+
         }
         /// <summary>
         /// Safety Bar proberty
@@ -40,7 +58,9 @@ namespace AutoAuctionProjekt.Classes
         public override string ToString()
         {
             //TODO: V18 - ToString for ProfessionalPersonalCar 
-            throw new NotImplementedException();
+            string baseDescription = base.ToString();
+            string safetyBarInfo = HasSafetyBar ? "Has Safety Bar" : "No Safety Bar";
+            return $"{baseDescription}, {safetyBarInfo}, Load Capacity: {LoadCapacity} kg";
         }
     }
 }

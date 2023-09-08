@@ -175,14 +175,16 @@ namespace AutoAuctionProjekt.Classes
                                 return EnergyClassEnum.D;
                         }
                     }
-                    }
-                }
+                   
+        }
+    
+    }
 
                 // Default return value if no condition is met
                 return EnergyClassEnum.D;
             }
 
-        }
+        
         /// <summary>
         /// Returns the vehicle in a string with relivant information.
         /// </summary>
