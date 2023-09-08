@@ -27,11 +27,11 @@ namespace AutoAuctionProjekt.Classes
             LoadCapacity = loadCapacity;
             if (LoadCapacity < 750)
             {
-                DriversLisence = "B";
+                DriversLisence = DriversLisenceEnum.B;
             }
             else
             {
-                DriversLisence = "BE";
+                DriversLisence = DriversLisenceEnum.BE;
             }
 
             //TODO: V17 - Add to database and set ID
