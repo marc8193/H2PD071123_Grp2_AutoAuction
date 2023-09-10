@@ -19,7 +19,8 @@ namespace AutoAuctionProjekt.Models
             double loadCapacity)
             : base(name, km, VIN, year, newPrice, true, engineSize, kmPerLiter, fuel, numberOfSeats, trunkDimension)
         {
-            //TODO: V16 - ProfessionalPersonalCar constructor. DriversLicense should be 'B' if load capasity is below 750 otherwise it should be 'BE'
+            this.DriversLisence = this.LoadCapacity > 750 ? DriversLisenceType.BE : DriversLisenceType.B;
+         
             //TODO: V17 - Add to database and set ID
             throw new NotImplementedException();
         }
@@ -28,8 +29,7 @@ namespace AutoAuctionProjekt.Models
         public double LoadCapacity { get; set; }
         public override string ToString()
         {
-            //TODO: V18 - ToString for ProfessionalPersonalCar 
-            throw new NotImplementedException();
+            return $"{base.ToString()}, Trunk Dimensions: {this.TrunkDimension}";
         }
     }
 }

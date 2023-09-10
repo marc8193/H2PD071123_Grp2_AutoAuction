@@ -19,25 +19,28 @@ namespace AutoAuctionProjekt.Models
             : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats)
         {
             this.TrunkDimension = trunkDimension;
+            this.DriversLisence = DriversLisenceType.B;
         }
         
         public IDimensions TrunkDimension { get; set; }
 
-        public override double EngineSize
+        public sealed override double EngineSize
         {
             get { return EngineSize; }
             set
             {
-                EngineSize = value;
-                
-                //TODO: V13 - EngineSize: must be between 0.7 and 10.0 L or cast an out of range exection.
-                throw new NotImplementedException();
+                if (value < 0.7 || value > 10.0)
+                {
+                    throw new IndexOutOfRangeException();
+                } else
+                {
+                    EngineSize = value;
+                }
             }
         }
         public override string ToString()
         {
-            //TODO: V15 - ToString for PersonalCar
-            throw new NotImplementedException();
+            return $"{base.ToString()}, Trunk Dimensions: {this.TrunkDimension}";
         }
     }
 }
