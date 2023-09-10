@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace AutoAuctionProjekt.Classes
+namespace AutoAuctionProjekt.Models
 {
     public class PrivatePersonalCar : PersonalCar
     {
         public PrivatePersonalCar(
             string name,
             double km,
-            string registrationNumber,
-            ushort year,
+            string VIN,
+            DateTime year,
             decimal newPrice,
             bool hasTowbar,
             double engineSize,
             double kmPerLiter,
-            FuelTypeEnum fuelType,
-            ushort numberOfSeat,
-            TrunkDimentionsStruct trunkDimentions,
+            FuelType fuelType,
+            uint numberOfSeats,
+            IDimensions trunkDimension,
             bool hasIsofixFittings)
-            : base(name, km, registrationNumber, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuelType, numberOfSeat, trunkDimentions)
+            : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuelType, numberOfSeats, trunkDimension)
         {
             //TODO: V19 - PrivatePersonalCar constructor. DriversLicense should be 'B'
             //TODO: V20 - Add to database and set ID
