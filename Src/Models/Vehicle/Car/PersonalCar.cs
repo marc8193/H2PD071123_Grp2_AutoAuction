@@ -23,7 +23,6 @@ namespace AutoAuctionProjekt.Models
         }
         
         public IDimensions TrunkDimension { get; set; }
-
         public sealed override double EngineSize
         {
             get { return EngineSize; }
@@ -31,7 +30,7 @@ namespace AutoAuctionProjekt.Models
             {
                 if (value < 0.7 || value > 10.0)
                 {
-                    throw new IndexOutOfRangeException();
+                    throw new ArgumentOutOfRangeException();
                 } else
                 {
                     EngineSize = value;

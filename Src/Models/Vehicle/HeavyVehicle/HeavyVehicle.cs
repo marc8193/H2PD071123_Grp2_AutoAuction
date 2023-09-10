@@ -29,7 +29,7 @@ namespace AutoAuctionProjekt.Models
             {
                 if (value < 4.2 || value > 15.0)
                 {
-                    throw new IndexOutOfRangeException();
+                    throw new ArgumentOutOfRangeException();
                 } else
                 {
                     EngineSize = value;
