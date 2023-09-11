@@ -142,12 +142,8 @@ namespace AutoAuctionProjekt.Models
         }
         public new virtual string ToString()
         {
-            string objStr;
-
-            objStr = @$"Vehicle - ({this.ID}): Name: {this.Name}, Km: {this.Km},
-                        Year: {this.Year}, New Price: {this.NewPrice}";
-
-            return objStr;
+           return @$"Vehicle - ({this.ID}): Name: {this.Name}, Km: {this.Km},
+                    Year: {this.Year}, New Price: {this.NewPrice}";
         }
     }
 }

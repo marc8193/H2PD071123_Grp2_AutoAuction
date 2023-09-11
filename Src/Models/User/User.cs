@@ -1,23 +1,33 @@
 ﻿using System;
 using System.Text;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace AutoAuctionProjekt.Models
 {
     //TODO: U4 - Implement interfaces
-    public abstract class User 
+    public abstract class User
     {
         protected User(string userName, string password, uint zipCode)
         {
-            //TODO: U1 - Set constructor and field
+             this.UserName = userName;
+            this.Password = password;
+            this.ZipCode = zipCode;
+           
 
             HashAlgorithm sha = SHA256.Create();
             byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
             PasswordHash = result;
 
             throw new NotImplementedException();
-        }
 
+            //TODO: U2 - Initalize det fra database i constructor
+
+
+        }
+        public string UserName  { get; set; }
+        public string Password {  get; set; }
+        public uint ZipCode { get; set; }
         public uint ID { get; private set; }
 
         private byte[] PasswordHash { get; set; }
@@ -38,8 +48,8 @@ namespace AutoAuctionProjekt.Models
 
         public override string ToString()
         {
-            //TODO: U3 - ToString for User
-            throw new NotImplementedException();
+           return @$"User - ({this.ID}): Name: {this.UserName}, Password: {this.Password},
+                    Zipcode: {this.ZipCode}";
         }
     }
 }
