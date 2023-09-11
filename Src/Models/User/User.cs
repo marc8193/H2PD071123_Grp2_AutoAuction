@@ -8,13 +8,14 @@ namespace AutoAuctionProjekt.Models
     //TODO: U4 - Implement interfaces
     public abstract class User
     {
+        //Username, Password og ZipCode sættes op
         protected User(string userName, string password, uint zipCode)
         {
              this.UserName = userName;
             this.Password = password;
             this.ZipCode = zipCode;
            
-
+//skal denne encryption blive? Skal serveren ikke styre det? spørg simon.
             HashAlgorithm sha = SHA256.Create();
             byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
             PasswordHash = result;
@@ -36,15 +37,35 @@ namespace AutoAuctionProjekt.Models
         {
             //TODO: U5 - Implement the rest of validation for password and user name
 
-            HashAlgorithm sha = SHA256.Create(); // HashAlgorithm object for making hash computations.
-            byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(loginPassword)); // Encodes password to hash as a Byte array.
+            //   HashAlgorithm sha = SHA256.Create(); // HashAlgorithm object for making hash computations.
+            //  byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(loginPassword)); // Encodes password to hash as a Byte array.
 
-            return PasswordHash == result;
+            //  return PasswordHash == result;
 
-            throw new NotImplementedException();
+            //Indsættes med at tilladelse i GUIen
+            bool grantAccess = true;
+            bool denyAccess = false;
+            //Hent Fra database
+            string DBUserName = "navn";
+                string DBPassword = "password";
+
+            if (loginUserName == DBUserName && loginPassword == DBPassword) {
+                return grantAccess;
+            }
+            return denyAccess;
+
+            //U5, Hent fra database
+            //U6, Lav user i database og brug den til authentication
+
+
+
+
+
+
+
         }
 
-        //TODO: U4 - Implement interface proberties and methods.
+
 
         public override string ToString()
         {
@@ -52,4 +73,5 @@ namespace AutoAuctionProjekt.Models
                     Zipcode: {this.ZipCode}";
         }
     }
+
 }

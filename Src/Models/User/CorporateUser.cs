@@ -2,7 +2,7 @@
 
 namespace AutoAuctionProjekt.Models
 {
-    public class CorporateUser : User
+    public class CorporateUser : User 
     {
         public CorporateUser(string userName, string password, uint zipCode, uint cvrNummer, decimal credit) : base(userName, password, zipCode)
         {
@@ -10,6 +10,7 @@ namespace AutoAuctionProjekt.Models
             //TODO: U8 - Add to database and set ID
             throw new NotImplementedException();
         }
+        public ISeller Seller { get; set; }
         public uint CVRNumber { get; set; }
         public decimal Credit { get; set; }
     }
