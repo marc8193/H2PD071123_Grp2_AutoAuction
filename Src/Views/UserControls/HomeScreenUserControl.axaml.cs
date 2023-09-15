@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
-public partial class AuctionHouseUserControl : UserControl
+public partial class HomeScreenUserControl : UserControl
 {
-    public AuctionHouseUserControl()
+    public HomeScreenUserControl()
     {
         InitializeComponent();
     }

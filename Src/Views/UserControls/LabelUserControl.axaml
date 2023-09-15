@@ -5,5 +5,5 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.LabelUserControl">
 
-	<Label Content="Log in" FontSize="34" ></Label>
+	<Label  FontSize="34" >Log in</Label>
 </UserControl>

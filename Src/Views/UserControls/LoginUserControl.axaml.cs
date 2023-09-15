@@ -2,21 +2,28 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using H2PD071123_Grp2_AutoAuction.Src.Views.UserControls;
+using H2PD071123_Grp2_AutoAuction.Views;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class LoginUserControl : UserControl
 {
-    RegisterUserControl registerUC = new RegisterUserControl();
+    public RegisterUserControl RegisterUC{ get; set; } 
+    static LoginUserControl? Instance;
     public LoginUserControl()
     {
+
+        this.RegisterUC = new RegisterUserControl(this); // constractor for RegisterUserControl property
         InitializeComponent();
-        
+        if(Instance == null) { Instance = this; }
     }
-     void LoginBtn(object sender, RoutedEventArgs e)
+    public LoginUserControl GetInstanse()
     {
-        ContentAreaUserControl.Navigate(registerUC.GetInstanse());       
+        return Instance == null ? new() : Instance;
+    }
+    void LoginBtn(object sender, RoutedEventArgs e)
+    {
+        ContentAreaUserControl.Navigate(this.RegisterUC);       
     }
  
 }

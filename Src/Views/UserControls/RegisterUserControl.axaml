@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-             x:Class="H2PD071123_Grp2_AutoAuction.Src.Views.UserControls.RegisterUserControl">
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.RegisterUserControl">
 
 	<Grid  HorizontalAlignment="Center"
 		   RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto,auto">
@@ -23,7 +23,7 @@
 		<Button Background="Gray" BorderBrush="Black"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20"  Content="cancel">
 			</Button>
 
-		<Button  TextElement.Foreground="White"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20" Background="#5CB85C">Create</Button>
+		<Button Name="RegisterBTN" Click="RegisterBtn" TextElement.Foreground="White"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20" Background="#5CB85C">Create</Button>
 		
 	</StackPanel>
 			</Grid>

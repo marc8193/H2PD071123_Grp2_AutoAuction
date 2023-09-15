@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.HomeScreenUserControl">
+
+	
+	
+	<Grid RowDefinitions="*,*" ColumnDefinitions="auto,*">
+		<!--Your aucions data grid with label-->
+		<StackPanel Margin="10 20 20 0" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+			<uc:LabelUserControl Margin="20 0 0 10" FontSize="18" FontWeight="Bold"> Your Auctions</uc:LabelUserControl>
+			<DataGrid Name="YourAuctionsDG"  AutoGenerateColumns="False" >
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Name" />
+					<DataGridTextColumn Header="Årgang"  />
+					<DataGridTextColumn Header="Bud" />
+				</DataGrid.Columns>
+			</DataGrid>		
+		</StackPanel>
+		<!--Current auctions with label-->
+		<StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+			<uc:LabelUserControl Margin="20 0 0 10" FontSize="18" FontWeight="Bold"> Current Auctions</uc:LabelUserControl>
+			<DataGrid Name="CurrentAuctionsDG" AutoGenerateColumns="False" >
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Name"  Width="2*"/>
+					<DataGridTextColumn Header="Årgang"  Width="2*"/>
+					<DataGridTextColumn Header="Bud"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</StackPanel>
+		<!--Buttons stack panel-->
+		<StackPanel Margin="20" Orientation="Vertical" Grid.Column="1">
+			<Button Margin="5" BorderBrush="Black" Padding="8 10 -20 10" Width="120" FontSize="16" Foreground="White" Background="#5CB85C" Content="+Set for sale"/>
+			<Button Margin="5" BorderBrush="Black" Padding="10 10 -20 10" Width="120" FontSize="17" FontWeight="SemiBold"  Content="User profile" />
+			<Button Margin="5" BorderBrush="Black" Padding="15 10 -20 10" Width="120" FontSize="17" FontWeight="SemiBold" Content="Bid history" />
+		</StackPanel>
+	</Grid>
+</UserControl>

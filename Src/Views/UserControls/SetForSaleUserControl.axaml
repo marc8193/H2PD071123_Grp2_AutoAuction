@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+             x:Class="H2PD071123_Grp2_AutoAuction.Src.Views.UserControls.SetForSaleUserControl">
+	<!--Grid for this Control-->
+	
+	<Grid ColumnDefinitions="auto,*" RowDefinitions="2*,*">
+		<!--stack panel for set for sale with text boxes and labels-->
+		<StackPanel Grid.Column="0" Grid.Row="0" Margin="10 0 0 0" Orientation="Vertical">
+			<uc:LabelUserControl Margin="20 20 0 20" TextElement.FontSize="28">Set for sale</uc:LabelUserControl>
+			<Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*">
+				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="1" TextElement.FontSize="14">Name</uc:LabelUserControl>
+				<uc:TextBoxUserControl  Margin="0 5 0 0" Grid.Column="1" Grid.Row="1"></uc:TextBoxUserControl>
+				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="2" TextElement.FontSize="14">Milage</uc:LabelUserControl>
+				<uc:TextBoxUserControl Margin="0 5 0 0" Grid.Column="1" Grid.Row="2" ></uc:TextBoxUserControl>
+				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="3" TextElement.FontSize="14"  >Reg. num</uc:LabelUserControl>
+				<uc:TextBoxUserControl Margin="0 5 0 0"  Grid.Column="1" Grid.Row="3"></uc:TextBoxUserControl>
+				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="4" TextElement.FontSize="14" >Year</uc:LabelUserControl>
+				<ComboBox Width="200" Margin="0 5 0 0" Grid.Row="4" Grid.Column="1" PlaceholderText="Select">
+					<ComboBoxItem>2011</ComboBoxItem>
+					<ComboBoxItem>2012</ComboBoxItem>
+					<ComboBoxItem>2013</ComboBoxItem>
+					<ComboBoxItem>2014</ComboBoxItem>
+					<ComboBoxItem>2015</ComboBoxItem>
+					<ComboBoxItem>2016</ComboBoxItem>
+					<ComboBoxItem>2017</ComboBoxItem>
+					<ComboBoxItem>2018</ComboBoxItem>
+					<ComboBoxItem>2019</ComboBoxItem>
+					<ComboBoxItem>2020</ComboBoxItem>
+					<ComboBoxItem>2021</ComboBoxItem>
+					<ComboBoxItem>2022</ComboBoxItem>
+					<ComboBoxItem>2023</ComboBoxItem>
+					<ComboBoxItem>2024</ComboBoxItem>
+
+				</ComboBox>
+			</Grid>
+		</StackPanel>
+		<!--starting bid and close auction-->
+		<StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+			<Grid RowDefinitions="*,*,auto" ColumnDefinitions="*,*">
+			<uc:LabelUserControl Margin="20" Grid.Column="0" Grid.Row="0" >Starting bid</uc:LabelUserControl>
+			<uc:TextBoxUserControl Grid.Column="1" Grid.Row="0" ></uc:TextBoxUserControl>
+			<uc:LabelUserControl  Margin="20 10 0 0" Grid.Column="0" Grid.Row="1">Close Auction</uc:LabelUserControl>
+			<CalendarDatePicker Grid.Column="1" Grid.Row="1"
+									Name="Close Auction"
+									SelectedDateFormat="Short"/>
+			<Button Name="CancelBtn" Margin="20" FontSize="16" Grid.Column="0" Grid.Row="3" Padding="30 5 30 5" BorderBrush="Black" > Cancel</Button>
+			</Grid>
+		</StackPanel>
+
+		<StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+			<Grid RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*" >
+					<uc:LabelUserControl  TextElement.FontSize="16" >Vehicle type</uc:LabelUserControl>
+					<ComboBox Width="200"  PlaceholderText="Select">
+						<ComboBoxItem>Private Car</ComboBoxItem>
+						<ComboBoxItem>Truck</ComboBoxItem>
+						<ComboBoxItem>2013</ComboBoxItem>
+						<ComboBoxItem>2014</ComboBoxItem>
+						<ComboBoxItem>2015</ComboBoxItem>
+						<ComboBoxItem>2016</ComboBoxItem>
+						<ComboBoxItem>2017</ComboBoxItem>
+						<ComboBoxItem>2018</ComboBoxItem>
+						<ComboBoxItem>2019</ComboBoxItem>
+						<ComboBoxItem>2020</ComboBoxItem>
+						<ComboBoxItem>2021</ComboBoxItem>
+						<ComboBoxItem>2022</ComboBoxItem>
+						<ComboBoxItem>2023</ComboBoxItem>
+						<ComboBoxItem>2024</ComboBoxItem>
+					</ComboBox>
+					<uc:LabelUserControl Grid.Column="0" Grid.Row="1" TextElement.FontSize="16">Name</uc:LabelUserControl>
+					<uc:TextBoxUserControl></uc:TextBoxUserControl>
+					<uc:LabelUserControl Grid.Column="0" Grid.Row="2" TextElement.FontSize="16">Milage</uc:LabelUserControl>
+					<uc:TextBoxUserControl ></uc:TextBoxUserControl>
+					<uc:LabelUserControl Grid.Column="0" Grid.Row="3" TextElement.FontSize="16"  >Reg. num</uc:LabelUserControl>
+					<uc:TextBoxUserControl Grid.Row="3" ></uc:TextBoxUserControl>
+
+			</Grid>
+		</StackPanel>
+	</Grid>
+</UserControl>
