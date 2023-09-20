@@ -8,7 +8,7 @@
 
 	
 	
-	<Grid RowDefinitions="*,*" ColumnDefinitions="auto,*">
+	<Grid RowDefinitions="*,*" ColumnDefinitions="2*,auto">
 		<!--Your aucions data grid with label-->
 		<StackPanel Margin="10 20 20 0" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
 			<uc:LabelUserControl Margin="20 0 0 10" FontSize="18" FontWeight="Bold"> Your Auctions</uc:LabelUserControl>
