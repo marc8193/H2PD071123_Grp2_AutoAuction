@@ -16,7 +16,7 @@
 
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left"  Margin="20 0 0 0">
-			<RadioButton Content="Corporate "></RadioButton>
+			<RadioButton IsChecked="true" Content="Corporate "></RadioButton>
 			<RadioButton Content="Private" Margin="60 0 0 0"></RadioButton>
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
