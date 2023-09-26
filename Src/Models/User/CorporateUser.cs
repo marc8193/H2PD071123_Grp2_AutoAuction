@@ -18,7 +18,8 @@ namespace AutoAuctionProjekt.Models
 
         public override string ToString()
         {
-            return base.ToString();
+            return @$"UserName ({this.UserName}): Password: {this.Password}, ZipCode: {this.ZipCode},
+                    CVRNumber: {this.CVRNumber}, Credit: {this.Credit}";
         }
     }
 }

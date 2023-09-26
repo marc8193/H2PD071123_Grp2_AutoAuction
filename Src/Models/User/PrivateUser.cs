@@ -14,12 +14,12 @@ namespace AutoAuctionProjekt.Models
         public IBuyer Buyer { get; set; }
         public uint CPRNumber { get; set; }
         public uint Credit { get; set; }
-        public uint CVrNumber { get; set; }
-
+       
 
         public override string ToString()
         {
-            return base.ToString();
+            return @$"User - ({this.ID}): Name: {this.UserName}, Password: {this.Password},
+                    Zipcode: {this.ZipCode}";
         }
     }
 }
