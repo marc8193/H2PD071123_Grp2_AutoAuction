@@ -21,7 +21,7 @@ public partial class LoginUserControl : UserControl
     {
         return Instance == null ? new() : Instance;
     }
-    void LoginBtn(object sender, RoutedEventArgs e)
+    void CreateUserBtn(object sender, RoutedEventArgs e)
     {
         ContentAreaUserControl.Navigate(this.RegisterUC);       
     }

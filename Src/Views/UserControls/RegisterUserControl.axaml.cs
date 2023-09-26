@@ -9,18 +9,21 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class RegisterUserControl : UserControl  
 {
-    public LoginUserControl LoginUC { get; set; }
-    static RegisterUserControl? Instance;
+    public LoginUserControl? LoginUC { get; set; }
+    public RegisterUserControl()
+    {
+        InitializeComponent();
+    }
     public RegisterUserControl(LoginUserControl loginUC)
     {
         InitializeComponent();
-        this.LoginUC = loginUC; 
+        this.LoginUC = loginUC;
     }
-  
+
 
     void RegisterBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.LoginUC);
+        ContentAreaUserControl.Navigate(this.LoginUC!);
     }
 
 }

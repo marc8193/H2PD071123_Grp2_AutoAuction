@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
-public partial class SetForSaleUserControl : UserControl
+public partial class MakeBidUserControl : UserControl
 {
-    public SetForSaleUserControl()
+    public MakeBidUserControl()
     {
         InitializeComponent();
     }

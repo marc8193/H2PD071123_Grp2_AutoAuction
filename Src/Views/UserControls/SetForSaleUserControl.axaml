@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-             x:Class="H2PD071123_Grp2_AutoAuction.Src.Views.UserControls.SetForSaleUserControl">
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.SetForSaleUserControl">
 	<!--Grid for this Control-->
 	
 	<Grid ColumnDefinitions="auto,auto" RowDefinitions="*,2*">
@@ -13,13 +13,13 @@
 			<uc:LabelUserControl Margin="20 20 0 20" TextElement.FontSize="28">Set for sale</uc:LabelUserControl>
 			<Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="auto,*">
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="1" TextElement.FontSize="14">Name</uc:LabelUserControl>
-				<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="1"></TextBox>
+				<TextBox Width="200" Margin="20 5 0 0" Grid.Column="1" Grid.Row="1"></TextBox>
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="2" TextElement.FontSize="14">Milage</uc:LabelUserControl>
-				<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="2" ></TextBox>
+				<TextBox Width="200" Margin="20 5 0 0" Grid.Column="1" Grid.Row="2" ></TextBox>
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="3" TextElement.FontSize="14"  >Reg. num</uc:LabelUserControl>
-				<TextBox Width="200" Margin="0 5 0 0"  Grid.Column="1" Grid.Row="3"></TextBox>
+				<TextBox Width="200" Margin="20 5 0 0"  Grid.Column="1" Grid.Row="3"></TextBox>
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="4" TextElement.FontSize="14" >Year</uc:LabelUserControl>
-				<ComboBox Width="200" Margin="17 5 0 0" Grid.Row="4" Grid.Column="1" PlaceholderText="Select">
+				<ComboBox Width="200" Margin="20 5 0 0" Grid.Row="4" Grid.Column="1" PlaceholderText="Select">
 					<ComboBoxItem>2011</ComboBoxItem>
 					<ComboBoxItem>2012</ComboBoxItem>
 					<ComboBoxItem>2013</ComboBoxItem>
@@ -39,18 +39,18 @@
 			</Grid>
 		</StackPanel>
 		<!--starting bid and close auction-->
-		<StackPanel  Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="20 70 0 0">
+		<StackPanel  Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="0 70 0 0">
 			<Grid RowDefinitions="*,*,auto" ColumnDefinitions="auto,*">
 			<uc:LabelUserControl Margin="20" Grid.Column="0" Grid.Row="0" >Starting bid</uc:LabelUserControl>
 			<TextBox Width="150" Height="20" Grid.Column="1" Grid.Row="0" ></TextBox>
 			<uc:LabelUserControl  Margin="20 10 0 0" Grid.Column="0" Grid.Row="1">Close Auction</uc:LabelUserControl>
-			<CalendarDatePicker Grid.Column="1" Grid.Row="1"
+			<CalendarDatePicker Margin="20 0 0 0" Grid.Column="1" Grid.Row="1"
 									Name="CloseAuction"
 									SelectedDateFormat="Short"/>
-			<Button Name="CancelBtn" Margin="20" FontSize="16" Grid.Column="0" Grid.Row="3" Padding="30 5 30 5" BorderBrush="Black" > Cancel</Button>
+			<Button Name="CancelBtn" Margin="20" FontSize="16" Grid.Column="0" Grid.Row="3" TextBlock.TextAlignment="Center" BorderBrush="Black" > Cancel</Button>
 			</Grid>
 		</StackPanel>
-		<StackPanel Grid.Column="1" Grid.Row="0" Margin="120 70 0 0" Orientation="Vertical">
+		<StackPanel Grid.Column="1" Grid.Row="0" Margin="160 70 0 0" Orientation="Vertical">
 			<Grid RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="auto,auto">
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="0" TextElement.FontSize="14" >Vehicle type</uc:LabelUserControl>
 				<ComboBox  Width="200" Margin="5 5 0 0" Grid.Row="0" Grid.Column="1" PlaceholderText="Truck" BorderBrush="Black" BorderThickness="1">
@@ -69,7 +69,7 @@
 				<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="3" ></TextBox>
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="4" TextElement.FontSize="14"  >Engine size</uc:LabelUserControl>
 				<TextBox Width="200" Margin="0 5 0 0"  Grid.Column="1" Grid.Row="4"></TextBox>
-				<Button Name="CreateAuctionBtn" Margin="90 150 0 0" FontSize="14" Grid.Column="1" Grid.Row="6" Padding="10 5 10 5" BorderBrush="Black" > Create auction</Button>
+				<Button Name="CreateAuctionBtn" Margin="90 150 0 0" FontSize="14" Grid.Column="1" Grid.Row="6" TextBlock.TextAlignment="Center" BorderBrush="Black" > Create auction</Button>
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="5" TextElement.FontSize="14"  >Tow bar</uc:LabelUserControl>
 				<StackPanel Margin="5" Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
 					<Grid RowDefinitions="auto" ColumnDefinitions="*,*,*">

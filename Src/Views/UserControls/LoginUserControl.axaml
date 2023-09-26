@@ -5,18 +5,17 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.LoginUserControl">
-	
 	<Grid  HorizontalAlignment="Center" 
 		   RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto,auto">
 		<StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
 			<uc:LabelUserControl ></uc:LabelUserControl>
-		<TextBox Margin="0 20 0 0" Grid.Column="0" Grid.Row="1" Width="350" Height="50" Watermark="User Name" ></TextBox>
-		<TextBox Margin="0 20 0 0" Width="350" Height="50" PasswordChar="*" Watermark="Password" ></TextBox>
+		<TextBox Margin="0 20 0 0" Grid.Column="0" Grid.Row="1" Padding="13" FontSize="20" Width="350" Height="50" Watermark="User Name" ></TextBox>
+		<TextBox Margin="0 20 0 0" Width="350" Height="50" Padding="13" FontSize="20" PasswordChar="*" Watermark="Password" ></TextBox>
 	</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" >
 		<uc:LabelUserControl Grid.Row="2" TextElement.FontSize="20"  HorizontalAlignment="Right" Margin="20 0 0 0">Not Registered? </uc:LabelUserControl>
-		<TextBlock Text="Create user" Foreground="#4896EC" TextDecorations="underLine" FontSize="20" Height="29" VerticalAlignment="Top" Background="Transparent"  Grid.Row="0" Margin="10 0 0 0" Grid.Column="2"></TextBlock>
+		<Button Content="Create user" Foreground="#4896EC" Click="CreateUserBtn" FontSize="20" Margin="0 -6 0 0"   Background="Transparent"  Grid.Row="0"  Grid.Column="2"></Button>
 		</StackPanel>
-		<Button Name="LoginBTN" Click="LoginBtn" Grid.Column="1" TextElement.Foreground="White" Grid.Row="3" Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20" Background="#5CB85C" Content="Login"></Button>
+		<Button TextBlock.TextAlignment="Center"  Name="LoginBTN"  Grid.Column="1" TextElement.Foreground="White" Grid.Row="3" Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20" Background="#5CB85C" Content="Login"></Button>
 	</Grid>
 </UserControl>

@@ -10,9 +10,12 @@
 		   RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto,auto">
 		<StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
 			<uc:LabelUserControl TextElement.FontSize="22">Create User</uc:LabelUserControl>
-			<TextBox Margin="0 20 0 0" Grid.Column="0" Grid.Row="1" Width="350" Height="50" Watermark="User Name" ></TextBox>
-			<TextBox Margin="0 20 0 0" Width="350" Height="50" PasswordChar="*" Watermark="Password" ></TextBox>
-			<TextBox Margin="0 20 0 0" Width="350" Height="50" PasswordChar="*" Watermark="Password again" ></TextBox>
+			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0" 
+					 Grid.Column="0" Grid.Row="1" Width="350" Height="50" Watermark="User Name" ></TextBox>
+			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0"
+					 Width="350" Height="50" PasswordChar="*" Watermark="Password" ></TextBox>
+			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0"
+					 Width="350" Height="50" PasswordChar="*" Watermark="Password again" ></TextBox>
 
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left"  Margin="20 0 0 0">
@@ -20,11 +23,12 @@
 			<RadioButton Content="Private" Margin="60 0 0 0"></RadioButton>
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-		<Button Background="Gray" BorderBrush="Black"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20"  Content="cancel">
-			</Button>
-
-		<Button Name="RegisterBTN" Click="RegisterBtn" TextElement.Foreground="White"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"  TextElement.FontSize="20" Background="#5CB85C">Create</Button>
-		
+		<Button TextBlock.TextAlignment="Center" Background="Gray" BorderBrush="Black" 
+				Margin="40" HorizontalAlignment="Right" Width="100" Height="40"
+				TextElement.FontSize="20"  Content="cancel"></Button>
+		<Button TextBlock.TextAlignment="Center" Name="RegisterBTN" Click="RegisterBtn" 
+				TextElement.Foreground="White"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"
+				TextElement.FontSize="20" Background="#5CB85C">Create</Button>
 	</StackPanel>
 			</Grid>
 </UserControl>

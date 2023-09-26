@@ -2,6 +2,6 @@
 
 public class MainWindowViewModel : ViewModelBase
 {
-   
+    public string name = "test test name binding";
 
 }

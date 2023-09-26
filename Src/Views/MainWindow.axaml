@@ -15,5 +15,7 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-	<uc:ContentAreaUserControl Name="ContentArea"></uc:ContentAreaUserControl>
+	<!--<uc:ContentAreaUserControl Name="ContentArea"></uc:ContentAreaUserControl>-->
+	<!--<uc:BuyerOfAuctionUserControl></uc:BuyerOfAuctionUserControl>-->
+	<uc:HomeScreenUserControl></uc:HomeScreenUserControl>
 </Window>

@@ -5,6 +5,7 @@ namespace AutoAuctionProjekt.Models
 {
     public abstract class Vehicle
     {
+        public string MyTestName = "Test Binding";
         protected Vehicle(string name,
             double km,
             string VIN,
