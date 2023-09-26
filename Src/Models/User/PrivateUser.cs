@@ -11,9 +11,15 @@ namespace AutoAuctionProjekt.Models
             //TODO: U11 - Add to database and set ID
             throw new NotImplementedException();
         }
-        public  IBuyer Buyer { get; set; }
+        public IBuyer Buyer { get; set; }
         public uint CPRNumber { get; set; }
         public uint Credit { get; set; }
         public uint CVrNumber { get; set; }
+
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

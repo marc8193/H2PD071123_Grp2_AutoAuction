@@ -16,11 +16,11 @@ namespace AutoAuctionProjekt.Models
             this.ZipCode = zipCode;
            
 //skal denne encryption blive? Skal serveren ikke styre det? spørg simon.
-            HashAlgorithm sha = SHA256.Create();
-            byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
-            PasswordHash = result;
+            //HashAlgorithm sha = SHA256.Create();
+            //byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
+            //PasswordHash = result;
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
 
             //TODO: U2 - Initalize det fra database i constructor
 
@@ -56,17 +56,7 @@ namespace AutoAuctionProjekt.Models
 
             //U5, Hent fra database
             //U6, Lav user i database og brug den til authentication
-
-
-
-
-
-
-
         }
-
-
-
         public override string ToString()
         {
            return @$"User - ({this.ID}): Name: {this.UserName}, Password: {this.Password},

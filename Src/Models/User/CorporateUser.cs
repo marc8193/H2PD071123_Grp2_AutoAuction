@@ -13,5 +13,12 @@ namespace AutoAuctionProjekt.Models
         public ISeller Seller { get; set; }
         public uint CVRNumber { get; set; }
         public decimal Credit { get; set; }
+
+
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
