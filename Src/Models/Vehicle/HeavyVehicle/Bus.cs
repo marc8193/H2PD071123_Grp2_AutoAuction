@@ -8,16 +8,18 @@ namespace AutoAuctionProjekt.Models
             string name,
             double km,
             string VIN,
-            DateTime year,
+            int year,
             decimal newPrice,
             bool hasTowbar,
             double engineSize,
             double kmPerLiter,
             FuelType fuel,
             uint numberOfSeatss,
-            IDimensions vehicleDimension,
+            double height,
+            double width,
+            double depth,
             uint numberOfSleepingSpaces,
-            bool hasToilet) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeatss, vehicleDimension)
+            bool hasToilet) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeatss, height, width, depth)
         {
             this.NumberOfSleepingSpaces = numberOfSleepingSpaces;
             this.HasToilet = hasToilet;

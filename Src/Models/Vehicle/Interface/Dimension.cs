@@ -6,5 +6,4 @@ namespace AutoAuctionProjekt
         public double Width { get; set; }
         public double Depth { get; set; }
     }
-    
 }

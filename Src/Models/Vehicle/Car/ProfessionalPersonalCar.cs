@@ -8,7 +8,7 @@ namespace AutoAuctionProjekt.Models
             string name,
             double km,
             string VIN,
-            DateTime year,
+            int year,
             decimal newPrice,
             double engineSize,
             double kmPerLiter,

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace AutoAuctionProjekt.Models
@@ -8,19 +9,22 @@ namespace AutoAuctionProjekt.Models
     {
         public static List<Auction> Auctions = new List<Auction>();
         
-        public static uint SetForSale(Vehicle vehicle, ISeller seller, decimal miniumBid)
+        public static Guid SetForSale(Vehicle vehicle, ISeller seller, decimal minimumBid)
         {
-            //TODO: A3 - SetForSale
-            throw new NotImplementedException();
+            var guid = Guid.NewGuid();
+
+            // TODO: Insert vehicle, seller, minimumBid and guid into database, and use 'vehicle.GetType()' to select what table the vehicle should be added to.        
+
+            return guid;
         }
         
-        public static bool RecieveBid(IBuyer buyer, uint auctionID, decimal bid)
+        public static bool RecieveBid(IBuyer buyer, Guid auctionID, decimal bid)
         {
             //TODO: A5 - RecieveBid
             throw new NotImplementedException();
         }
 
-        public static bool AcceptBid(ISeller seller, uint auctionID)
+        public static bool AcceptBid(ISeller seller, Guid auctionID)
         {
             //TODO: A6 - AcceptBid
             throw new NotImplementedException();
@@ -29,7 +33,7 @@ namespace AutoAuctionProjekt.Models
         // The only purpose of regions is to provide an easy way to collapse code
         #region Search Methods 
         
-        public static async Task<Auction> FindAuctionByID(uint auctionID)
+        public static async Task<Auction> FindAuctionByID(Guid auctionID)
         {
             //TODO: A7 - FindAuctionByID
             throw new NotImplementedException();

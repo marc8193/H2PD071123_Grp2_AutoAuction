@@ -1,30 +1,38 @@
 ﻿using System;
+using System.Runtime.Intrinsics.Arm;
 
 namespace AutoAuctionProjekt.Models
 {
-    public abstract class HeavyVehicle : Vehicle
+    public abstract class HeavyVehicle : Vehicle, IDimensions
     {
         public HeavyVehicle(
          string name,
          double km,
          string VIN,
-         DateTime year,
+         int year,
          decimal newPrice,
          bool hasTowbar,
          double engineSize,
          double kmPerLiter,
          FuelType fuel,
          uint numberOfSeats,
-         IDimensions vehicleDimension) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats)
+         double height,
+         double width,
+         double depth) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats)
         {
-            this.VehicleDimension = vehicleDimension;
+            this.Height = height;
+            this.Width = width;
+            this.Depth = depth;
         }
         
-        public IDimensions VehicleDimension { get; set; }
+        public double Height { get; set; }
+        public double Width { get; set; }
+        public double Depth { get; set; }
 
+        private double _engineSize;
         public sealed override double EngineSize
         {
-            get { return EngineSize; }
+            get { return _engineSize; }
             set
             {
                 if (value < 4.2 || value > 15.0)
@@ -32,14 +40,14 @@ namespace AutoAuctionProjekt.Models
                     throw new ArgumentOutOfRangeException();
                 } else
                 {
-                    EngineSize = value;
+                    _engineSize = value;
                 }
             }
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()}, Dimensions: {this.VehicleDimension}";
+            return $"{base.ToString()}, Dimensions: H: {this.Height}, W: {this.Width}, D: {this.Depth}";
         }
     }
 }

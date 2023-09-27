@@ -8,7 +8,7 @@ namespace AutoAuctionProjekt.Models
         protected Vehicle(string name,
             double km,
             string VIN,
-            DateTime year,
+            int year,
             decimal newPrice,
             bool hasTowbar,
             double engineSize,
@@ -34,7 +34,7 @@ namespace AutoAuctionProjekt.Models
         public string Name { get; set; }
         public double Km { get; set; }
         public string VIN { get; set; } // Vehicle identification number
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
         public decimal NewPrice { get; set; }
         public bool HasTowbar { get; set; }
         public virtual double EngineSize { get; set; }
@@ -70,7 +70,7 @@ namespace AutoAuctionProjekt.Models
         }
         private EnergyType GetEnergyClass()
         {
-            if (this.Year.Year < new DateTime(2010, 1, 1).Year)
+            if (this.Year < new DateTime(2010, 1, 1).Year)
             {
                 switch (this.Fuel)
                 {

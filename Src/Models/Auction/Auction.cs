@@ -6,7 +6,10 @@ namespace AutoAuctionProjekt.Models
     {
         public Auction(Vehicle vehicle, ISeller seller, decimal minimumPrice)
         {
-            //TODO: A1 - Set constructor
+            this.Vehicle = vehicle;
+            this.Seller = seller;
+            this.MinimumPrice = minimumPrice;
+            
             //TODO: A2 - Add to database and set ID
             throw new NotImplementedException();
         }
