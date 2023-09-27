@@ -24,7 +24,8 @@ CREATE PROCEDURE CreateBus (
 	--For Bus
 	@Seats int,
 	@Sleep int,
-	@Toilet bit
+	@Toilet bit,
+	@VehicleId int output
 ) AS
 BEGIN
 	BEGIN TRY
@@ -34,6 +35,8 @@ BEGIN
 		
 			INSERT INTO BUS (HeavyVehicleId, Seats, Sleep, Toilet)
 			VALUES (@HeavyVehicleId, @Seats, @Sleep, @Toilet)
+
+			SET @VehicleId = SCOPE_IDENTITY();
 		
 		COMMIT;
 	END TRY

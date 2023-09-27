@@ -5,7 +5,8 @@ GO
 
 DECLARE	@return_value int,
 		@BaseVehicleId int,
-		@HeavyVehicleId int
+		@HeavyVehicleId int,
+		@VehicleId int
 
 EXEC	@return_value = [dbo].[CreateBus]
 		@LicensTypeId = 1,
@@ -25,7 +26,8 @@ EXEC	@return_value = [dbo].[CreateBus]
 		@HeavyVehicleId = @HeavyVehicleId OUTPUT,
 		@Seats = 2,
 		@Sleep = 1,
-		@Toilet = 1
+		@Toilet = 1,
+		@VehicleId = @VehicleId OUTPUT
 
 SELECT	@BaseVehicleId as N'@BaseVehicleId',
 		@HeavyVehicleId as N'@HeavyVehicleId'
