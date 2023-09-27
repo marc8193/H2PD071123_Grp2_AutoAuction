@@ -6,11 +6,20 @@ namespace AutoAuctionProjekt.Models
     {
         public CorporateUser(string userName, string password, uint zipCode, uint cvrNummer, decimal credit) : base(userName, password, zipCode)
         {
-            //TODO: U7 - Set constructor
+            this.CVRNumber = cvrNummer;
+            this.Credit = credit;
+
             //TODO: U8 - Add to database and set ID
+            
             throw new NotImplementedException();
         }
         public uint CVRNumber { get; set; }
         public decimal Credit { get; set; }
+
+        public override string ToString()
+        {
+            return @$"User - ({this.ID}): Username: {this.UserName}, 
+            Cvr nummer: {this.CVRNumber}, Credit: {this.Credit}";
+        }
     }
 }
