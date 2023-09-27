@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.SellerOfAuctionUserControl">
+
+	<Grid RowDefinitions="auto, *" ColumnDefinitions="auto,*">
+		<StackPanel Margin="20" Grid.Column="0" Grid.Row="0"  Orientation="Vertical">
+			<uc:LabelUserControl  FontSize="24" FontWeight="SemiBold">Seller of Auction</uc:LabelUserControl>
+			<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="0 30 0 0">Auction info</uc:LabelUserControl>
+			<ListBox  Margin="0 20 0 0" BorderBrush="Black" BorderThickness="1" Width="270" Height="250"></ListBox>
+		</StackPanel>
+		<Button Name="BackBtnBuyerOfAuction" FontSize="20" Padding="33 05 0 0" BorderBrush="Black" Content="Back" Grid.Column="0" Grid.Row="1" Width="120" Height="40" Margin="20 0 0 0"></Button>
+		<StackPanel  Orientation="Vertical" Grid.Column="1" Grid.Row="0" >
+			<Grid  Margin="50 20 0 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+				<uc:LabelUserControl Padding="140 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" FontWeight="Medium" FontSize="22">Closing</uc:LabelUserControl>
+				<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="20 0 0 0" Grid.Column="1" Grid.Row="0">bind date here 12/12</uc:LabelUserControl>
+				<uc:LabelUserControl Margin="0 20 0 0" Padding="80 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
+				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium" Grid.Column="1" Grid.Row="1">bind balance here dkk</uc:LabelUserControl>
+				<Button Name="Accept" Click="AcceptBtn"  FontSize="20"  Foreground="White" Background="#5CB85C" Content="Accept" TextBlock.TextAlignment="Center" Grid.Column="1" Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button>
+			</Grid>
+		</StackPanel>
+	</Grid>
+</UserControl>

@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.YourBidHistoryUserControl">
+	<Grid Margin="20" RowDefinitions="*,4*,2*">
+		<Label FontSize="26" Grid.Row="0">Your bid history</Label>
+		<Grid Grid.Row="1">
+			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" BorderBrush="Black" BorderThickness="1"  Name="YourAuctionsDG"  AutoGenerateColumns="False" >
+				<DataGrid.Columns >
+					<DataGridTextColumn  Width="*" Header="Name" />
+					<DataGridTextColumn Width="*" Header="Årgang" />
+					<DataGridTextColumn Width="*" Header="Bud" />
+					<DataGridTextColumn Width="*" Header="Final" />
+				</DataGrid.Columns>
+		</DataGrid>
+		</Grid>
+		<Button BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" VerticalAlignment="Bottom" Grid.Row="2">Back</Button>
+	</Grid>
+</UserControl>
