@@ -17,6 +17,6 @@
 		<Label Grid.Row="4" Grid.Column="1">Bind YourAuction her</Label>
 		<Label  Margin="0 0 20 20" Grid.Row="5" >Auction won:</Label>
 		<Label Grid.Row="5" Grid.Column="1">Bind Auction her</Label>
-		<Button Grid.Row="6">Back</Button>
+		<Button Name="BackBTN" Click="BackBtn" Grid.Row="6">Back</Button>
 	</Grid>
 </UserControl>

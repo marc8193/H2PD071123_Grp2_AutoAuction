@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.YourBidHistoryUserControl">
-	<Grid Margin="20" RowDefinitions="*,4*,2*">
+	<Grid Margin="20" RowDefinitions="*,4*,2*" >
 		<Label FontSize="26" Grid.Row="0">Your bid history</Label>
 		<Grid Grid.Row="1">
 			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" BorderBrush="Black" BorderThickness="1"  Name="YourAuctionsDG"  AutoGenerateColumns="False" >
@@ -16,6 +16,6 @@
 				</DataGrid.Columns>
 		</DataGrid>
 		</Grid>
-		<Button BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" VerticalAlignment="Bottom" Grid.Row="2">Back</Button>
+		<Button Name="BackBTN" Click="BackBtn" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" VerticalAlignment="Bottom" Grid.Row="2">Back</Button>
 	</Grid>
 </UserControl>

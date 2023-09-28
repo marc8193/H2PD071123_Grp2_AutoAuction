@@ -33,9 +33,9 @@
 		</Grid>
 		<!--Buttons Grid-->
 		<Grid  HorizontalAlignment="Right" Margin="130 20 0 0" RowDefinitions="auto,auto,auto">
-			<Button Name="SetForSale" Click="SetForSaleBtn" Grid.Column="0" Grid.Row="0" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="16" Foreground="White" Background="#5CB85C" Content="+Set for sale"/>
-			<Button Grid.Column="0" Grid.Row="1" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="17" FontWeight="SemiBold"  Content="User profile" />
-			<Button Grid.Column="0" Grid.Row="2" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="17" FontWeight="SemiBold" Content="Bid history" />
+			<Button Name="SetForSaleBTN" Click="SetForSaleBtn" Grid.Column="0" Grid.Row="0" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="16" Foreground="White" Background="#5CB85C" Content="+Set for sale"/>
+			<Button Name="UserProfileBTN" Click="UserProfileBtn" Grid.Column="0" Grid.Row="1" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="17" FontWeight="SemiBold"  Content="User profile" />
+			<Button Name="BidHistoryBTN" Click="BidHistoryBtn" Grid.Column="0" Grid.Row="2" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="17" FontWeight="SemiBold" Content="Bid history" />
 			</Grid>
 	</Grid>
 </UserControl>

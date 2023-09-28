@@ -7,11 +7,17 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class HomeScreenUserControl : UserControl
 {
+    SellerOfAuctionUserControl SellerOfAuctionUC = new SellerOfAuctionUserControl(); 
+    YourBidHistoryUserControl YourBidHistoryUC;
+    YourProfileUserControl YourProfileUC;
     SetForSaleUserControl SetforSaleUC;
     static HomeScreenUserControl? Instance;
     public HomeScreenUserControl()
     {
-        this.SetforSaleUC = new SetForSaleUserControl(this); // constractor property
+        this.SellerOfAuctionUC=new SellerOfAuctionUserControl(this);
+        this.YourBidHistoryUC=new YourBidHistoryUserControl(this);
+        this.YourProfileUC= new YourProfileUserControl(this);
+        this.SetforSaleUC = new SetForSaleUserControl(this,SellerOfAuctionUC) ; // constractor property
         InitializeComponent();
         if (Instance == null) { Instance = this; }
     }
@@ -24,4 +30,12 @@ public partial class HomeScreenUserControl : UserControl
         ContentAreaUserControl.Navigate(this.SetforSaleUC);
 
     }
-}
+    void UserProfileBtn(object sender, RoutedEventArgs e)
+    {
+        ContentAreaUserControl.Navigate(this.YourProfileUC);
+    }
+    void BidHistoryBtn (object sender, RoutedEventArgs e)
+    {
+        ContentAreaUserControl.Navigate(this.YourBidHistoryUC);
+    }
+}   
