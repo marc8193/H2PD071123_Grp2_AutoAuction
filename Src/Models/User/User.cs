@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace AutoAuctionProjekt.Models
 {
-    //TODO: U4 - Implement interfaces
+
     public abstract class User
     {
         //Username, Password og ZipCode sættes op
@@ -20,7 +20,7 @@ namespace AutoAuctionProjekt.Models
             //byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
             //PasswordHash = result;
 
-            //throw new NotImplementedException();
+
 
             //TODO: U2 - Initalize det fra database i constructor
 
@@ -35,14 +35,12 @@ namespace AutoAuctionProjekt.Models
 
         private bool ValidateLogin(string loginUserName, string loginPassword)
         {
-            //TODO: U5 - Implement the rest of validation for password and user name
-
             //   HashAlgorithm sha = SHA256.Create(); // HashAlgorithm object for making hash computations.
             //  byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(loginPassword)); // Encodes password to hash as a Byte array.
 
             //  return PasswordHash == result;
 
-            //Indsættes med at tilladelse i GUIen
+            //ÆNDRER NÅR LOGINS ER LAVET I DATABASE
             bool grantAccess = true;
             bool denyAccess = false;
             //Hent Fra database
@@ -54,7 +52,7 @@ namespace AutoAuctionProjekt.Models
             }
             return denyAccess;
 
-            //U5, Hent fra database
+      
             //U6, Lav user i database og brug den til authentication
         }
         public override string ToString()
