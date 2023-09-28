@@ -21,8 +21,6 @@ BEGIN
 
         --Basic
         BV.Id AS BasicId,
-        BV.LicensTypeId,
-        BV.EnergyId,
         BV.Name,
         BV.Km,
         BV.Registration,
@@ -30,7 +28,10 @@ BEGIN
         BV.Price,
         BV.Towbar,
         BV.EngineSize,
-        BV.KmPr
+        BV.KmPr,
+		BV.LicensTypes,
+		BV.EnergyClass,
+		BV.Fuel
 	FROM 
         Bus AS B
     INNER JOIN 

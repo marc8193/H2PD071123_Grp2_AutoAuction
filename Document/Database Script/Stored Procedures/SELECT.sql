@@ -45,7 +45,7 @@ SELECT
 	) AS G
 IF @Bus IS NOT NULL 
 	BEGIN
-		SET @FirstTable = 'dbo.Bus'
+		SET @FirstTable = 'Bus'
 		SET @SecTable = 'dbo.HeavyVehicle'
 		SET @Id = @Bus;
 		SELECT @Bus AS BusId
@@ -72,6 +72,6 @@ ELSE IF @Privat IS NOT NULL
 		SELECT @Privat AS PrivatCarId
 	END
 
-
+	EXEC SelectVehicleData @FirstTable, @SecTable, @Id
 --Procedure to select data according to @table
 --EXEC 

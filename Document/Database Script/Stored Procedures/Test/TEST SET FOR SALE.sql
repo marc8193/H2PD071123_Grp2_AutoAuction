@@ -9,10 +9,10 @@ EXEC	@return_value = [dbo].[SetForSale]
 		@UserId = 16,
 		@Visable = 1,
 		@MinPrice = 200,
-		@EndDate = '2015-10-01',
-		@BidId = @BidId OUTPUT
+		@EndDate = '2023-09-30 14:30:00',
+		@AuctionId = @AuctionId OUTPUT
 
-SELECT	@AuctionId as N'@BidId'
+SELECT	@AuctionId as N'@AuctionId'
 
 SELECT	'Return Value' = @return_value
 
