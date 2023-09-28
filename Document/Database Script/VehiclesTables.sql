@@ -1,27 +1,27 @@
 use auction
 
 --Connected to BaseVehicle Table
-CREATE TABLE LicensTypes(
-	Id int IDENTITY(1, 1) PRIMARY KEY,
-	Name varchar(2)
-)
+--CREATE TABLE LicensTypes(
+--	Id int IDENTITY(1, 1) PRIMARY KEY,
+--	Name varchar(2)
+--)
 
 --Connected to BaseVehicle Table
-CREATE TABLE Energys(
-	Id int IDENTITY(1, 1) PRIMARY KEY,
-	Klass int
-)
+--CREATE TABLE Energys(
+--	Id int IDENTITY(1, 1) PRIMARY KEY,
+--	Klass int
+--)
 
 --Will get a trigger to be filled?
-CREATE TABLE Fuel(
-	Id int IDENTITY(1, 1) PRIMARY KEY,
-	Name varchar(20)
-)
+--CREATE TABLE Fuel(
+--	Id int IDENTITY(1, 1) PRIMARY KEY,
+--	Name varchar(20)
+--)
 
 CREATE TABLE BaseVehicles(
 	Id int IDENTITY(1, 1) PRIMARY KEY,
-	LicensTypeId int,
-	EnergyId int,
+	--LicensTypeId int,
+	--EnergyId int,
 	Name varchar(50) NOT NULL,
 	Km int CHECK(Km >= 0),
 	Registration varchar(7),
@@ -30,15 +30,18 @@ CREATE TABLE BaseVehicles(
 	Towbar bit,
 	EngineSize decimal CHECK(EngineSize >= 0.7 AND EngineSize <= 15),
 	KmPr decimal,
+	LicensTypes varchar(2),
+	EnergyClass varchar(2),
+	Fuel varchar(20)
 	
-	--OR use Check constraint connected to Enum
-	CONSTRAINT FK_LicensType
-	FOREIGN KEY (LicensTypeId)
-	REFERENCES LicensTypes (Id),
+	----OR use Check constraint connected to Enum
+	--CONSTRAINT FK_LicensType
+	--FOREIGN KEY (LicensTypeId)
+	--REFERENCES LicensTypes (Id),
 
-	CONSTRAINT FK_Energy
-	FOREIGN KEY (EnergyId)
-	REFERENCES Energys (Id)
+	--CONSTRAINT FK_Energy
+	--FOREIGN KEY (EnergyId)
+	--REFERENCES Energys (Id)
 )
 
 -----------------

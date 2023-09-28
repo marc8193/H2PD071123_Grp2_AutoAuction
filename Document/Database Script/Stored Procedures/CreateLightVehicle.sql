@@ -1,7 +1,7 @@
 USE auction
 GO
 
-CREATE PROCEDURE CreateHeavyVehicle (
+CREATE PROCEDURE CreateLightVehicle (
 	--For Base
 	@Name varchar(50),
 	@Km int,
@@ -18,27 +18,27 @@ CREATE PROCEDURE CreateHeavyVehicle (
 
 	--For Heavy
 	@Height decimal(18,0),
-	@Weight decimal(18,0),
+	@Width decimal(18,0),
 	@Length decimal(18,0),
-	@HeavyVehicleId int output
+	@LightVehicleId int output
 ) AS
 BEGIN
-	BEGIN TRY
-		BEGIN TRANSACTION;
+	--BEGIN TRY
+	--	BEGIN TRANSACTION;
 
 			Exec CreateBaseVehicle @Name, @Km, @Registration, @Year, @Price, @Towbar, @EngineSize, @KmPr, @LicensTypes, @EnergyClass, @Fuel, @BaseVehicleId = @BaseVehicleId OUTPUT;
 
-			INSERT INTO HeavyVehicles (BaseVehicleId, Height, Weight, Length)
-			VALUES (@BaseVehicleId, @Height, @Weight, @Length)
+			INSERT INTO LightVehicles(BaseVehicleId, Height, Width, Length)
+			VALUES (@BaseVehicleId, @Height, @Width, @Length)
 
 			--Get newly inserted id
-			SET @HeavyVehicleId = SCOPE_IDENTITY();
+			SET @LightVehicleId = SCOPE_IDENTITY();
 
-		COMMIT;
-	END TRY
-	BEGIN CATCH
-		-- We can log Error here
-		ROLLBACK;
-		THROW;
-	END CATCH
+	--	COMMIT;
+	--END TRY
+	--BEGIN CATCH
+	--	-- We can log Error here
+	--	ROLLBACK;
+	--	THROW;
+	--END CATCH
 END;

@@ -3,8 +3,6 @@ GO
 
 CREATE PROCEDURE CreateTruck (
 --For Base
-	@LicensTypeId int,
-	@EnergyId int,
 	@Name varchar(50),
 	@Km int,
 	@Registration varchar(7),
@@ -13,6 +11,9 @@ CREATE PROCEDURE CreateTruck (
 	@Towbar bit,
 	@EngineSize decimal(18,0),
 	@KmPr decimal(18,0),
+	@LicensTypes varchar(2),
+	@EnergyClass varchar(1),
+	@Fuel varchar(20),
 	@BaseVehicleId int output,
 
 	--For Heavy
@@ -30,7 +31,7 @@ BEGIN
 	BEGIN TRY
 		BEGIN TRANSACTION;
 
-			Exec CreateHeavyVehicle @LicensTypeId, @EnergyId, @Name, @Km, @Registration, @Year, @Price, @Towbar, @EngineSize, @KmPr, @BaseVehicleId = @BaseVehicleId OUTPUT, @Height = @Height, @Weight = @Weight, @Length = @Length, @HeavyVehicleId = @HeavyVehicleId OUTPUT;
+			Exec CreateHeavyVehicle @Name, @Km, @Registration, @Year, @Price, @Towbar, @EngineSize, @KmPr, @LicensTypes, @EnergyClass, @Fuel, @BaseVehicleId = @BaseVehicleId OUTPUT, @Height = @Height, @Weight = @Weight, @Length = @Length, @HeavyVehicleId = @HeavyVehicleId OUTPUT;
 		
 			INSERT INTO Trucks (HeavyVehicleId, Capacity)
 			VALUES (@HeavyVehicleId, @Capacity)

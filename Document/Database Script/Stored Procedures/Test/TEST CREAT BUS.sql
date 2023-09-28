@@ -9,8 +9,6 @@ DECLARE	@return_value int,
 		@VehicleId int
 
 EXEC	@return_value = [dbo].[CreateBus]
-		@LicensTypeId = 1,
-		@EnergyId = 1,
 		@Name = N'Haraldur',
 		@Km = 20,
 		@Registration = N'Ha2088',
@@ -19,6 +17,9 @@ EXEC	@return_value = [dbo].[CreateBus]
 		@Towbar = 0,
 		@EngineSize = 2,
 		@KmPr = 20,
+		@LicensTypes = N'1',
+		@EnergyClass = N'1',
+		@Fuel = N'Benzin',
 		@BaseVehicleId = @BaseVehicleId OUTPUT,
 		@Height = 203,
 		@Weight = 33,
