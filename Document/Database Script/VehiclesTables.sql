@@ -56,7 +56,8 @@ CREATE TABLE HeavyVehicles(
 
 	CONSTRAINT FK_BaseVehicle
 	FOREIGN KEY (BaseVehicleId)
-	REFERENCES BaseVehicles (Id),
+	REFERENCES BaseVehicles (Id)
+	ON DELETE CASCADE,
 )
 
 --Connected to HeavyVehicles Table
@@ -69,7 +70,8 @@ CREATE TABLE Bus(
 
 	CONSTRAINT FK_HeavyVehicle
 	FOREIGN KEY (HeavyVehicleId)
-	REFERENCES HeavyVehicles (Id),
+	REFERENCES HeavyVehicles (Id)
+	ON DELETE CASCADE,
 )
 
 --Connected to HeavyVehicles Table
@@ -80,7 +82,8 @@ CREATE TABLE Trucks(
 
 	CONSTRAINT FK_HeavyVehicleTruck
 	FOREIGN KEY (HeavyVehicleId)
-	REFERENCES HeavyVehicles (Id),
+	REFERENCES HeavyVehicles (Id)
+	ON DELETE CASCADE,
 )
 
 -----------------
@@ -96,7 +99,8 @@ CREATE TABLE LightVehicles(
 
 	CONSTRAINT FK_BaseVehicleLight
 	FOREIGN KEY (BaseVehicleId)
-	REFERENCES BaseVehicles (Id),
+	REFERENCES BaseVehicles (Id)
+	ON DELETE CASCADE,
 )
 
 --Connected to LightVehicles Table
@@ -108,7 +112,8 @@ CREATE TABLE BusinessCar(
 
 	CONSTRAINT FK_LightVehiclesBusCar
 	FOREIGN KEY (LightVehicleId)
-	REFERENCES LightVehicles (Id),
+	REFERENCES LightVehicles (Id)
+	ON DELETE CASCADE,
 )
 
 --Connected to LightVehicles Table
@@ -119,5 +124,6 @@ CREATE TABLE PrivateCar(
 
 	CONSTRAINT FK_LightVehiclesPrivCar
 	FOREIGN KEY (LightVehicleId)
-	REFERENCES LightVehicles (Id),
+	REFERENCES LightVehicles (Id)
+	ON DELETE CASCADE,
 )
