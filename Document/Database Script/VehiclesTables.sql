@@ -88,7 +88,7 @@ CREATE TABLE LightVehicles(
 	BaseVehicleId int,
 	Seats int CHECK(Seats >= 2 AND Seats <= 7),
 	Height decimal,
-	Weight decimal,
+	Width decimal,
 	Length decimal,
 
 	CONSTRAINT FK_BaseVehicleLight
