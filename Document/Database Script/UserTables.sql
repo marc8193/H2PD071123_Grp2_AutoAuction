@@ -20,28 +20,21 @@ CREATE TABLE FirmUsers(
 
 CREATE TABLE Users(
 	Id int IDENTITY(1, 1) PRIMARY KEY,
-	Privat int,
-	Firm int,
-	Name varchar NOT NULL,
+	PrivatId int,
+	FirmId int,
+	Name varchar(50) NOT NULL,
 	ZipCode varchar(25),
 
 	CONSTRAINT FK_Privat
-	FOREIGN KEY (Privat)
+	FOREIGN KEY (PrivatId)
 	REFERENCES PrivatUsers (Id),
 
 	CONSTRAINT FK_Firm
-	FOREIGN KEY (Firm)
+	FOREIGN KEY (FirmId)
 	REFERENCES FirmUsers (Id),
 )
 
 -----------------Accounts
-CREATE TABLE Transactions(
-	Id int IDENTITY(1, 1) PRIMARY KEY,
-	Date DateTime,
-	Status varchar,
-	Ammount decimal,
-)
-
 CREATE TABLE Accounts(
 	Id int IDENTITY(1, 1) PRIMARY KEY,
 	PrivatUser int,
@@ -56,8 +49,17 @@ CREATE TABLE Accounts(
 	CONSTRAINT FK_FirmUser
 	FOREIGN KEY (FirmUser)
 	REFERENCES FirmUsers (Id),
-
-	CONSTRAINT FK_Transactions
-	FOREIGN KEY (Transactions)
-	REFERENCES Transactions (Id),
 )
+
+CREATE TABLE Transactions(
+	Id int IDENTITY(1, 1) PRIMARY KEY,
+	AccountId int,
+	Date DateTime,
+	Status varchar(50),
+	Ammount decimal,
+
+	CONSTRAINT FK_Account
+	FOREIGN KEY (AccountId)
+	REFERENCES Accounts (Id),
+)
+

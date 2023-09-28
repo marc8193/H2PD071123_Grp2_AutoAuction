@@ -4,7 +4,7 @@ CREATE TABLE Auction(
 	Id int IDENTITY(1, 1) PRIMARY KEY,
 	VehicleId int,
 	UserId int,
-	Status varchar(25),
+	Visable bit,
 	MinPrice decimal,
 	EndDate dateTime
 
