@@ -7,7 +7,7 @@ DECLARE	@return_value int,
 EXEC	@return_value = [dbo].[SetForSale]
 		@VehicleId = 9,
 		@UserId = 16,
-		@Visable = 1,
+		@Visible = 1,
 		@MinPrice = 200,
 		@EndDate = '2023-09-30 14:30:00',
 		@AuctionId = @AuctionId OUTPUT

@@ -5,7 +5,7 @@ CREATE PROCEDURE SetForSale (
 	--For Base
 	@VehicleId int,
 	@UserId int,
-	@Visable bit,
+	@Visible bit,
 	@MinPrice Decimal(18,0),
 	@EndDate datetime,
 
@@ -15,8 +15,8 @@ BEGIN
 	--BEGIN TRY
 	--	BEGIN TRANSACTION;
 
-			INSERT INTO Auction(VehicleId, UserId, visable, MinPrice, EndDate)
-			VALUES (@VehicleId, @UserId, @Visable, @MinPrice, @EndDate)
+			INSERT INTO Auction(VehicleId, UserId, Visible, MinPrice, EndDate)
+			VALUES (@VehicleId, @UserId, @Visible, @MinPrice, @EndDate)
 
 			SET @BidId = SCOPE_IDENTITY();
 		
