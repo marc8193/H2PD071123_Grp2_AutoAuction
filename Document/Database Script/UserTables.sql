@@ -37,17 +37,16 @@ CREATE TABLE Users(
 -----------------Accounts
 CREATE TABLE Accounts(
 	Id int IDENTITY(1, 1) PRIMARY KEY,
-	PrivatUser int,
-	FirmUser int,
-	Transactions int,
+	PrivatUserId int,
+	FirmUserId int,
 	Credit decimal,
 
 	CONSTRAINT FK_PrivatUser
-	FOREIGN KEY (PrivatUser)
+	FOREIGN KEY (PrivatUserId)
 	REFERENCES PrivatUsers (Id),
 
 	CONSTRAINT FK_FirmUser
-	FOREIGN KEY (FirmUser)
+	FOREIGN KEY (FirmUserId)
 	REFERENCES FirmUsers (Id),
 )
 

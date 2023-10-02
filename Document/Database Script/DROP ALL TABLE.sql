@@ -13,11 +13,16 @@ DROP TABLE PrivateCar;
 DROP TABLE Trucks;
 
 --- DROP Users
---DROP TABLE Accounts;
---DROP TABLE FirmUsers;
---DROP TABLE PrivatUsers;
---DROP TABLE Transactions;
---DROP TABLE Users;
+DROP TABLE Accounts;
+DROP TABLE FirmUsers;
+DROP TABLE PrivatUsers;
+DROP TABLE Transactions;
+DROP TABLE Users;
+
+--DROP Auction
+DROP TABLE Auction;
+DROP TABLE Bid;
+
 
 
 
