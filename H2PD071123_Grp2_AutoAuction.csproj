@@ -24,4 +24,11 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.2" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="Src\ImagesSource\Vehicle.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+			 Width="1000" Height="650"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.RegisterUserControl">
 
 	<Grid  HorizontalAlignment="Center"

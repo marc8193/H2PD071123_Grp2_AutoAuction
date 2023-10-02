@@ -7,7 +7,7 @@
 			 Width="400" Height="300"             
 			 x:Class="H2PD071123_Grp2_AutoAuction.Views.PrivateCarUserControl">
 	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-		<Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*">
+		<Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*">
 			<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="1" TextElement.FontSize="14">Height</uc:LabelUserControl>
 			<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="1"></TextBox>
 			<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="2" TextElement.FontSize="14">Length</uc:LabelUserControl>
@@ -15,14 +15,7 @@
 			<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="3" TextElement.FontSize="14">Weight</uc:LabelUserControl>
 			<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="3" ></TextBox>
 			<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="4" TextElement.FontSize="14"  >Engine size</uc:LabelUserControl>
-			<TextBox Width="200" Margin="0 5 0 0"  Grid.Column="1" Grid.Row="4"></TextBox>
-			<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="5" TextElement.FontSize="14"  >Tow bar</uc:LabelUserControl>
-			<StackPanel Margin="5" Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-				<Grid RowDefinitions="auto" ColumnDefinitions="*,*,*">
-					<RadioButton IsChecked="true" Grid.Column="1" >Yes</RadioButton>
-					<RadioButton Margin="30 0 0 0" Grid.Column="2" >No</RadioButton>
-				</Grid>
-			</StackPanel>
+			<TextBox Width="200" Margin="0 5 0 0"  Grid.Column="1" Grid.Row="4"></TextBox>		
 		</Grid>
 	</StackPanel>
 </UserControl>
