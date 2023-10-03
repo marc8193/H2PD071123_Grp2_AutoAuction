@@ -1,6 +1,7 @@
 
 CREATE PROCEDURE SelectUser
-	@UserId int
+	@UserId int,
+	@CreditAndBalance int = null
 AS
 BEGIN
 	DECLARE
@@ -32,14 +33,22 @@ BEGIN
 		BEGIN
 			SET @Table = 'FirmUsers'
 			SET @NextId = @Firm;
-			SELECT @Firm AS FirmId
+			--SELECT @Firm AS FirmId
 		END;
 	ELSE IF @Privat IS NOT NULL
 		BEGIN
 			SET @Table = 'PrivatUsers'
 			SET @NextId = @Privat;
-			SELECT @Privat as PrivatId
+			--SELECT @Privat as PrivatId
 		END;
 	
-	EXEC SelectUserData @Table, @NextId, @UserId
+	IF @CreditAndBalance IS NULL
+		BEGIN
+			EXEC SelectUserData @Table, @NextId, @UserId;
+		END;
+
+	IF @CreditAndBalance IS NOT NULL
+		BEGIN
+			EXEC SelectUserBalanceAndCredit @Table, @UserId;
+		END;
 END;
