@@ -1,4 +1,4 @@
-ALTER PROCEDURE SelectVehicleData
+CREATE PROCEDURE SelectVehicleData
     @FirstTable VARCHAR(255),
     @SecTable VARCHAR(255),
     @Id INT

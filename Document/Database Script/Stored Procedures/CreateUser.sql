@@ -6,14 +6,14 @@ CREATE PROCEDURE CreateUser(
 	@UserName varchar(300),
 	@Password varchar(max),
 
+	@Balance decimal(18,0) = null,
+
 	--Used for Privat User
 	@SocialSecurityNumber varchar(25) = null,
-	@BalancePrivat decimal(18,0) = null,
 	@PrivatUserId int output,
 
 	--Used for Frim User
 	@Cvr varchar(25) = null,
-	@BalanceFirm decimal(18,0) = null,
 	@FirmUserId int output,
 
 	--For user
@@ -29,11 +29,11 @@ BEGIN
 
 	IF @SocialSecurityNumber IS NOT NULL
 		BEGIN
-			EXEC CreatePrivatUser @SocialSecurityNumber, @BalancePrivat, @PrivatUserId = @PrivatUserId OUTPUT;
+			EXEC CreatePrivatUser @SocialSecurityNumber, @Balance, @PrivatUserId = @PrivatUserId OUTPUT;
 		END;
 	ELSE IF @Cvr IS NOT NULL
 		BEGIN
-			EXEC CreateFirmUser @Cvr, @BalanceFirm, @FirmUserId = @FirmUserId OUTPUT;
+			EXEC CreateFirmUser @Cvr, @Balance, @FirmUserId = @FirmUserId OUTPUT;
 		END;
 
 		--Users
