@@ -40,7 +40,7 @@
 
 			<Border Margin="-5 5 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5">
 				<Border.Background>
-					<ImageBrush Source="C:\Users\angel\source\repos\H2PD071123_Grp2_AutoAuction\H2PD071123_Grp2_AutoAuction\Src\ImagesSource\Vehicle.jpg"/>
+					<ImageBrush Source="/Src/Assets/Vehicle.jpg"/>
 				</Border.Background>
 				<Border.Styles>
 					<Style Selector="Border">
