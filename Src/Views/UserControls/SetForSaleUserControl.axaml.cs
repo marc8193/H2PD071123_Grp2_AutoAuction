@@ -10,10 +10,8 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class SetForSaleUserControl : UserControl
 {
-
-    
-    public SellerOfAuctionUserControl SellerOfAuctionUC {  get; set; }
-    public HomeScreenUserControl HomeScreenUC { get; set; }
+    public SellerOfAuctionUserControl? SellerOfAuctionUC {  get; set; }
+    public HomeScreenUserControl? HomeScreenUC { get; set; }
     public SetForSaleUserControl()
     {
         InitializeComponent();
@@ -32,12 +30,12 @@ public partial class SetForSaleUserControl : UserControl
 
     void CancelBTN(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.HomeScreenUC);
+        ContentAreaUserControl.Navigate(this.HomeScreenUC!);
     }
 
     void CreateAuctionBTN(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.SellerOfAuctionUC);
+        ContentAreaUserControl.Navigate(this.SellerOfAuctionUC!);
 
     }
 }

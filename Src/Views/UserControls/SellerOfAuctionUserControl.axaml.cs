@@ -8,7 +8,7 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class SellerOfAuctionUserControl : UserControl
 {
-    HomeScreenUserControl HomeScreenUC { get; set; }
+    HomeScreenUserControl? HomeScreenUC { get; set; }
     public SellerOfAuctionUserControl()
     {
         InitializeComponent();
@@ -25,7 +25,7 @@ public partial class SellerOfAuctionUserControl : UserControl
     }
     void BackBtn (object sender, RoutedEventArgs e) 
     {
-        ContentAreaUserControl.Navigate(this.HomeScreenUC);
+        ContentAreaUserControl.Navigate(this.HomeScreenUC!);
     }
    
 }

@@ -7,7 +7,7 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class YourBidHistoryUserControl : UserControl
 {
-    public HomeScreenUserControl HomeScreenUC { get; set; }
+    public HomeScreenUserControl? HomeScreenUC { get; set; }
     public YourBidHistoryUserControl()
     {
         InitializeComponent();
@@ -20,6 +20,6 @@ public partial class YourBidHistoryUserControl : UserControl
 
     void BackBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.HomeScreenUC);
+        ContentAreaUserControl.Navigate(this.HomeScreenUC!);
     }
 }
