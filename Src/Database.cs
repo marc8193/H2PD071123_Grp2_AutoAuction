@@ -1,5 +1,7 @@
 using System;
+using System.Data;
 using Microsoft.Data.SqlClient;
+using Tmds.DBus.Protocol;
 
 namespace H2PD071123_Grp2_AutoAuction;
 
@@ -9,12 +11,14 @@ public partial class Database
     new Lazy<Database>(() => new Database());
 
     public static Database Instance { get; set; } = lazy.Value;
-
     private Database()
     {
         this.ConnectionStr = MakeConnectionString();
         this.Connection = new SqlConnection(this.ConnectionStr);
 
+        SqlCommand cmd = new SqlCommand("UpdateAuctionVisibility", Connection);
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
         Connection.Open();
     }
 
