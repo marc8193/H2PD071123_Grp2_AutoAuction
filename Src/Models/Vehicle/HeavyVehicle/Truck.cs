@@ -2,7 +2,7 @@
 
 namespace AutoAuctionProjekt.Models
 {
-    class Truck : HeavyVehicle
+    public class Truck : HeavyVehicle
     {
         public Truck(
             string name,

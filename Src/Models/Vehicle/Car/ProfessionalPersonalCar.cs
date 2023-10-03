@@ -14,22 +14,23 @@ namespace AutoAuctionProjekt.Models
             double kmPerLiter,
             FuelType fuel,
             uint numberOfSeats,
-            IDimensions trunkDimension,
+            double height,
+            double width,
+            double length,
             bool hasSafetyBar,
             double loadCapacity)
-            : base(name, km, VIN, year, newPrice, true, engineSize, kmPerLiter, fuel, numberOfSeats, trunkDimension)
+            : base(name, km, VIN, year, newPrice, true, engineSize, kmPerLiter, fuel, numberOfSeats, height, width, length)
         {
+            this.LoadCapacity = loadCapacity;
             this.DriversLisence = this.LoadCapacity > 750 ? DriversLisenceType.BE : DriversLisenceType.B;
-         
-            //TODO: V17 - Add to database and set ID
-            throw new NotImplementedException();
+            this.HasSafetyBar = hasSafetyBar;
         }
 
         public bool HasSafetyBar { get; set; }
         public double LoadCapacity { get; set; }
         public override string ToString()
         {
-            return $"{base.ToString()}, Trunk Dimensions: {this.TrunkDimension}";
+            return $"{base.ToString()}, Loadcapacity: {this.LoadCapacity}";
         }
     }
 }

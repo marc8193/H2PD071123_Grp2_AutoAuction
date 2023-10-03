@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Intrinsics.Arm;
 
 namespace AutoAuctionProjekt.Models
 {
@@ -17,17 +16,18 @@ namespace AutoAuctionProjekt.Models
          FuelType fuel,
          uint numberOfSeats,
          double height,
-         double width,
-         double depth) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats)
+         double weight,
+         double length) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats)
         {
             this.Height = height;
-            this.Width = width;
-            this.Depth = depth;
+            this.Length = length;
+            this.Weight = weight;
         }
         
-        public double Height { get; set; }
-        public double Width { get; set; }
-        public double Depth { get; set; }
+        public double? Height { get; set; }
+        public double? Width { get; set; }
+        public double? Length { get; set; }
+        public double Weight { get; set; }
 
         private double _engineSize;
         public sealed override double EngineSize
@@ -47,7 +47,7 @@ namespace AutoAuctionProjekt.Models
 
         public override string ToString()
         {
-            return $"{base.ToString()}, Dimensions: H: {this.Height}, W: {this.Width}, D: {this.Depth}";
+            return $"{base.ToString()}, Dimensions: H: {this.Height}, D: {this.Length}";
         }
     }
 }

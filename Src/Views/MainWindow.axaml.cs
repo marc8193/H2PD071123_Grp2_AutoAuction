@@ -11,8 +11,12 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        var truck = new Truck("Volvo FH12", 1200, "12345", DateTime.Now.Year, 100, false, 6, 2, Vehicle.FuelType.Diesel, 2, 10, 10, 10, 20);
+        User user = new PrivateUser("Testttt", "group2", 9000, 1234567890);
+        
+        var db = Database.Instance;
+        user.DbId = db.InsertUser(user);
 
-        AuctionHouse.SetForSale(truck);
+        var privatePersonalCar = new PrivatePersonalCar("Skoda Octavia", 1200, "56", DateTime.Now.Year, 87666, true, 2.0, 21, Vehicle.FuelType.Diesel, 5, 1.8, 2, 2.5, false);
+        AuctionHouse.SetForSale(privatePersonalCar, user.DbId, 1000);        
     }
 }
