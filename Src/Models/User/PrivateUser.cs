@@ -9,7 +9,7 @@ namespace AutoAuctionProjekt.Models
         {
             this.CPRNumber = cprNummer;
         }
-        public IBuyer Buyer { get; set; }
+ 
         public uint CPRNumber { get; set; }
 
         public override string ToString()

@@ -9,7 +9,6 @@ namespace AutoAuctionProjekt.Models
             this.CVRNumber = cvrNummer;
             this.Credit = credit;
         }
-        public ISeller Seller { get; set; }
         public uint CVRNumber { get; set; }
         public decimal Credit { get; set; }
 

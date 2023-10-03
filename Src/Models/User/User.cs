@@ -2,6 +2,7 @@
 using System.Text;
 using System.Security.Cryptography;
 using System.Diagnostics;
+using H2PD071123_Grp2_AutoAuction;
 
 namespace AutoAuctionProjekt.Models
 {
@@ -15,10 +16,6 @@ namespace AutoAuctionProjekt.Models
             this.Password = password;
             this.ZipCode = zipCode;
            
-//skal denne encryption blive? Skal serveren ikke styre det? spørg simon.
-            //HashAlgorithm sha = SHA256.Create();
-            //byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
-            //PasswordHash = result;
 
             this.UserName = userName;
             this.Password = password;
@@ -33,17 +30,12 @@ namespace AutoAuctionProjekt.Models
 
         private bool ValidateLogin(string loginUserName, string loginPassword)
         {
-            //   HashAlgorithm sha = SHA256.Create(); // HashAlgorithm object for making hash computations.
-            //  byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(loginPassword)); // Encodes password to hash as a Byte array.
-
-            //  return PasswordHash == result;
-
-            //ÆNDRER NÅR LOGINS ER LAVET I DATABASE
+   
             bool grantAccess = true;
             bool denyAccess = false;
             //Hent Fra database
-            string DBUserName = "navn";
-                string DBPassword = "password";
+            var DB = Database.Instance;
+            DB.SelectVe
 
             if (loginUserName == DBUserName && loginPassword == DBPassword) {
                 return grantAccess;
