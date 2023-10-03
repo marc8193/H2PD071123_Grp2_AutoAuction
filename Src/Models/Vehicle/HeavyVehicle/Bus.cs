@@ -2,30 +2,29 @@
 
 namespace AutoAuctionProjekt.Models
 {
-    class Bus : HeavyVehicle
+    public class Bus : HeavyVehicle
     {
         public Bus (
             string name,
             double km,
             string VIN,
-            DateTime year,
+            int year,
             decimal newPrice,
             bool hasTowbar,
             double engineSize,
             double kmPerLiter,
             FuelType fuel,
-            uint numberOfSeatss,
-            IDimensions vehicleDimension,
+            uint numberOfSeats,
+            double height,
+            double width,
+            double depth,
             uint numberOfSleepingSpaces,
-            bool hasToilet) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeatss, vehicleDimension)
+            bool hasToilet) : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats, height, width, depth)
         {
             this.NumberOfSleepingSpaces = numberOfSleepingSpaces;
             this.HasToilet = hasToilet;
             this.DriversLisence = this.HasTowbar ? DriversLisenceType.DE : DriversLisenceType.D;
-            this.EngineSize = engineSize;            
-
-            //TODO: V8 - Add to database and set ID
-            throw new NotImplementedException();
+            this.EngineSize = engineSize;
         }
 
         public uint NumberOfSleepingSpaces { get; set; }

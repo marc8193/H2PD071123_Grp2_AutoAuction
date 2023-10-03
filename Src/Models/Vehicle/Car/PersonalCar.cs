@@ -2,30 +2,39 @@
 
 namespace AutoAuctionProjekt.Models
 {
-    public abstract class PersonalCar : Vehicle
+    public abstract class PersonalCar : Vehicle, IDimensions
     {
         protected PersonalCar(
             string name,
             double km,
             string VIN,
-            DateTime year,
+            int year,
             decimal newPrice,
             bool hasTowbar,
             double engineSize,
             double kmPerLiter,
             FuelType fuel,
             uint numberOfSeats,
-            IDimensions trunkDimension)
+            double height,
+            double width,
+            double length)
             : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuel, numberOfSeats)
         {
-            this.TrunkDimension = trunkDimension;
+            this.Height = height;
+            this.Width = width;
+            this.Length = length;
+
             this.DriversLisence = DriversLisenceType.B;
         }
         
-        public IDimensions TrunkDimension { get; set; }
+        public double? Height { get; set; }
+        public double? Width { get; set; }
+        public double? Length { get; set; }
+
+        private double _engineSize;
         public sealed override double EngineSize
         {
-            get { return EngineSize; }
+            get { return _engineSize; }
             set
             {
                 if (value < 0.7 || value > 10.0)
@@ -33,13 +42,13 @@ namespace AutoAuctionProjekt.Models
                     throw new ArgumentOutOfRangeException();
                 } else
                 {
-                    EngineSize = value;
+                    _engineSize = value;
                 }
             }
         }
         public override string ToString()
         {
-            return $"{base.ToString()}, Trunk Dimensions: {this.TrunkDimension}";
+            return $"{base.ToString()}, Trunk Dimensions: W: {this.Width} H: {this.Height} L: {this.Length}";
         }
     }
 }

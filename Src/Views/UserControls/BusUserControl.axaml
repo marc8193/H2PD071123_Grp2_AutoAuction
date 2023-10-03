@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+			 Width="400" Height="300"
+			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.BusUserControl">
+	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*">
+		<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="1" TextElement.FontSize="14">Height</uc:LabelUserControl>
+	<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="1"></TextBox>
+	<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="2" TextElement.FontSize="14">Length</uc:LabelUserControl>
+	<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="2" ></TextBox>
+	<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="3" TextElement.FontSize="14">Weight</uc:LabelUserControl>
+	<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="3" ></TextBox>
+	<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="4" TextElement.FontSize="14"  >Engine size</uc:LabelUserControl>
+	<TextBox Width="200" Margin="0 5 0 0"  Grid.Column="1" Grid.Row="4"></TextBox>
+	<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="5" TextElement.FontSize="14"  >Tow bar</uc:LabelUserControl>
+	<StackPanel Margin="5" Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+		<Grid RowDefinitions="auto" ColumnDefinitions="*,*,*">
+			<RadioButton IsChecked="true" Grid.Column="1" >Yes</RadioButton>
+			<RadioButton Margin="30 0 0 0" Grid.Column="2" >No</RadioButton>
+		</Grid>
+	</StackPanel>
+		</Grid>
+</StackPanel>
+</UserControl>
