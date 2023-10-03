@@ -9,5 +9,5 @@ namespace H2PD071123_Grp2_AutoAuction.Src.ViewModels
 {
     public class TruckUserControlViewModel : ViewModelBase
     {
-    }
+	}
 }

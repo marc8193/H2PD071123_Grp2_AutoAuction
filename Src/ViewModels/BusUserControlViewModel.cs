@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace H2PD071123_Grp2_AutoAuction.Src.ViewModels
 {
-    internal class BusUserControlViewModel :ViewModelBase
+    public class BusUserControlViewModel :ViewModelBase
     {
     }
 }

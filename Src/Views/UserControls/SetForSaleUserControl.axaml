@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-			 x:DataType="uc:SetForSaleUserControl"
+		 	 xmlns:vm="clr-namespace:H2PD071123_Grp2_AutoAuction.Src.ViewModels"
+			 x:DataType="vm:SetForSaleUserControlViewModel"
 			 x:CompileBindings="True"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.SetForSaleUserControl">
 	<!--Grid for this Control-->
@@ -52,16 +53,17 @@
 			</Grid>
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="0" Margin="160 70 0 0" Orientation="Vertical">
-			<Grid RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="auto,auto">
+			<Grid RowDefinitions="auto,*" ColumnDefinitions="auto,auto">
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="0" TextElement.FontSize="14" >Vehicle type</uc:LabelUserControl>
-				<ComboBox  Width="200" Margin="5 5 0 0" Grid.Row="0" Grid.Column="1" PlaceholderText="Truck" BorderBrush="Black" BorderThickness="1">
-					<ComboBoxItem>Bus</ComboBoxItem>
-					<ComboBoxItem>Personal Car</ComboBoxItem>
-					<ComboBoxItem>Private Personal Car</ComboBoxItem>
-					<ComboBoxItem>Professional Personal Car</ComboBoxItem>
-					<ComboBoxItem>Heavy Vehicle</ComboBoxItem>
-					<ComboBoxItem>Truck</ComboBoxItem>
-				</ComboBox>
+				<StackPanel Orientation="Vertical" Grid.Column="2">
+					<ComboBox PlaceholderText="Truck" Name="TruckTypeComboBox" SelectedItem="{Binding SelectedTruckType}" >
+						<ComboBoxItem>PrivateCar</ComboBoxItem>
+						<ComboBoxItem>ProfessionalCar</ComboBoxItem>
+						<ComboBoxItem>Bus</ComboBoxItem>
+						<ComboBoxItem>Truck</ComboBoxItem>
+					</ComboBox>
+				<ContentControl Name="TruckTypeContentControl" Content="{Binding SelectedTruckType}" />
+				</StackPanel>
 			</Grid>
 		</StackPanel>
 			<Button Name="CreateAuctionBtn" Click="CreateAuctionBTN" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 0 20" FontSize="14" Grid.Column="2" Grid.Row="3" TextBlock.TextAlignment="Center" BorderBrush="Black" > Create auction</Button>

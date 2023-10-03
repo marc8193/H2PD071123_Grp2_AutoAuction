@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using H2PD071123_Grp2_AutoAuction.Src.ViewModels;
 using H2PD071123_Grp2_AutoAuction.ViewModels;
 using AutoAuctionProjekt;
 using AutoAuctionProjekt.Models;

@@ -28,6 +28,20 @@
 
 
   <ItemGroup>
+    <Compile Update="Src\Views\UserControls\ProfessionalCarUserControl.axaml.cs">
+      <DependentUpon>ProfessionalCarUserControl.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Src\Views\UserControls\ProfessionalCarUserControl.axaml.cs">
+      <DependentUpon>ProfessionalCarUserControl.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
     <None Update="Src\ImagesSource\Vehicle.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>

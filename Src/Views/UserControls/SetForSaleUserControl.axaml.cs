@@ -15,7 +15,6 @@ public partial class SetForSaleUserControl : UserControl
     public SetForSaleUserControl()
     {
         InitializeComponent();
-
         DataContext = new SetForSaleUserControlViewModel();
             
     }
@@ -25,8 +24,6 @@ public partial class SetForSaleUserControl : UserControl
         this.HomeScreenUC=homeScreenUC;
        this.SellerOfAuctionUC=sellerOfAuctionUC;
     }
-    
-  
 
     void CancelBTN(object sender, RoutedEventArgs e)
     {
