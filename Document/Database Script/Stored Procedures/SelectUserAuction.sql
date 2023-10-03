@@ -9,4 +9,6 @@ BEGIN
     FROM Auction AS a
     LEFT JOIN Basevehicles AS b ON a.VehicleId = b.Id
 	WHERE a.UserId = @UserId;
+
+	--Get latest Bid
 END;
