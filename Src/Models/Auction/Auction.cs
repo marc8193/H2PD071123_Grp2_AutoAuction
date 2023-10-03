@@ -4,9 +4,12 @@ namespace AutoAuctionProjekt.Models
 {
     public class Auction
     {
-        public Auction(Vehicle vehicle, ISeller seller, decimal minimumPrice)
+        public Auction(Vehicle vehicle, User seller, decimal minimumPrice)
         {
-            //TODO: A1 - Set constructor
+            this.Vehicle = vehicle;
+            this.Seller = seller;
+            this.MinimumPrice = minimumPrice;
+            
             //TODO: A2 - Add to database and set ID
             throw new NotImplementedException();
         }
@@ -15,8 +18,8 @@ namespace AutoAuctionProjekt.Models
         public decimal MinimumPrice { get; set; }
         public decimal StandingBid { get; set; }
         internal Vehicle Vehicle { get; set; }
-        internal ISeller Seller { get; set; }
-        internal IBuyer Buyer { get; set; }
+        internal User Seller { get; set; }
+        internal User Buyer { get; set; }
         public override string ToString()
         {
             throw new NotImplementedException();

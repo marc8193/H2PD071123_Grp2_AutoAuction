@@ -5,31 +5,24 @@ using System.Security.Cryptography;
 namespace AutoAuctionProjekt.Models
 {
     //TODO: U4 - Implement interfaces
-    public abstract class User 
+    public abstract class User
     {
         protected User(string userName, string password, uint zipCode)
         {
-            //TODO: U1 - Set constructor and field
-
-            HashAlgorithm sha = SHA256.Create();
-            byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(password));
-            PasswordHash = result;
-
-            throw new NotImplementedException();
+            this.UserName = userName;
+            this.Password = password;
+            this.Zipcode = zipCode;
         }
 
-        public uint ID { get; private set; }
-
-        private byte[] PasswordHash { get; set; }
+        public string UserName { get; set; }
+        public int DbId { get; set; }
+        public string Password { get; set; }
+        public decimal Balance { get; set; }
+        public uint Zipcode { get; set; }
 
         private bool ValidateLogin(string loginUserName, string loginPassword)
         {
             //TODO: U5 - Implement the rest of validation for password and user name
-
-            HashAlgorithm sha = SHA256.Create(); // HashAlgorithm object for making hash computations.
-            byte[] result = sha.ComputeHash(Encoding.ASCII.GetBytes(loginPassword)); // Encodes password to hash as a Byte array.
-
-            return PasswordHash == result;
 
             throw new NotImplementedException();
         }
@@ -38,8 +31,8 @@ namespace AutoAuctionProjekt.Models
 
         public override string ToString()
         {
-            //TODO: U3 - ToString for User
-            throw new NotImplementedException();
+            return @$"User - ({this.DbId}): Username: {this.UserName}, 
+            Balance: {this.Balance}, Zipcode: {this.Zipcode}";
         }
     }
 }

@@ -6,10 +6,14 @@ namespace AutoAuctionProjekt.Models
     {
         public PrivateUser(string userName, string password, uint zipCode, uint cprNummer) : base(userName, password, zipCode)
         {
-            //TODO: U10 - Set constructor
-            //TODO: U11 - Add to database and set ID
-            throw new NotImplementedException();
+            this.CPRNumber = cprNummer;
         }
         public uint CPRNumber { get; set; }
+
+        public override string ToString()
+        {
+            return @$"User - ({this.DbId}): Username: {this.UserName}, 
+            Cpr nummer: {this.CPRNumber}";
+        }
     }
 }
