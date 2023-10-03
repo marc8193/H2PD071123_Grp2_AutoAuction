@@ -15,18 +15,19 @@ namespace AutoAuctionProjekt.Models
             double kmPerLiter,
             FuelType fuelType,
             uint numberOfSeats,
-            IDimensions trunkDimension,
+            double height,
+            double width,
+            double length,
             bool hasIsofixFittings)
-            : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuelType, numberOfSeats, trunkDimension)
+            : base(name, km, VIN, year, newPrice, hasTowbar, engineSize, kmPerLiter, fuelType, numberOfSeats, height, width, length)
         {
-            //TODO: V20 - Add to database and set ID
-            throw new NotImplementedException();
+            this.HasIsofixFittings = hasIsofixFittings;
         }
 
         public bool HasIsofixFittings { get; set; }
         public override string ToString()
         {
-            return $"{base.ToString()}, Trunk Dimensions: {this.TrunkDimension}";
+            return $"{base.ToString()} - Isofix: {this.HasIsofixFittings}";
         }
     }
 }

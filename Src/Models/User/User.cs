@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 namespace AutoAuctionProjekt.Models
 {
     //TODO: U4 - Implement interfaces
-    public abstract class User : IBuyer, ISeller
+    public abstract class User
     {
         protected User(string userName, string password, uint zipCode)
         {
@@ -15,15 +15,11 @@ namespace AutoAuctionProjekt.Models
         }
 
         public string UserName { get; set; }
+        public int DbId { get; set; }
         public string Password { get; set; }
         public decimal Balance { get; set; }
         public uint Zipcode { get; set; }
-        public uint ID { get; private set; }
 
-        public string ReceiveBidNodification(string message)
-        {
-            throw new NotImplementedException();
-        }
         private bool ValidateLogin(string loginUserName, string loginPassword)
         {
             //TODO: U5 - Implement the rest of validation for password and user name
@@ -35,7 +31,7 @@ namespace AutoAuctionProjekt.Models
 
         public override string ToString()
         {
-            return @$"User - ({this.ID}): Username: {this.UserName}, 
+            return @$"User - ({this.DbId}): Username: {this.UserName}, 
             Balance: {this.Balance}, Zipcode: {this.Zipcode}";
         }
     }

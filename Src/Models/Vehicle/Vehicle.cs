@@ -60,7 +60,12 @@ namespace AutoAuctionProjekt.Models
         }
         public uint numberOfSeats { get; set; }
 
-        public EnergyType EnergyClass { get { return EnergyClass; } set => GetEnergyClass(); }
+        private EnergyType _energyClass;
+        public EnergyType EnergyClass 
+        {
+            get { return _energyClass; } 
+            set { _energyClass = GetEnergyClass(); } 
+        }
         public enum EnergyType
         {
             A,
@@ -79,7 +84,7 @@ namespace AutoAuctionProjekt.Models
                         return EnergyType.A;
 
                     case FuelType.Diesel:
-                        switch (KmPerLiter)
+                        switch (this.KmPerLiter)
                         {
                             case var km when km >= 23:
                                 return EnergyType.A;
@@ -92,7 +97,7 @@ namespace AutoAuctionProjekt.Models
                         }
 
                     case FuelType.Petrol:
-                        switch (KmPerLiter)
+                        switch (this.KmPerLiter)
                         {
                             case var km when km >= 18:
                                 return EnergyType.A;
@@ -111,7 +116,7 @@ namespace AutoAuctionProjekt.Models
                 {
                     
                     case FuelType.Diesel:
-                        switch (KmPerLiter)
+                        switch (this.KmPerLiter)
                         {
                             case var km when km >= 25:
                                 return EnergyType.A;
@@ -124,7 +129,7 @@ namespace AutoAuctionProjekt.Models
                         }
 
                     case FuelType.Petrol:    
-                        switch (KmPerLiter)
+                        switch (this.KmPerLiter)
                         {
                             case var km when km >= 20:
                                 return EnergyType.A;
