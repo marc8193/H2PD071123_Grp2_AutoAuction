@@ -21,10 +21,10 @@ public partial class BuyerOfAuctionUserControl : UserControl
 
         InitializeComponent();
     }
-    // void MakeBidBtn(object sender, RoutedEventArgs e)
-    // {
-
-    // }
+    void MakeBidBtn(object sender, RoutedEventArgs e)
+    {
+        makeBidControl.IsVisible = true;
+    }
 
     void BackBtn(object sender, RoutedEventArgs e)
     {
@@ -39,6 +39,13 @@ public partial class BuyerOfAuctionUserControl : UserControl
 
         var db = Database.Instance;
         db.CreateBid(1, 1, Convert.ToDecimal(bidValue));
+        makeBidControl.BidTextValue = "";
+    }
+
+    private void MakeBidControl_CancelClicked(object sender, EventArgs e)
+    {
+
+        makeBidControl.IsVisible = false;
         makeBidControl.BidTextValue = "";
     }
 }

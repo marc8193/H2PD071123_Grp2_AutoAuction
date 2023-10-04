@@ -23,7 +23,7 @@ public partial class RegisterUserControl : UserControl
         InitializeComponent();
         this.LoginUC = loginUC;
 
-        CreditTextBox = this.FindControl<TextBox>("CreditTextBox");
+        // CreditTextBox = this.FindControl<TextBox>("CreditTextBox");
     }
 
     private void CorporateRadioButton_Checked(object sender, RoutedEventArgs e)

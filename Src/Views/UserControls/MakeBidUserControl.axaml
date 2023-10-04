@@ -11,12 +11,15 @@
 				Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
 				<Grid RowDefinitions="*" ColumnDefinitions="auto,*,*">
 					<StackPanel Orientation="Horizontal" Grid.Column="0">
-						<Button Content="+" Margin="10 0 10 0" Background="Black" Foreground="White"
-							FontSize="12" Padding="1" BorderBrush="Black"></Button>
-						<Button Content="-" Margin="0 0 10 0" Background="Black" Foreground="White"
-							FontSize="12" Padding="1" BorderBrush="Black"></Button>
-						<Button Content="x" Margin="0 0 10 0" Background="Black" Foreground="White"
-							FontSize="12" Padding="1" BorderBrush="Black"></Button>
+						<Button x:Name="plus" Content="+" Margin="10 0 10 0" Background="Black"
+							Foreground="White"
+							FontSize="12" Padding="1" BorderBrush="Black" Click="Plus_Click"></Button>
+						<Button x:Name="minus" Content="-" Margin="0 0 10 0" Background="Black"
+							Foreground="White"
+							FontSize="12" Padding="1" BorderBrush="Black" Click="Minus_Click"></Button>
+						<Button x:Name="empty" Content="x" Margin="0 0 10 0" Background="Black"
+							Foreground="White"
+							FontSize="12" Padding="1" BorderBrush="Black" Click="Empty_Click"></Button>
 					</StackPanel>
 					<Label Margin="25 0 0 0" VerticalAlignment="Center" FontSize="16"
 						FontWeight="Medium" Content="Make a bid" Grid.Column="2"></Label>
@@ -31,7 +34,8 @@
 						Grid.Row="0"></Label>
 					<TextBox x:Name="bidText" Grid.Column="2" Grid.Row="0" Height="36" Width="140"
 						Margin="-10 0 0 0" HorizontalAlignment="Left"></TextBox>
-					<Button Content="Cancel" TextBlock.TextAlignment="Center" Width="100"
+					<Button x:Name="cancelButton" Content="Cancel" TextBlock.TextAlignment="Center"
+						Width="100"
 						Grid.Row="2" Grid.Column="0" Margin="10 25 0 0" BorderBrush="Black"> </Button>
 					<Button x:Name="bidAccept" Content="bid" TextBlock.TextAlignment="Center"
 						HorizontalAlignment="Right" Background="#5CB85C" Width="100" Grid.Row="2"

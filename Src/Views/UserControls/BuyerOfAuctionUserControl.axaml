@@ -15,22 +15,8 @@
 			<uc:LabelUserControl FontSize="24" FontWeight="SemiBold">Buyer of Auction</uc:LabelUserControl>
 			<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="0 30 0 0">Auction info</uc:LabelUserControl>
 
-			<Grid Margin="0 20 0 0" Width="270" Height="250">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-				</Grid.RowDefinitions>
+			<Grid Margin="0 20 0 0" Width="270" Height="250"
+				RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" ColumnDefinitions="auto,*">
 
 				<TextBlock Text="Name:" Margin="5" Grid.Column="0" Grid.Row="0" />
 				<TextBlock Text="{Binding Seller.Name}" Margin="5" Grid.Column="1" Grid.Row="0" />
@@ -81,14 +67,15 @@
 					Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
 				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium"
 					Grid.Column="1" Grid.Row="1" Content="{Binding Seller.NewestBidAmount}"></uc:LabelUserControl>
-				<!-- <Button Name="MakeBid" Click="MakeBidBtn" FontSize="18" Padding="20 8 0 0"
+				<Button Name="MakeBid" Click="MakeBidBtn" FontSize="18" Padding="20 8 0 0"
 					Foreground="White" Background="#5CB85C" Content="Make a bid" Grid.Column="1"
-					Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button> -->
+					Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button>
 			</Grid>
 		</StackPanel>
-		<uc:MakeBidUserControl x:Name="makeBidControl" Grid.Column="2" Grid.Row="1"
+		<uc:MakeBidUserControl IsVisible="false" x:Name="makeBidControl" Grid.Column="2"
+			Grid.Row="1"
 			Margin="100 -200 0 0"
-			BidAccepted="MakeBidControl_BidAccepted"></uc:MakeBidUserControl>
+			BidAccepted="MakeBidControl_BidAccepted" CancelClicked="MakeBidControl_CancelClicked"></uc:MakeBidUserControl>
 
 	</Grid>
 </UserControl>
