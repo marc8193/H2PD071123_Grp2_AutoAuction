@@ -1,15 +1,23 @@
-﻿using H2PD071123_Grp2_AutoAuction.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ReactiveUI;
 
-namespace H2PD071123_Grp2_AutoAuction.Src.ViewModels
+namespace H2PD071123_Grp2_AutoAuction.ViewModels
 {
-    internal class LoginUserControlViewModel : ViewModelBase
+    public class LoginUserControlViewModel : ViewModelBase
     {
-        public string? UserName { get; set; }
-        public string? Password { get; set; }
+        public LoginUserControlViewModel() {}
+
+        string? _username; 
+        public string Username 
+        { 
+            get { return _username!; } 
+            set { this.RaiseAndSetIfChanged(ref _username, value); }
+        }
+
+        string? _password;
+        public string Password 
+        { 
+            get { return _password!; } 
+            set { this.RaiseAndSetIfChanged(ref _password, value); }
+        }
     }
 }

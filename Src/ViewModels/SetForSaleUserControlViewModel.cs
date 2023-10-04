@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using H2PD071123_Grp2_AutoAuction.Views;
 
-namespace H2PD071123_Grp2_AutoAuction.Src.ViewModels
+namespace H2PD071123_Grp2_AutoAuction.ViewModels
 {
     public class SetForSaleUserControlViewModel : ViewModelBase
     {

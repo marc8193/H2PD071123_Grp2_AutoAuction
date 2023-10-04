@@ -1,100 +1,110 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
-			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-             x:Class="H2PD071123_Grp2_AutoAuction.Views.LoginUserControl"
-        Width="1000" Height="650"
-			 Background="#FEBC3B">
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
+	xmlns:dc="clr-namespace:H2PD071123_Grp2_AutoAuction.ViewModels"
+	xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+	x:Class="H2PD071123_Grp2_AutoAuction.Views.LoginUserControl"
+	x:DataType="dc:LoginUserControlViewModel"
+	x:CompileBindings="True"
+	Width="1000" Height="650"
+	Background="#FEBC3B">
 	<UserControl.Styles>
-		<!--label style-->
+		<!--label
+		style-->
 		<Style Selector="Label">
-			<Setter Property="FontWeight" Value="Bold"/>
-			<Setter Property="Foreground" Value="#225967"/>
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="Foreground" Value="#225967" />
 			<Setter Property="Margin" Value="20" />
 		</Style>
 
 		<Style Selector="TextBox">
-			<Setter Property="Margin" Value="100 35 0 0"/>
-			<Setter Property="Padding" Value="13"/>
-			<Setter Property="FontSize" Value="22"/>
-			<Setter Property="Width" Value="250"/>
-			<Setter Property="Height" Value="50"/>
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderBrush" Value="Black"/>
-			<Setter Property="BorderThickness" Value="0 0 0 1"/>
-			<Setter Property="TextElement.Foreground" Value="Black"/>
-			<Setter Property="TextElement.FontWeight" Value="Bold"/>
+			<Setter Property="Margin" Value="100 35 0 0" />
+			<Setter Property="Padding" Value="13" />
+			<Setter Property="FontSize" Value="22" />
+			<Setter Property="Width" Value="250" />
+			<Setter Property="Height" Value="50" />
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="BorderBrush" Value="Black" />
+			<Setter Property="BorderThickness" Value="0 0 0 1" />
+			<Setter Property="TextElement.Foreground" Value="Black" />
+			<Setter Property="TextElement.FontWeight" Value="Bold" />
 		</Style>
 		<Style Selector="TextBox:pressed">
-			<Setter Property="Background" Value="White"/>
-			<Setter Property="TextElement.FontWeight" Value="Light"/>
+			<Setter Property="Background" Value="White" />
+			<Setter Property="TextElement.FontWeight" Value="Light" />
 		</Style>
 	</UserControl.Styles>
 	<Grid>
-	
-		<Grid  HorizontalAlignment="Center" 
-		   RowDefinitions="auto,auto,auto,auto,*" ColumnDefinitions="auto,auto,auto">
-			<uc:LabelUserControl ></uc:LabelUserControl>
 
-			<Border Margin="-5 5 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5">
+		<Grid HorizontalAlignment="Center"
+			RowDefinitions="auto,auto,auto,auto,*" ColumnDefinitions="auto,auto,auto">
+			<uc:LabelUserControl></uc:LabelUserControl>
+
+			<Border Margin="-5 5 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+				Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5">
 				<Border.Background>
-					<ImageBrush Source="/Src/Assets/Vehicle.jpg"/>
+					<ImageBrush Source="/Src/Assets/Vehicle.jpg" />
 				</Border.Background>
 				<Border.Styles>
 					<Style Selector="Border">
-						<Setter Property="BorderThickness" Value="2"/>
+						<Setter Property="BorderThickness" Value="2" />
 						<Setter Property="CornerRadius" Value="500 0 500 0" />
-						<Setter Property="Width" Value="1000"/>
-						<Setter Property="Height" Value="500"/>
+						<Setter Property="Width" Value="1000" />
+						<Setter Property="Height" Value="500" />
 					</Style>
-					</Border.Styles>
+				</Border.Styles>
 			</Border>
-				<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="20" HorizontalAlignment="Right">
-					<TextBox  Watermark="User Name" ></TextBox>
-		<TextBox Width="300" Height="50"  PasswordChar="*" Watermark="Password" ></TextBox>
-	</StackPanel>
-		<StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2" Orientation="Horizontal" >
-			<uc:LabelUserControl Foreground="Wheat" Grid.Row="2" TextElement.FontSize="20"  HorizontalAlignment="Right" Margin="20 0 0 0">Not Registered? </uc:LabelUserControl>
-		<Button Classes="CreateUserBtn" Content="Create user" Click="CreateUserBtn" 
-				 Margin="0 -6 0 0"  Grid.Row="0"  Grid.Column="2">
-			<Button.Styles >
-				<Style Selector="Button">
-					<Setter Property="TextElement.FontSize" Value="20" />
-					<Setter Property="Foreground" Value="Red" />
-					<Setter Property="Background" Value="Transparent"/>
-					<Setter Property="CornerRadius" Value="500"/>
+			<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="20"
+				HorizontalAlignment="Right">
+				<TextBox Watermark="Username" Text="{Binding Username}"></TextBox>
+				<TextBox Width="300" Height="50" PasswordChar="*" Watermark="Password"
+					Text="{Binding Password}"></TextBox>
+			</StackPanel>
+			<StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"
+				Orientation="Horizontal">
+				<uc:LabelUserControl Foreground="Wheat" Grid.Row="2" TextElement.FontSize="20"
+					HorizontalAlignment="Right" Margin="20 0 0 0">Not Registered? </uc:LabelUserControl>
+				<Button Classes="CreateUserBtn" Content="Create user" Click="CreateUserBtn"
+					Margin="0 -6 0 0" Grid.Row="0" Grid.Column="2">
+					<Button.Styles>
+						<Style Selector="Button">
+							<Setter Property="TextElement.FontSize" Value="20" />
+							<Setter Property="Foreground" Value="Red" />
+							<Setter Property="Background" Value="Transparent" />
+							<Setter Property="CornerRadius" Value="500" />
 
-				</Style>
-				<Style Selector="Button:pointerover">
-					<Setter Property="TextElement.FontSize" Value="22" />
-					<Setter Property="Background" Value="Transparent"/>
+						</Style>
+						<Style Selector="Button:pointerover">
+							<Setter Property="TextElement.FontSize" Value="22" />
+							<Setter Property="Background" Value="Transparent" />
 
-				</Style>
-			</Button.Styles>
-		</Button>
-		
-		</StackPanel>
-		<Button  Name="LoginBtn" Click="LoginBTN"  Grid.Column="0"  
-				  Grid.Row="4" Margin="0 0 0 55" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-				  Width="300" Height="40"   Content="Login">
-			<Button.Styles >
-				<Style Selector="Button">
-					<Setter Property="TextElement.FontSize" Value="20" />
-					<Setter Property="Foreground" Value="#225967" />
-					<Setter Property="CornerRadius" Value="50 0 50 0"/>
-					<Setter Property="TextBlock.TextAlignment" Value="Center"/>
-					<Setter Property="Background" Value="#FEBC3B"/>
-					<Setter Property="FontWeight" Value="Bold"/>
-				</Style>
-				<Style Selector="Button:pointerover">
-					<Setter Property="TextElement.FontSize" Value="22" />
-					<Setter Property="TextElement.Foreground" Value="White" />
-					<Setter Property="Background" Value="Transparent"/>
-				</Style>
-			</Button.Styles>
-		</Button>
+						</Style>
+					</Button.Styles>
+				</Button>
+
+			</StackPanel>
+			<Button Name="LoginBtn" Click="LoginBTN" Grid.Column="0"
+				Grid.Row="4" Margin="0 0 0 55" HorizontalAlignment="Center"
+				VerticalAlignment="Bottom"
+				Width="300" Height="40" Content="Login">
+				<Button.Styles>
+					<Style Selector="Button">
+						<Setter Property="TextElement.FontSize" Value="20" />
+						<Setter Property="Foreground" Value="#225967" />
+						<Setter Property="CornerRadius" Value="50 0 50 0" />
+						<Setter Property="TextBlock.TextAlignment" Value="Center" />
+						<Setter Property="Background" Value="#FEBC3B" />
+						<Setter Property="FontWeight" Value="Bold" />
+					</Style>
+					<Style Selector="Button:pointerover">
+						<Setter Property="TextElement.FontSize" Value="22" />
+						<Setter Property="TextElement.Foreground" Value="White" />
+						<Setter Property="Background" Value="Transparent" />
+					</Style>
+				</Button.Styles>
+			</Button>
 		</Grid>
 	</Grid>
 </UserControl>

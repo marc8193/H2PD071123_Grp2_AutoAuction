@@ -1,41 +1,38 @@
-using Avalonia;
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
+using H2PD071123_Grp2_AutoAuction.ViewModels;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class HomeScreenUserControl : UserControl
 {
-    SellerOfAuctionUserControl SellerOfAuctionUC = new SellerOfAuctionUserControl(); 
-    YourBidHistoryUserControl YourBidHistoryUC;
-    YourProfileUserControl YourProfileUC;
-    SetForSaleUserControl SetforSaleUC;
-    static HomeScreenUserControl? Instance;
+    HomeScreenUserControlViewModel HomeScreenVM { get; set; }
+
     public HomeScreenUserControl()
     {
-        this.SellerOfAuctionUC=new SellerOfAuctionUserControl(this);
-        this.YourBidHistoryUC=new YourBidHistoryUserControl(this);
-        this.YourProfileUC= new YourProfileUserControl(this);
-        this.SetforSaleUC = new SetForSaleUserControl(this,SellerOfAuctionUC) ; // constractor property
+        this.HomeScreenVM = new HomeScreenUserControlViewModel();
+
+        var db = Database.Instance;
+        
+        this.HomeScreenVM.AddDataToAuctions(db.SelectAuctions());    
+        this.HomeScreenVM.AddDataToYourAuctions(db.SelectYourAuctions(10));    
+        
+        this.DataContext = this.HomeScreenVM;
+        
         InitializeComponent();
-        if (Instance == null) { Instance = this; }
     }
-    public HomeScreenUserControl GetInstanse()
-    {
-        return Instance == null ? new() : Instance;
-    }
+
     void SetForSaleBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.SetforSaleUC);
-
+        ContentAreaUserControl.Navigate(new SetForSaleUserControl(this, new SellerOfAuctionUserControl()));
     }
     void UserProfileBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.YourProfileUC);
+        ContentAreaUserControl.Navigate(new YourProfileUserControl(this));
     }
-    void BidHistoryBtn (object sender, RoutedEventArgs e)
+    void BidHistoryBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.YourBidHistoryUC);
+        ContentAreaUserControl.Navigate(new YourBidHistoryUserControl(this));
     }
-}   
+}

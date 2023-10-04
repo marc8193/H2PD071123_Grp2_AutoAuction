@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using H2PD071123_Grp2_AutoAuction.Src.ViewModels;
+using H2PD071123_Grp2_AutoAuction.ViewModels;
 using System;
 using System.Diagnostics;
 

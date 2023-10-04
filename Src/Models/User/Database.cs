@@ -36,4 +36,28 @@ public partial class Database
 			return Convert.ToInt32(reader["@UserId"]);
 		}
     }
+
+	public Boolean IsUserValid(string username, string password)
+	{
+		string queryString = 
+		$@"
+		SELECT
+			CASE WHEN EXISTS
+			(SELECT name
+			FROM sys.database_principals
+			WHERE name = '{username}')
+			THEN 1
+			ELSE 0
+		END
+		";
+
+		SqlCommand command = new SqlCommand(queryString, this.Connection);
+
+		using (SqlDataReader reader = command.ExecuteReader())
+		{
+			reader.Read();
+
+			return Convert.ToBoolean(reader[0]);
+		}
+	}
 }

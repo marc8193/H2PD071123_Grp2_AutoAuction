@@ -2,6 +2,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using H2PD071123_Grp2_AutoAuction.ViewModels;
+using System;
 using System.Reflection.Emit;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
@@ -9,6 +11,7 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 public partial class YourProfileUserControl : UserControl
 {
     public HomeScreenUserControl? HomeScreenUC { get; set; }
+
     public YourProfileUserControl()
     {
         InitializeComponent();
@@ -16,7 +19,7 @@ public partial class YourProfileUserControl : UserControl
     public YourProfileUserControl(HomeScreenUserControl homeScreenUC)
     {
         InitializeComponent();
-        this.HomeScreenUC= homeScreenUC;
+        this.HomeScreenUC = homeScreenUC;
     }
     void BackBtn(object sender, RoutedEventArgs e)
     {

@@ -1,34 +1,33 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using H2PD071123_Grp2_AutoAuction.ViewModels;
 using H2PD071123_Grp2_AutoAuction.Views;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
 public partial class LoginUserControl : UserControl
 {
-    public HomeScreenUserControl HomeScreenUC { get; set; }
-    public RegisterUserControl RegisterUC{ get; set; } 
-    static LoginUserControl? Instance;
     public LoginUserControl()
     {
-        this.HomeScreenUC = new HomeScreenUserControl();
-        this.RegisterUC = new RegisterUserControl(this); // constractor for RegisterUserControl property
         InitializeComponent();
-        if(Instance == null) { Instance = this; }
+
+        this.LoginVM = new LoginUserControlViewModel();
+
+        this.DataContext = this.LoginVM;
     }
-    public LoginUserControl GetInstanse()
-    {
-        return Instance == null ? new() : Instance;
-    }
+
+    public LoginUserControlViewModel LoginVM { get; set; }
+    
     void CreateUserBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.RegisterUC);       
+        ContentAreaUserControl.Navigate(new RegisterUserControl(this));       
     }
     void LoginBTN(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.HomeScreenUC);
+        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
     }
 
 }
