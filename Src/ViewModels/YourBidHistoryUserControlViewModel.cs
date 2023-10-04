@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using ReactiveUI;
 
 namespace H2PD071123_Grp2_AutoAuction.ViewModels
 {
@@ -20,8 +19,7 @@ namespace H2PD071123_Grp2_AutoAuction.ViewModels
             }
         }
 
-        public ObservableCollection<DisplayBids> _bids; 
-        public ObservableCollection<DisplayBids> Bids { get { return _bids; } set => this.RaiseAndSetIfChanged(ref _bids, value); }
+        public ObservableCollection<DisplayBids> Bids { get; set; }
         public class DisplayBids
         {
             public DisplayBids(decimal amount, DateTime date)

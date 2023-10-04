@@ -25,6 +25,8 @@ public partial class YourBidHistoryUserControl : UserControl
         var db = Database.Instance;
 
         this.BidHistoryVM!.AddDataToYourBids(db.SelectYourBids(1));
+
+        this.DataContext = this.BidHistoryVM;
     }
 
     void BackBtn(object sender, RoutedEventArgs e)
