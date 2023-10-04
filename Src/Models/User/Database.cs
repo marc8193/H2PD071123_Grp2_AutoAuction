@@ -16,7 +16,7 @@ public partial class Database
 		EXEC [dbo].[CreateUser]
 		@UserName = {user.UserName},
 		@Password = N'{user.Password}',
-		{(user is PrivateUser ? "@SocialSecurityNumber = '{((PrivateUser)user).CPRNumber}'" : "@Cvr = '{((CorporateUser)user).cvrNummer}'")},
+		{(user is PrivateUser ? $"@SocialSecurityNumber = {((PrivateUser)user).CPRNumber}" : $"@Cvr = {((CorporateUser)user).CVRNumber}")},
 		@Balance = {user.Balance},
 		@PrivatUserId = @PrivatUserId OUTPUT,
 		@FirmUserId = @FirmUserId OUTPUT,
@@ -25,8 +25,8 @@ public partial class Database
 		@Credit = {(user is PrivateUser ? 0 : ((CorporateUser)user).Credit)}
 		SELECT @UserId as N'@UserId'";
 
-		SqlCommand command = new SqlCommand(queryString, this.Connection);
 
+		SqlCommand command = new SqlCommand(queryString, this.Connection);
 		using (SqlDataReader reader = command.ExecuteReader())
 		{
 			reader.Read();
