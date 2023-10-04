@@ -19,6 +19,6 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-            .LogToTrace(LogEventLevel.Verbose)
+            .LogToTrace()
             .UseReactiveUI();
 }

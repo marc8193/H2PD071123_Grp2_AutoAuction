@@ -6,9 +6,9 @@ namespace H2PD071123_Grp2_AutoAuction;
 
 public partial class Database
 {
-    public int InsertUser(User user)
-    {
-		string queryString = 
+	public int InsertUser(User user)
+	{
+		string queryString =
 		$@"DECLARE	@PrivatUserId int,
 		@FirmUserId int,
 		@UserId int
@@ -16,18 +16,16 @@ public partial class Database
 		EXEC [dbo].[CreateUser]
 		@UserName = {user.UserName},
 		@Password = N'{user.Password}',
-		@SocialSecurityNumber = N'202020',
-		--@Cvr = N'20',
-		@Balance = 200,
+		{(user is PrivateUser ? "@SocialSecurityNumber = '{((PrivateUser)user).CPRNumber}'" : "@Cvr = '{((CorporateUser)user).cvrNummer}'")},
+		@Balance = {user.Balance},
 		@PrivatUserId = @PrivatUserId OUTPUT,
 		@FirmUserId = @FirmUserId OUTPUT,
-		@ZipCode = N'9320',
+		@ZipCode = {user.Zipcode},
 		@UserId = @UserId OUTPUT,
-		@Credit = 0
-
+		@Credit = {(user is PrivateUser ? 0 : ((CorporateUser)user).Credit)}
 		SELECT @UserId as N'@UserId'";
 
-        SqlCommand command = new SqlCommand(queryString, this.Connection);
+		SqlCommand command = new SqlCommand(queryString, this.Connection);
 
 		using (SqlDataReader reader = command.ExecuteReader())
 		{
@@ -35,11 +33,11 @@ public partial class Database
 
 			return Convert.ToInt32(reader["@UserId"]);
 		}
-    }
+	}
 
 	public Boolean IsUserValid(string username, string password)
 	{
-		string queryString = 
+		string queryString =
 		$@"
 		SELECT
 			CASE WHEN EXISTS
