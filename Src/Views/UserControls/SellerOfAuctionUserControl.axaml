@@ -21,6 +21,7 @@
 				<uc:LabelUserControl Margin="0 20 0 0" Padding="80 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
 				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium" Grid.Column="1" Grid.Row="1">bind balance here dkk</uc:LabelUserControl>
 				<Button Name="Accept" Click="AcceptBtn"  FontSize="20"  Foreground="White" Background="#5CB85C" Content="Accept" TextBlock.TextAlignment="Center" Grid.Column="1" Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button>
+			
 			</Grid>
 		</StackPanel>
 	</Grid>

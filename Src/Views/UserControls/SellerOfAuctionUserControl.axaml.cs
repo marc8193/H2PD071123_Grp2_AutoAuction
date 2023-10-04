@@ -12,6 +12,7 @@ public partial class SellerOfAuctionUserControl : UserControl
     public SellerOfAuctionUserControl()
     {
         InitializeComponent();
+
     }
     public SellerOfAuctionUserControl(HomeScreenUserControl homeScreenUC)
     {

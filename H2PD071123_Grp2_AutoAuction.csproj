@@ -28,15 +28,30 @@
 
 
   <ItemGroup>
-    <Compile Update="Src\Views\UserControls\ProfessionalCarUserControl.axaml.cs">
+    <Compile Update="Src\Views\UserControls\BusUserControlView.axaml.cs">
+      <DependentUpon>BusUserControlView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Src\Views\UserControls\LoginUserControlView.axaml.cs">
+      <DependentUpon>LoginUserControlView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Src\Views\UserControls\PrivateCarUserControlView.axaml.cs">
+      <DependentUpon>PrivateCarUserControlView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Src\Views\UserControls\ProfessionalCarUserControlView.axaml.cs">
       <DependentUpon>ProfessionalCarUserControl.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
 
   <ItemGroup>
-    <Compile Update="Src\Views\UserControls\ProfessionalCarUserControl.axaml.cs">
-      <DependentUpon>ProfessionalCarUserControl.axaml</DependentUpon>
+    <Compile Update="Src\Views\UserControls\ProfessionalCarUserControlView.axaml.cs">
+      <DependentUpon>ProfessionalCarUserControlView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Src\Views\UserControls\SetForSaleUserControlView.axaml.cs">
+      <DependentUpon>SetForSaleUserControlView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Src\Views\UserControls\TruckUserControlView.axaml.cs">
+      <DependentUpon>TruckUserControlView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

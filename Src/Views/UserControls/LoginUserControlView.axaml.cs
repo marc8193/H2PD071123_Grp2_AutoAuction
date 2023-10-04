@@ -6,19 +6,19 @@ using H2PD071123_Grp2_AutoAuction.Views;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
-public partial class LoginUserControl : UserControl
+public partial class LoginUserControlView : UserControl
 {
     public HomeScreenUserControl HomeScreenUC { get; set; }
     public RegisterUserControl RegisterUC{ get; set; } 
-    static LoginUserControl? Instance;
-    public LoginUserControl()
+    static LoginUserControlView? Instance;
+    public LoginUserControlView()
     {
         this.HomeScreenUC = new HomeScreenUserControl();
         this.RegisterUC = new RegisterUserControl(this); // constractor for RegisterUserControl property
         InitializeComponent();
         if(Instance == null) { Instance = this; }
     }
-    public LoginUserControl GetInstanse()
+    public LoginUserControlView GetInstanse()
     {
         return Instance == null ? new() : Instance;
     }

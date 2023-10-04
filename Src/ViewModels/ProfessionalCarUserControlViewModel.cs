@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace H2PD071123_Grp2_AutoAuction.ViewModels
 {
-    public class PrivateCarUserControlViewModel : ViewModelBase
+    public class ProfessionalCarUserControlViewModel : ViewModelBase
     {
         private string height;
 

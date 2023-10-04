@@ -14,10 +14,10 @@ public partial class MainWindow : Window
         InitializeComponent();
         
         DataContext = new MainWindowViewModel(); //bind to mainviewmodel
-        ContentAreaUserControl.Navigate(new LoginUserControl());
+        ContentAreaUserControl.Navigate(new LoginUserControlView());
+        SetForSaleUserControlViewModel setForSaleUserControlViewModel = new SetForSaleUserControlViewModel();
+        DataContext = setForSaleUserControlViewModel;
 
-        // User user = new PrivateUser("Testtrtt", "group2", 9000, 1234567890);
-        
         // var db = Database.Instance;
         // user.DbId = db.InsertUser(user);
 

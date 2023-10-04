@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-             x:Class="H2PD071123_Grp2_AutoAuction.Views.LoginUserControl"
+             x:Class="H2PD071123_Grp2_AutoAuction.Views.LoginUserControlView"
         Width="1000" Height="650"
 			 Background="#FEBC3B">
 	<UserControl.Styles>
@@ -67,7 +67,7 @@
 					<Setter Property="CornerRadius" Value="500"/>
 
 				</Style>
-				<Style Selector="Button:pointerover">
+				<Style Selector="Button:pointerover"> 
 					<Setter Property="TextElement.FontSize" Value="22" />
 					<Setter Property="Background" Value="Transparent"/>
 
