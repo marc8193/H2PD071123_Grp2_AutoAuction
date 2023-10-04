@@ -47,8 +47,13 @@ BEGIN
 			EXEC SelectUserData @Table, @NextId, @UserId;
 		END;
 
-	IF @CreditAndBalance IS NOT NULL
+	IF @CreditAndBalance IS NOT NULL AND @CreditAndBalance = 1
 		BEGIN
 			EXEC SelectUserBalanceAndCredit @Table, @UserId;
+		END;
+
+	IF @CreditAndBalance IS NOT NULL AND @CreditAndBalance = 2
+		BEGIN
+			EXEC SelectUserBalanceAndFirmAndPrivat @Table, @UserId;
 		END;
 END;
