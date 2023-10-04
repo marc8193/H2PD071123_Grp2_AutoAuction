@@ -20,7 +20,7 @@
 				<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500"
 					BorderBrush="Black" BorderThickness="1" Name="YourAuctionsDG"
 					AutoGenerateColumns="True" ItemsSource="{Binding YourAuctions}"
-					IsReadOnly="True" />
+					IsReadOnly="True" SelectionChanged="YourAuctionClick" />
 			</Grid>
 			<!--Current
 			auctions with label-->
@@ -30,7 +30,8 @@
 				<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500"
 					Margin="20 0 0 10" BorderBrush="Black" BorderThickness="1"
 					Name="CurrentAuctionsDG" AutoGenerateColumns="True"
-					ItemsSource="{Binding Auctions}" IsReadOnly="True" />
+					ItemsSource="{Binding Auctions}" IsReadOnly="True"
+					SelectionChanged="CurrentClick" />
 			</Grid>
 		</Grid>
 		<!--Buttons

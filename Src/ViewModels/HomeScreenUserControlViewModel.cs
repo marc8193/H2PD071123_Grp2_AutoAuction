@@ -33,13 +33,15 @@ namespace H2PD071123_Grp2_AutoAuction.ViewModels
 
         public class DisplayAuction
         {
-            public DisplayAuction(string vehicleName, decimal standingPrice, DateTime endDate)
+            public DisplayAuction(int id, string vehicleName, decimal standingPrice, DateTime endDate)
             {
+                this.Id = id;
                 this.VehicleName = vehicleName;
                 this.StandingPrice = standingPrice;
                 this.EndDate = endDate;
             }
 
+            public int Id { get; set; }
             public string VehicleName { get; set; }
             public decimal StandingPrice { get; set; }
             public DateTime EndDate { get; set; }

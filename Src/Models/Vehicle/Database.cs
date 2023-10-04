@@ -8,7 +8,7 @@ public partial class Database
 {
 	public void SelectVehicle(uint baseVehicleId)
 	{
-		string queryString = 
+		string queryString =
 		$@"DECLARE	@return_value int
 		
 		EXEC	@return_value = [dbo].[SelectVehicles]
@@ -22,13 +22,16 @@ public partial class Database
 		{
 			reader.Read();
 
+			// var obj = new Vehicle(Convert.ToInt32(reader[1]), Convert.ToString(reader[6])!, Convert.ToDecimal(reader[8]), Convert.ToDateTime(reader[5]));
+
+
 			Console.WriteLine(reader["@return_value"]);
 		}
 	}
 
 	public int InsertPrivatePersonalCar(PrivatePersonalCar car)
 	{
-		string queryString = 
+		string queryString =
 		$@"DECLARE	@return_value int,
 		@BaseVehicleId int,
 		@LightVehicleId int,
@@ -66,9 +69,9 @@ public partial class Database
 		}
 	}
 
-		public int InsertProfessionalPersonalCar(ProfessionalPersonalCar car)
+	public int InsertProfessionalPersonalCar(ProfessionalPersonalCar car)
 	{
-		string queryString = 
+		string queryString =
 		$@"DECLARE	@return_value int,
 		@BaseVehicleId int,
 		@LightVehicleId int,
@@ -107,10 +110,10 @@ public partial class Database
 		}
 	}
 
-    public int InsertBus(Bus bus) 
-    {
-        string queryString = 
-        $@"DECLARE @BaseVehicleId int,
+	public int InsertBus(Bus bus)
+	{
+		string queryString =
+		$@"DECLARE @BaseVehicleId int,
 		@HeavyVehicleId int,
 		@VehicleId int
         
@@ -138,7 +141,7 @@ public partial class Database
 				
 		SELECT @BaseVehicleId as N'@BaseVehicleId'";
 
-        SqlCommand command = new SqlCommand(queryString, this.Connection);
+		SqlCommand command = new SqlCommand(queryString, this.Connection);
 
 		using (SqlDataReader reader = command.ExecuteReader())
 		{
@@ -146,11 +149,11 @@ public partial class Database
 
 			return Convert.ToInt32(reader["@BaseVehicleId"]);
 		}
-    }
+	}
 
 	public int InsertTruck(Truck truck)
 	{
-		string queryString = 
+		string queryString =
 		$@"DECLARE	@return_value int,
 		@BaseVehicleId int,
 		@HeavyVehicleId int,

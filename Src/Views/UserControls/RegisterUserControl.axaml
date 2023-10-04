@@ -1,35 +1,56 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-			 Width="1000" Height="650"
-             x:Class="H2PD071123_Grp2_AutoAuction.Views.RegisterUserControl">
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+	Width="1000" Height="650"
+	x:Class="H2PD071123_Grp2_AutoAuction.Views.RegisterUserControl">
 
-	<Grid  HorizontalAlignment="Center"
-		   RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto,auto">
+	<Grid HorizontalAlignment="Center"
+		RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto,auto">
 		<StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
 			<uc:LabelUserControl TextElement.FontSize="22">Create User</uc:LabelUserControl>
-			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0" 
-					 Grid.Column="0" Grid.Row="1" Width="350" Height="50" Watermark="User Name" ></TextBox>
-			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0"
-					 Width="350" Height="50" PasswordChar="*" Watermark="Password" ></TextBox>
-			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0"
-					 Width="350" Height="50" PasswordChar="*" Watermark="Password again" ></TextBox>
+			<TextBox
+				x:Name="UserNameTextBox" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Grid.Column="0" Grid.Row="1" Width="350" Height="50" Watermark="User Name"></TextBox>
+			<TextBox
+				x:Name="PasswordTextBox" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Width="350" Height="50" PasswordChar="*" Watermark="Password"></TextBox>
+			<TextBox
+				x:Name="PasswordTextBoxAgain" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Width="350" Height="50" PasswordChar="*" Watermark="Password again"></TextBox>
+
+			<TextBox x:Name="zipCodeTextBox" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Width="350" Height="50" PasswordChar="*" Watermark="ZipCode" IsVisible="false"></TextBox>
+			<TextBox
+				x:Name="CprTextBox" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Width="350" Height="50" PasswordChar="*" Watermark="Cpr Number" IsVisible="false"></TextBox>
+			<TextBox
+				x:Name="CvrTextBox" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Width="350" Height="50" PasswordChar="*" Watermark="Cvr"></TextBox>
+			<TextBox
+				x:Name="CreditTextBox" Padding="13" FontSize="20" Margin="0 20 0 0"
+				Width="350" Height="50" PasswordChar="*" Watermark="Credit"></TextBox>
+
 
 		</StackPanel>
-		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left"  Margin="20 0 0 0">
-			<RadioButton IsChecked="true" Content="Corporate "></RadioButton>
-			<RadioButton Content="Private" Margin="60 0 0 0"></RadioButton>
+		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left"
+			Margin="20 0 0 0">
+			<RadioButton x:Name="CorporateRadioButton" IsChecked="true" Content="Corporate "
+				Checked="CorporateRadioButton_Checked" Unchecked="CorporateRadioButton_Unchecked"></RadioButton>
+			<RadioButton x:Name="PrivateRadioButton" Content="Private" Margin="60 0 0 0"
+				Checked="CorporateRadioButton_Unchecked" Unchecked="CorporateRadioButton_Checked"></RadioButton>
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-		<Button TextBlock.TextAlignment="Center" Background="Gray" BorderBrush="Black" 
+			<Button TextBlock.TextAlignment="Center" Click="CnclBtn" Background="Gray"
+				BorderBrush="Black"
 				Margin="40" HorizontalAlignment="Right" Width="100" Height="40"
-				TextElement.FontSize="20"  Content="cancel"></Button>
-		<Button TextBlock.TextAlignment="Center" Name="RegisterBTN" Click="RegisterBtn" 
-				TextElement.Foreground="White"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"
+				TextElement.FontSize="20" Content="cancel"></Button>
+			<Button TextBlock.TextAlignment="Center" Name="RegisterBTN" Click="RegisterBtn"
+				TextElement.Foreground="White" Margin="40" HorizontalAlignment="Right" Width="100"
+				Height="40"
 				TextElement.FontSize="20" Background="#5CB85C">Create</Button>
-	</StackPanel>
-			</Grid>
+		</StackPanel>
+	</Grid>
 </UserControl>

@@ -19,6 +19,9 @@ BEGIN
 			VALUES (@VehicleId, @UserId, @Visible, @MinPrice, @EndDate)
 
 			SET @BidId = SCOPE_IDENTITY();
+
+			INSERT INTO Bid(UserId, AuctionId, Status, BidAmount, Date)
+			VALUES (@UserId, @AuctionId, '', @MinPrice, CURRENT_TIMESTAMP)
 		
 	--	COMMIT;
 	--END TRY

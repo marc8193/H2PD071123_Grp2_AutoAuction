@@ -1,7 +1,9 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using H2PD071123_Grp2_AutoAuction.ViewModels;
 using Splat;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
@@ -13,19 +15,22 @@ public partial class SellerOfAuctionUserControl : UserControl
     {
         InitializeComponent();
     }
-    public SellerOfAuctionUserControl(HomeScreenUserControl homeScreenUC)
+    public SellerOfAuctionUserControl(int id)
     {
+        this.DataContext = new SellerOfAuctionUserControlViewModel(id);
+
         InitializeComponent();
-        this.HomeScreenUC = homeScreenUC;
     }
 
     void AcceptBtn(object sender, RoutedEventArgs e)
     {
 
     }
-    void BackBtn (object sender, RoutedEventArgs e) 
+    void BackBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(this.HomeScreenUC!);
+        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
     }
-   
+
+
+
 }

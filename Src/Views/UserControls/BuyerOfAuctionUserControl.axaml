@@ -1,26 +1,94 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-             x:Class="H2PD071123_Grp2_AutoAuction.Views.BuyerOfAuctionUserControl">
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
+	xmlns:dc="clr-namespace:H2PD071123_Grp2_AutoAuction.ViewModels"
+	Width="1000" Height="650"
+	x:Class="H2PD071123_Grp2_AutoAuction.Views.BuyerOfAuctionUserControl"
+	x:DataType="dc:BuyerOfAuctionUserControlViewModel"
+	x:CompileBindings="True"
+>
 	<Grid RowDefinitions="auto, *" ColumnDefinitions="auto,*">
-		<StackPanel Margin="20" Grid.Column="0" Grid.Row="0"  Orientation="Vertical">
-			<uc:LabelUserControl  FontSize="24" FontWeight="SemiBold">Buyer of Auction</uc:LabelUserControl>
-		<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="0 30 0 0">Auction info</uc:LabelUserControl>
-			<ListBox  Margin="0 20 0 0" BorderBrush="Black" BorderThickness="1" Width="270" Height="250"></ListBox>
+		<StackPanel Margin="20" Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+			<uc:LabelUserControl FontSize="24" FontWeight="SemiBold">Buyer of Auction</uc:LabelUserControl>
+			<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="0 30 0 0">Auction info</uc:LabelUserControl>
+
+			<Grid Margin="0 20 0 0" Width="270" Height="250">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<TextBlock Text="Name:" Margin="5" Grid.Column="0" Grid.Row="0" />
+				<TextBlock Text="{Binding Seller.Name}" Margin="5" Grid.Column="1" Grid.Row="0" />
+
+				<TextBlock Text="Km:" Margin="5" Grid.Column="0" Grid.Row="1" />
+				<TextBlock Text="{Binding Seller.Km}" Margin="5" Grid.Column="1" Grid.Row="1" />
+
+				<TextBlock Text="Registration:" Margin="5" Grid.Column="0" Grid.Row="2" />
+				<TextBlock Text="{Binding Seller.Registration}" Margin="5" Grid.Column="1"
+					Grid.Row="2" />
+
+				<TextBlock Text="Year:" Margin="5" Grid.Column="0" Grid.Row="3" />
+				<TextBlock Text="{Binding Seller.Year}" Margin="5" Grid.Column="1" Grid.Row="3" />
+
+				<TextBlock Text="Towbar:" Margin="5" Grid.Column="0" Grid.Row="4" />
+				<TextBlock Text="{Binding Seller.Towbar}" Margin="5" Grid.Column="1" Grid.Row="4" />
+
+				<TextBlock Text="EngineSize:" Margin="5" Grid.Column="0" Grid.Row="5" />
+				<TextBlock Text="{Binding Seller.EngineSize}" Margin="5" Grid.Column="1"
+					Grid.Row="5" />
+
+				<TextBlock Text="KmPr:" Margin="5" Grid.Column="0" Grid.Row="6" />
+				<TextBlock Text="{Binding Seller.KmPr}" Margin="5" Grid.Column="1" Grid.Row="6" />
+
+				<TextBlock Text="LicensTypes:" Margin="5" Grid.Column="0" Grid.Row="7" />
+				<TextBlock Text="{Binding Seller.LicensTypes}" Margin="5" Grid.Column="1"
+					Grid.Row="7" />
+
+				<TextBlock Text="EnergyClass:" Margin="5" Grid.Column="0" Grid.Row="8" />
+				<TextBlock Text="{Binding Seller.EnergyClass}" Margin="5" Grid.Column="1"
+					Grid.Row="8" />
+
+				<TextBlock Text="Fuel:" Margin="5" Grid.Column="0" Grid.Row="9" />
+				<TextBlock Text="{Binding Seller.Fuel}" Margin="5" Grid.Column="1" Grid.Row="9" />
+			</Grid>
+
 		</StackPanel>
-		<Button Name="BackBtnBuyerOfAuction" FontSize="20" Padding="33 05 0 0" BorderBrush="Black" Content="Back" Grid.Column="0" Grid.Row="1" Width="120" Height="40" Margin="20 0 0 0"></Button>
-		<StackPanel  Orientation="Vertical" Grid.Column="1" Grid.Row="0" >
-			<Grid  Margin="50 20 0 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*">
-			<uc:LabelUserControl Padding="140 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" FontWeight="Medium" FontSize="22">Closing</uc:LabelUserControl>
-				<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="20 0 0 0" Grid.Column="1" Grid.Row="0">bind date here 12/12</uc:LabelUserControl>
-				<uc:LabelUserControl Margin="0 20 0 0" Padding="80 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
-				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium" Grid.Column="1" Grid.Row="1">bind balance here dkk</uc:LabelUserControl>
-				<Button Name="MakeBid" Click="MakeBidBtn"  FontSize="18" Padding="20 8 0 0" Foreground="White" Background="#5CB85C" Content="Make a bid" Grid.Column="1" Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button>
+		<Button Name="BackBtnBuyerOfAuction" FontSize="20" Padding="33 05 0 0" BorderBrush="Black"
+			Content="Back" Click="BackBtn" Grid.Column="0" Grid.Row="1" Width="120" Height="40"
+			Margin="20 0 0 0"></Button>
+		<StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+			<Grid Margin="50 20 0 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+				<uc:LabelUserControl Padding="140 0 0 0" Grid.ColumnSpan="2" Grid.Column="0"
+					Grid.Row="0" FontWeight="Medium" FontSize="22">Closing</uc:LabelUserControl>
+				<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="20 0 0 0"
+					Grid.Column="1" Grid.Row="0" Content="{Binding Seller.EndDate}"></uc:LabelUserControl>
+				<uc:LabelUserControl Margin="0 20 0 0" Padding="80 0 0 0" Grid.ColumnSpan="2"
+					Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
+				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium"
+					Grid.Column="1" Grid.Row="1" Content="{Binding Seller.NewestBidAmount}"></uc:LabelUserControl>
+				<!-- <Button Name="MakeBid" Click="MakeBidBtn" FontSize="18" Padding="20 8 0 0"
+					Foreground="White" Background="#5CB85C" Content="Make a bid" Grid.Column="1"
+					Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button> -->
 			</Grid>
 		</StackPanel>
-		<uc:MakeBidUserControl Grid.Column="2" Grid.Row="1" Margin="100 -200 0 0" ></uc:MakeBidUserControl>
+		<uc:MakeBidUserControl x:Name="makeBidControl" Grid.Column="2" Grid.Row="1"
+			Margin="100 -200 0 0"
+			BidAccepted="MakeBidControl_BidAccepted"></uc:MakeBidUserControl>
+
 	</Grid>
 </UserControl>
