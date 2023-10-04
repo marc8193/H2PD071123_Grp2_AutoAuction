@@ -161,6 +161,29 @@ public partial class SetForSaleUserControl : UserControl
         var kmBox = this.Find<TextBox>("kmBox")?.Text;
         var regBox = this.Find<TextBox>("regBox")?.Text;
         var minBidBox = this.Find<TextBox>("minBidBox")?.Text;
+        var newPrice = this.Find<TextBox>("newPrice")?.Text;
+        var hasTowbarBox = this.Find<CheckBox>("towbar")?.IsChecked;
+        var engineSizeBox = this.Find<TextBox>("enginSize")?.Text;
+        var kmPerLiterBox = this.Find<TextBox>("kmPr")?.Text;
+        var licensTypes = this.Find<TextBox>("licensTypes")?.Text;
+        var energyClass = this.Find<TextBox>("energyClass")?.Text;
+        var fuelTypeBox = this.Find<ComboBox>("fuel");
+        var heavyHeight = this.Find<TextBox>("heavyHeightTextBox")?.Text;
+        var heavyWidth = this.Find<TextBox>("heavyWidthTextBox")?.Text;
+        var heavyLength = this.Find<TextBox>("heavyLengthTextBox")?.Text;
+        var seats = this.Find<TextBox>("seatsTextBox")?.Text;
+        var sleep = this.Find<TextBox>("sleepTextBox")?.Text;
+        var toilet = this.Find<TextBox>("toiletTextBox")?.Text;
+        var loadCapacity = this.Find<TextBox>("loadCapacityTextBox")?.Text;
+        var lightSeats = this.Find<TextBox>("lightSeatsTextBox")?.Text;
+        var lightHeight = this.Find<TextBox>("lightHeightTextBox")?.Text;
+        var lightWidth = this.Find<TextBox>("lightWidthTextBox")?.Text;
+        var lightLength = this.Find<TextBox>("lightLengthTextBox")?.Text;
+        var isoFix = this.Find<TextBox>("isoFixTextBox")?.Text;
+        var safetyBar = this.Find<TextBox>("safetyBarTextBox")?.Text;
+        var perCapacity = this.Find<TextBox>("perCapacityTextBox")?.Text;
+
+
 
         var db = Database.Instance;
 
@@ -199,6 +222,7 @@ public partial class SetForSaleUserControl : UserControl
         {
 
         }
+
 
         ContentAreaUserControl.Navigate(new HomeScreenUserControl());
 
