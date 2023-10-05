@@ -192,9 +192,8 @@ public partial class SetForSaleUserControl : UserControl
         // Bus, Truck, Private Car, Business Car
         if (selectedV == 0) //Bus
         {
-            //bus
             var Bus = new Bus(
-            nameBox,
+          nameBox,
           Convert.ToDouble(kmBox),
           regBox,
           Convert.ToInt32(year),
@@ -233,9 +232,6 @@ public partial class SetForSaleUserControl : UserControl
           );
             int vhId = db.InsertTruck(Truck);
             db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
-
-
-            //truck
         }
         else if (selectedV == 2) //Private Car
         {
@@ -254,7 +250,6 @@ public partial class SetForSaleUserControl : UserControl
                 Convert.ToDouble(lightWidth),
                 Convert.ToDouble(lightLength),
                 Convert.ToBoolean(isoFix)
-
             );
             int vhId = db.InsertPrivatePersonalCar(privateCar);
             db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
@@ -276,12 +271,9 @@ public partial class SetForSaleUserControl : UserControl
                 Convert.ToDouble(lightLength),
                 Convert.ToBoolean(safetyBar),
                 Convert.ToDouble(loadCapacity)
-
-
                 );
             int vhId = db.InsertProfessionalPersonalCar(BusinessCar);
             db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
-            //Business car
         }
 
 
