@@ -26,6 +26,9 @@ public partial class SetForSaleUserControl : UserControl
     public SetForSaleUserControl(HomeScreenUserControl homeScreenUC, SellerOfAuctionUserControl sellerOfAuctionUC, int userId)
     {
         InitializeComponent();
+
+        Database.Instance.SetForSale(1, 1, 1009);
+
         this.HomeScreenUC = homeScreenUC;
         this.SellerOfAuctionUC = sellerOfAuctionUC;
         this.UserId = userId;
@@ -210,7 +213,7 @@ public partial class SetForSaleUserControl : UserControl
           Convert.ToBoolean(toilet)
           );
             int vhId = db.InsertBus(Bus);
-            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
+            db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
         else if (selectedV == 1) //Truck
         {
@@ -231,7 +234,7 @@ public partial class SetForSaleUserControl : UserControl
           Convert.ToDouble(loadCapacity)
           );
             int vhId = db.InsertTruck(Truck);
-            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
+            db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
         else if (selectedV == 2) //Private Car
         {
@@ -252,7 +255,7 @@ public partial class SetForSaleUserControl : UserControl
                 Convert.ToBoolean(isoFix)
             );
             int vhId = db.InsertPrivatePersonalCar(privateCar);
-            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
+            db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
         else if (selectedV == 3) // Business Car
         {
@@ -273,7 +276,7 @@ public partial class SetForSaleUserControl : UserControl
                 Convert.ToDouble(loadCapacity)
                 );
             int vhId = db.InsertProfessionalPersonalCar(BusinessCar);
-            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
+            db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
 
 

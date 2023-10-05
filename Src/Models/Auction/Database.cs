@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using AutoAuctionProjekt.Models;
 using Microsoft.Data.SqlClient;
 using static H2PD071123_Grp2_AutoAuction.ViewModels.HomeScreenUserControlViewModel;
@@ -19,7 +20,7 @@ public partial class Database
 		@UserId = {userId},
 		@Visible = 1,
 		@MinPrice = {minBid},
-		@EndDate = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}',
+		@EndDate = '{DateTime.Now.ToString("yyyy - MM - dd HH: mm: ss.fff", CultureInfo.InvariantCulture)}',
 		@AuctionId = @AuctionId OUTPUT
 
         SELECT	@AuctionId as N'@AuctionId'";

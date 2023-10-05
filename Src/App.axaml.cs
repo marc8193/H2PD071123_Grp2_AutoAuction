@@ -1,3 +1,4 @@
+using System.Threading;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -20,7 +21,9 @@ public partial class App : Application
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainWindowViewModel(),
+
             };
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-DK");
         }
 
         base.OnFrameworkInitializationCompleted();
