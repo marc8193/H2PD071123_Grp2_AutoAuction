@@ -5,9 +5,18 @@
 			 mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
 			 Width="400" Height="300"     
+			 Background="#1e1e1e"
+			 BorderBrush="YellowGreen" 
+			 BorderThickness="2"
+			 CornerRadius="150 0 150 0"
 			 xmlns:vm="clr-namespace:H2PD071123_Grp2_AutoAuction.ViewModels"
 			 x:DataType="vm:ProfessionalCarUserControlViewModel"
 			 x:Class="H2PD071123_Grp2_AutoAuction.Views.ProfessionalCarUserControlView">
+	<UserControl.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="Foreground" Value="White"></Setter>
+		</Style>
+	</UserControl.Styles>
 	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 		<Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*">
 			<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="1" TextElement.FontSize="14">Height</uc:LabelUserControl>

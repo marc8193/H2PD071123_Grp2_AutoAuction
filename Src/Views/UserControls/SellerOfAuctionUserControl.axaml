@@ -5,22 +5,30 @@
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
 			 Width="1000" Height="650"
+			 Background="#1e1e1e"
+			 BorderBrush="YellowGreen" 
+			 BorderThickness="2"
+			 CornerRadius="120 0 120 0"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.SellerOfAuctionUserControl">
-
+	<UserControl.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="Foreground" Value="White"></Setter>
+		</Style>
+	</UserControl.Styles>
 	<Grid RowDefinitions="auto, *" ColumnDefinitions="auto,*">
 		<StackPanel Margin="20" Grid.Column="0" Grid.Row="0"  Orientation="Vertical">
-			<uc:LabelUserControl  FontSize="24" FontWeight="SemiBold">Seller of Auction</uc:LabelUserControl>
+			<uc:LabelUserControl Margin="20" FontSize="24" FontWeight="SemiBold">Seller of Auction</uc:LabelUserControl>
 			<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="0 30 0 0">Auction info</uc:LabelUserControl>
-			<ListBox  Margin="0 20 0 0" BorderBrush="Black" BorderThickness="1" Width="270" Height="250"></ListBox>
+			<ListBox Background="LightGray"  Margin="0 20 0 0" BorderBrush="Black" BorderThickness="1" Width="270" Height="250"></ListBox>
 		</StackPanel>
-		<Button Name="BackBtnBuyerOfAuction" Click="BackBtn" FontSize="20" Padding="33 05 0 0" BorderBrush="Black" Content="Back" Grid.Column="0" Grid.Row="1" Width="120" Height="40" Margin="20 0 0 0"></Button>
+		<Button Name="BackBtnBuyerOfAuction" Click="BackBtn" FontSize="20" Padding="33 05 0 0" Foreground="Wheat" CornerRadius="20" BorderBrush="Wheat" Content="Back" Grid.Column="0" Grid.Row="1" Width="120" Height="40" Margin="20 0 0 0"></Button>
 		<StackPanel  Orientation="Vertical" Grid.Column="1" Grid.Row="0" >
 			<Grid  Margin="50 20 0 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*">
 				<uc:LabelUserControl Padding="140 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" FontWeight="Medium" FontSize="22">Closing</uc:LabelUserControl>
 				<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="20 0 0 0" Grid.Column="1" Grid.Row="0">bind date here 12/12</uc:LabelUserControl>
 				<uc:LabelUserControl Margin="0 20 0 0" Padding="80 0 0 0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
 				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium" Grid.Column="1" Grid.Row="1">bind balance here dkk</uc:LabelUserControl>
-				<Button Name="Accept" Click="AcceptBtn"  FontSize="20"  Foreground="White" Background="#5CB85C" Content="Accept" TextBlock.TextAlignment="Center" Grid.Column="1" Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button>
+				<Button CornerRadius="20" Name="Accept" Click="AcceptBtn" BorderBrush="Wheat"  FontSize="20"  Foreground="White" Background="#5CB85C" Content="Accept" TextBlock.TextAlignment="Center" Grid.Column="1" Grid.Row="2" Width="140" Height="40" Margin="70 20 0 0"></Button>
 			
 			</Grid>
 		</StackPanel>

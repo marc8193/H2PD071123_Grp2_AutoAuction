@@ -3,10 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
-			 Width="300"
+			 Width="300" 
+			 Background="#1e1e1e"
+			 BorderBrush="YellowGreen"
+			 BorderThickness="2"
+			 CornerRadius="150 0 150 0"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.YourProfileUserControl">
+	<UserControl.Styles>
+		<Style Selector="Label">
+			<Setter Property="Foreground" Value="White"></Setter>
+		</Style>
+	</UserControl.Styles>
 	<Grid Margin="20" RowDefinitions="*,auto,auto,2*,auto,2*,*" ColumnDefinitions="auto,*">
-		<Label Grid.ColumnSpan="2"  FontSize="26">Your profile</Label>
+		<Label HorizontalAlignment="Center" Grid.ColumnSpan="2"  FontSize="26">Your profile</Label>
 		<Label Margin="0 0 20 20" Grid.Row="1" >Username:</Label>
 		<Label Grid.Row="1" Grid.Column="1">Bind UserName her</Label>
 		<Label Margin="0 0 20 20" Grid.Row="2" >Password:</Label>
@@ -17,6 +26,6 @@
 		<Label Grid.Row="4" Grid.Column="1">Bind YourAuction her</Label>
 		<Label  Margin="0 0 20 20" Grid.Row="5" >Auction won:</Label>
 		<Label Grid.Row="5" Grid.Column="1">Bind Auction her</Label>
-		<Button Name="BackBTN" Click="BackBtn" Grid.Row="6">Back</Button>
+		<Button Foreground="Wheat"  BorderBrush="Wheat" Name="BackBTN" Click="BackBtn" Grid.Row="6">Back</Button>
 	</Grid>
 </UserControl>

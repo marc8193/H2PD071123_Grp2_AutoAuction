@@ -5,7 +5,8 @@
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.LoginUserControlView"
-        Width="1000" Height="650"
+		     Width="1000" Height="650"
+			 CornerRadius="500 0 350 0"
 			 Background="#FEBC3B">
 	<UserControl.Styles>
 		<!--label style-->
@@ -36,9 +37,9 @@
 	
 		<Grid  HorizontalAlignment="Center" 
 		   RowDefinitions="auto,auto,auto,auto,*" ColumnDefinitions="auto,auto,auto">
-			<uc:LabelUserControl ></uc:LabelUserControl>
+			<uc:LabelUserControl HorizontalAlignment="Center" ></uc:LabelUserControl>
 
-			<Border Margin="-5 5 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5">
+			<Border Margin="-5 40 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Grid.RowSpan="5">
 				<Border.Background>
 					<ImageBrush Source="/Src/Assets/Vehicle.jpg"/>
 				</Border.Background>
@@ -47,7 +48,7 @@
 						<Setter Property="BorderThickness" Value="2"/>
 						<Setter Property="CornerRadius" Value="500 0 500 0" />
 						<Setter Property="Width" Value="1000"/>
-						<Setter Property="Height" Value="500"/>
+						<Setter Property="Height" Value="400"/>
 					</Style>
 					</Border.Styles>
 			</Border>
@@ -55,9 +56,9 @@
 					<TextBox  Watermark="User Name" ></TextBox>
 		<TextBox Width="300" Height="50"  PasswordChar="*" Watermark="Password" ></TextBox>
 	</StackPanel>
-		<StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2" Orientation="Horizontal" >
-			<uc:LabelUserControl Foreground="Wheat" Grid.Row="2" TextElement.FontSize="20"  HorizontalAlignment="Right" Margin="20 0 0 0">Not Registered? </uc:LabelUserControl>
-		<Button Classes="CreateUserBtn" Content="Create user" Click="CreateUserBtn" 
+		<StackPanel HorizontalAlignment="Center" Margin="70" Grid.Column="0" Grid.Row="4" Orientation="Horizontal" >
+			<uc:LabelUserControl Foreground="Wheat" Grid.Row="2" TextElement.FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20 0 0 0">Not Registered? </uc:LabelUserControl>
+		<Button Classes="CreateUserBtn" Content="Create user" VerticalAlignment="Top" Click="CreateUserBtn" 
 				 Margin="0 -6 0 0"  Grid.Row="0"  Grid.Column="2">
 			<Button.Styles >
 				<Style Selector="Button">
@@ -77,7 +78,7 @@
 		
 		</StackPanel>
 		<Button  Name="LoginBtn" Click="LoginBTN"  Grid.Column="0"  
-				  Grid.Row="4" Margin="0 0 0 55" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+				  Grid.Row="4" Margin="0 0 0 15" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
 				  Width="300" Height="40"   Content="Login">
 			<Button.Styles >
 				<Style Selector="Button">

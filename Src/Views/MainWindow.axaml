@@ -8,6 +8,7 @@
 		xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
         x:DataType="vm:MainWindowViewModel"
         Width="1000" Height="650"
+		Background="Transparent"
         Title="H2PD071123_Grp2_AutoAuction">
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,

@@ -3,11 +3,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			  Background="#1e1e1e"
+			 BorderBrush="YellowGreen" 
+			 BorderThickness="2"
+			 CornerRadius="150 0 150 0"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.YourBidHistoryUserControl">
 	<Grid Margin="20" RowDefinitions="*,4*,2*" >
-		<Label FontSize="26" Grid.Row="0">Your bid history</Label>
-		<Grid Grid.Row="1">
-			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" BorderBrush="Black" BorderThickness="1"  Name="YourAuctionsDG"  AutoGenerateColumns="False" >
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="26" Grid.Row="0">Your bid history</Label>
+		<Grid HorizontalAlignment="Center" Grid.Row="1">
+			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" BorderBrush="Wheat" BorderThickness="1"  Name="YourAuctionsDG"  AutoGenerateColumns="False" >
 				<DataGrid.Columns >
 					<DataGridTextColumn  Width="*" Header="Name" />
 					<DataGridTextColumn Width="*" Header="Årgang" />
@@ -16,6 +20,6 @@
 				</DataGrid.Columns>
 		</DataGrid>
 		</Grid>
-		<Button Name="BackBTN" Click="BackBtn" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" VerticalAlignment="Bottom" Grid.Row="2">Back</Button>
+		<Button CornerRadius="20" Foreground="Wheat" Name="BackBTN" Click="BackBtn" BorderBrush="Wheat"  TextBlock.TextAlignment="Center" Width="120" VerticalAlignment="Bottom" Grid.Row="2">Back</Button>
 	</Grid>
 </UserControl>

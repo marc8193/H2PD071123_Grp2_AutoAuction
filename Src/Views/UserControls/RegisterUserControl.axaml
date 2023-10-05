@@ -2,15 +2,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
 			 Width="1000" Height="650"
+			 Background="#FEBC3B"
+			 CornerRadius="500 0 350 0"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.RegisterUserControl">
+	<UserControl.Styles>
+		<!--label style-->
+		<Style Selector="Label">
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="Foreground" Value="#225967"/>
+			<Setter Property="Margin" Value="20" />
+		</Style>
 
+		<Style Selector="TextBox">
+			<Setter Property="Margin" Value="100 35 0 0"/>
+			<Setter Property="Padding" Value="13"/>
+			<Setter Property="FontSize" Value="22"/>
+			<Setter Property="Width" Value="250"/>
+			<Setter Property="Height" Value="50"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="BorderThickness" Value="0 0 0 1"/>
+			<Setter Property="TextElement.Foreground" Value="Black"/>
+			<Setter Property="TextElement.FontWeight" Value="Bold"/>
+			<Setter Property="CornerRadius" Value="50" />
+		</Style>
+	
+		<Style Selector="TextBox:pressed">
+			<Setter Property="Background" Value="#011025"/>
+			<Setter Property="TextElement.FontWeight" Value="Light"/>
+			<Setter Property="BorderThickness" Value="0 0 0 1"/>
+
+		</Style>
+	</UserControl.Styles>
 	<Grid  HorizontalAlignment="Center"
 		   RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto,auto">
+		<Border Margin="-25 -5 70 0" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="6">
+			<Border.Background>
+				<ImageBrush Source="/Src/Assets/Vehicle.jpg"/>
+			</Border.Background>
+			<Border.Styles>
+				<Style Selector="Border">
+					<Setter Property="CornerRadius" Value="500 0 500 0" />
+					<Setter Property="Width" Value="910"/>
+					<Setter Property="Height" Value="400"/>
+				</Style>
+			</Border.Styles>
+		</Border>
 		<StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
-			<uc:LabelUserControl TextElement.FontSize="22">Create User</uc:LabelUserControl>
+			<uc:LabelUserControl Margin="40 0 0 0" TextElement.FontWeight="Bold" TextElement.Foreground="#225967" TextElement.FontSize="22">Create User</uc:LabelUserControl>
 			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0" 
 					 Grid.Column="0" Grid.Row="1" Width="350" Height="50" Watermark="User Name" ></TextBox>
 			<TextBox Padding="13" FontSize="20" Margin="0 20 0 0"
@@ -19,17 +61,19 @@
 					 Width="350" Height="50" PasswordChar="*" Watermark="Password again" ></TextBox>
 
 		</StackPanel>
-		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left"  Margin="20 0 0 0">
-			<RadioButton IsChecked="true" Content="Corporate "></RadioButton>
-			<RadioButton Content="Private" Margin="60 0 0 0"></RadioButton>
+		<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left"  Margin="110 0 0 0">
+			<RadioButton  Padding="5 0 20 0" CornerRadius="0 50 0 50" Background="#FEBC3B" TextBlock.TextAlignment="Right" IsChecked="true" Content="Corporate" TextElement.Foreground="Black"></RadioButton>
+			
+			<RadioButton Padding="5 0 30 0" CornerRadius="50 0 50 0" Background="#FEBC3B" TextBlock.TextAlignment="Right" Content="Private" Margin="60 0 0 0" TextElement.Foreground="Black"></RadioButton>
 		</StackPanel>
-		<StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-		<Button TextBlock.TextAlignment="Center" Background="Gray" BorderBrush="Black" 
-				Margin="40" HorizontalAlignment="Right" Width="100" Height="40"
+		<StackPanel Margin="0 0 0 -5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal">
+		<Button CornerRadius="0 50 0 50" TextBlock.TextAlignment="Center" Background="#5CB85C" BorderBrush="Black" 
+				Margin="40" TextElement.Foreground="White" HorizontalAlignment="Right" Width="100" Height="40"
 				TextElement.FontSize="20"  Content="cancel"></Button>
-		<Button TextBlock.TextAlignment="Center" Name="RegisterBTN" Click="RegisterBtn" 
+		<Button CornerRadius="50 0 50 0" TextBlock.TextAlignment="Center" Name="RegisterBTN" Click="RegisterBtn" 
 				TextElement.Foreground="White"  Margin="40" HorizontalAlignment="Right" Width="100" Height="40"
 				TextElement.FontSize="20" Background="#5CB85C">Create</Button>
 	</StackPanel>
+	
 			</Grid>
 </UserControl>

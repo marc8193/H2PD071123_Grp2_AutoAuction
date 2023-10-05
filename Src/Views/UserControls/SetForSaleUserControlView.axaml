@@ -7,14 +7,21 @@
 		 	 xmlns:vm="clr-namespace:H2PD071123_Grp2_AutoAuction.Src.ViewModels"
 			 x:DataType="vm:SetForSaleUserControlViewModel"
 			 x:CompileBindings="True"
+			 BorderBrush="YellowGreen" 
+			 BorderThickness="2"
+			 CornerRadius="50 0 0 50"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.SetForSaleUserControlView">
 	<!--Grid for this Control-->
-	
+	<UserControl.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="Foreground" Value="White"></Setter>
+		</Style>
+	</UserControl.Styles>
 	<Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,*,2*,*,auto">
 		<!--stack panel for set for sale with text boxes and labels-->
-		<Border Grid.Column="0" Grid.Row="0" Margin="10 0 0 0" CornerRadius="50" Height="350" BorderBrush="YellowGreen" BorderThickness="2">
+		<Border Background="#1e1e1e" Grid.Column="0" Grid.Row="0" Margin="10 10 0 0" CornerRadius="50" Height="350" BorderBrush="YellowGreen" BorderThickness="2">
 		<StackPanel  Orientation="Vertical">
-			<uc:LabelUserControl Margin="20 20 0 20" TextElement.FontSize="28">Set for sale</uc:LabelUserControl>
+			<uc:LabelUserControl Margin="20 0 0 20" TextElement.FontSize="28">Set for sale</uc:LabelUserControl>
 			<Grid RowDefinitions="*,*,*,*,*,*,*,*" ColumnDefinitions="auto,*">
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="1" TextElement.FontSize="14">Name</uc:LabelUserControl>
 				<TextBox Width="200" Margin="0 5 0 0" Grid.Column="1" Grid.Row="1" Text="{Binding Name}"></TextBox>
@@ -31,15 +38,15 @@
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="7" TextElement.FontSize="14"  >Tow bar</uc:LabelUserControl>
 				<StackPanel Margin="60 5 0 0" Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
 					<Grid RowDefinitions="auto" ColumnDefinitions="*,*,*">
-						<RadioButton  IsChecked="{Binding TowBar}" Content="Yes" Grid.Column="1" ></RadioButton>
-						<RadioButton  IsChecked="{Binding !TowBar}" Content="No" Margin="30 0 0 0" Grid.Column="2" ></RadioButton>
+						<RadioButton Foreground="White"  IsChecked="{Binding TowBar}" Content="Yes" Grid.Column="1" ></RadioButton>
+						<RadioButton Foreground="White" IsChecked="{Binding !TowBar}" Content="No" Margin="30 0 0 0" Grid.Column="2" ></RadioButton>
 					</Grid>
 				</StackPanel>
 			</Grid>
 		</StackPanel>
 		</Border>
 		<!--starting bid and close auction-->
-		<Border BorderBrush="YellowGreen" BorderThickness="2" CornerRadius="50" Grid.Column="0" Height="100" Grid.Row="2" Padding="0 0 15 0" Margin="10 0 0 0">
+		<Border Background="#1e1e1e" BorderBrush="YellowGreen" BorderThickness="2" CornerRadius="50" Grid.Column="0" Height="100" Grid.Row="2" Padding="0 0 15 0" Margin="10 0 0 0">
 		<StackPanel  Orientation="Vertical" >
 			<Grid RowDefinitions="*,*,auto" ColumnDefinitions="auto,*">
 			<uc:LabelUserControl Margin="20 20 0 0" Grid.Column="0" Grid.Row="0" >Starting bid</uc:LabelUserControl>
@@ -52,16 +59,20 @@
 			</Grid>
 		</StackPanel>
 		</Border>
-			<Button Name="CancelBtn" Click="CancelBTN" Margin="20 15 0 10" FontSize="16" Grid.Column="0" Grid.Row="4" TextBlock.TextAlignment="Center" BorderBrush="Black" > Cancel</Button>
-		<StackPanel Grid.Column="1" Grid.Row="0" Margin="160 70 0 0" Orientation="Vertical">
+			<Button Name="CancelBtn" Click="CancelBTN"  CornerRadius="20" Margin="20 15 0 10" FontSize="16" Grid.Column="0" Grid.Row="4" TextBlock.TextAlignment="Center" BorderBrush="Black" > Cancel</Button>
+		
+		<Border Margin="50 0 0 0" Width="420" Grid.RowSpan="4" Background="#1e1e1e" BorderBrush="YellowGreen" BorderThickness="2" CornerRadius="50" Grid.Column="1" Grid.Row="0">	
+		<StackPanel Margin="30 70 0 0" Orientation="Vertical">
 			<Grid RowDefinitions="auto,*" ColumnDefinitions="auto,auto">
 				<uc:LabelUserControl Margin="10" Grid.Column="0" Grid.Row="0" TextElement.FontSize="14" >Vehicle type</uc:LabelUserControl>
 				<StackPanel Orientation="Vertical" Grid.Column="2">
-					<ComboBox PlaceholderText="Truck" ItemsSource="{Binding TruckTypes}" Name="TruckTypeComboBox" SelectedIndex="{Binding SelectedCarIndex}" ></ComboBox>
+					<ComboBox Background="Gray" PlaceholderText="Truck" ItemsSource="{Binding TruckTypes}" Name="TruckTypeComboBox" SelectedIndex="{Binding SelectedCarIndex}" ></ComboBox>
 				</StackPanel>
 			</Grid>
 					<ContentControl Name="TruckTypeContentControl" Content="{Binding ActivView}" />
 		</StackPanel>
-			<Button Name="CreateAuctionBtn" Click="CreateAuctionBTN" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 0 20" FontSize="14" Grid.Column="2" Grid.Row="3" TextBlock.TextAlignment="Center" BorderBrush="Black" > Create auction</Button>
+		</Border>
+		<Button Name="CreateAuctionBtn" Click="CreateAuctionBTN" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" FontSize="14" CornerRadius="20" Grid.Column="1" Grid.Row="4" TextBlock.TextAlignment="Center" BorderBrush="Black" > Create auction</Button>
+
 	</Grid>
 </UserControl>

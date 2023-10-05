@@ -4,15 +4,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
 			 xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
-        Width="800" Height="450"
+			  Width="800" Height="450"
+			 Background="#1e1e1e"
+			 BorderThickness="2"
+			 BorderBrush="YellowGreen"
+			 CornerRadius="30"
              x:Class="H2PD071123_Grp2_AutoAuction.Views.HomeScreenUserControl">
-
+	<UserControl.Styles>
+		<Style Selector="Button">
+			<Setter Property="Foreground" Value="Wheat"/>
+			<Setter Property="BorderBrush" Value="Wheat"/>
+			<Setter Property="Margin"  Value="5"/>
+			<Setter Property="TextBlock.TextAlignment" Value="Center"/>
+			<Setter Property="Width" Value="120"/>
+			<Setter Property="FontSize" Value="17"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+		</Style>
+	</UserControl.Styles>
 	<Grid>
 		<Grid  RowDefinitions="auto,*,auto,*" ColumnDefinitions="*,*,*">
 			<!--Your aucions data grid with label-->
-			<uc:LabelUserControl Grid.Row="0" Margin="20 20 0 10" FontSize="18" FontWeight="Bold"> Your Auctions</uc:LabelUserControl>
+			<uc:LabelUserControl Foreground="White" Grid.Row="0" Margin="20 20 0 10" FontSize="18" FontWeight="Bold"> Your Auctions</uc:LabelUserControl>
 			<Grid Grid.Column="0" Margin="20 0 0 10"  Grid.Row="1" ColumnDefinitions="2*,2*,2*">
-			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" BorderBrush="Black" BorderThickness="1"  Name="YourAuctionsDG"  AutoGenerateColumns="False" >
+			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" BorderBrush="White" BorderThickness="1"  Name="YourAuctionsDG"  AutoGenerateColumns="False" >
 				<DataGrid.Columns>
 					<DataGridTextColumn Width="*" Header="Name" />
 					<DataGridTextColumn Width="*" Header="Årgang" />
@@ -21,9 +35,9 @@
 			</DataGrid>
 			</Grid>
 			<!--Current auctions with label-->
-			<uc:LabelUserControl Grid.Row="2" Margin="20 20 0 10" FontSize="18" FontWeight="Bold"> Current Auctions</uc:LabelUserControl>
+			<uc:LabelUserControl Foreground="White" Grid.Row="2" Margin="120 20 0 10" FontSize="18" FontWeight="Bold"> Current Auctions</uc:LabelUserControl>
 			<Grid Grid.Row="3" ColumnDefinitions="*,*,*">
-			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" Margin="20 0 0 10" BorderBrush="Black" BorderThickness="1" Name="CurrentAuctionsDG" AutoGenerateColumns="False" >
+			<DataGrid TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Width="500" Margin="20 0 0 10" BorderBrush="White" BorderThickness="1" Name="CurrentAuctionsDG" AutoGenerateColumns="False" >
 				<DataGrid.Columns>
 					<DataGridTextColumn Width="*" Header="Name" />
 					<DataGridTextColumn Width="*" Header="Årgang" />
@@ -33,10 +47,10 @@
 			</Grid>
 		</Grid>
 		<!--Buttons Grid-->
-		<Grid  HorizontalAlignment="Right" Margin="130 20 0 0" RowDefinitions="auto,auto,auto">
-			<Button Name="SetForSaleBTN" Click="SetForSaleBtn" Grid.Column="0" Grid.Row="0" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="16" Foreground="White" Background="#5CB85C" Content="+Set for sale"/>
-			<Button Name="UserProfileBTN" Click="UserProfileBtn" Grid.Column="0" Grid.Row="1" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="17" FontWeight="SemiBold"  Content="User profile" />
-			<Button Name="BidHistoryBTN" Click="BidHistoryBtn" Grid.Column="0" Grid.Row="2" Margin="5" BorderBrush="Black" TextBlock.TextAlignment="Center" Width="120" FontSize="17" FontWeight="SemiBold" Content="Bid history" />
+		<Grid  HorizontalAlignment="Right" Margin="120 20 0 0" RowDefinitions="auto,auto,auto">
+			<Button Name="SetForSaleBTN" Click="SetForSaleBtn" Grid.Column="0" Grid.Row="0"   Background="#5CB85C" Content="+Set for sale"/>
+			<Button Name="UserProfileBTN" Click="UserProfileBtn" Grid.Column="0" Grid.Row="1" Content="User profile" />
+			<Button Name="BidHistoryBTN" Click="BidHistoryBtn" Grid.Column="0" Grid.Row="2"  Content="Bid history" />
 			</Grid>
 	</Grid>
 </UserControl>

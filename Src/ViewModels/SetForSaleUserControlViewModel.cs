@@ -85,8 +85,12 @@ namespace H2PD071123_Grp2_AutoAuction.Src.ViewModels
             {
                 YearList.Add(year);
             }
-
         }
+        public SetForSaleUserControlViewModel()
+        {
+            YearsCB();
+        }
+
         private string year;
 
         public string Year
@@ -103,12 +107,6 @@ namespace H2PD071123_Grp2_AutoAuction.Src.ViewModels
             get { return towBar; }
             set { towBar = value; }
         }
-
-        public SetForSaleUserControlViewModel()
-        {
-            YearsCB();
-        }
-
 
         public ObservableCollection<string> TruckTypes { get; } = new ObservableCollection<string> {"Truck Type", "Bus", "Truck", "PrivateCar" ,"ProfessionalCar" };
         public ObservableCollection<string> FuelTypeCB { get; } = new ObservableCollection<string> { "Diesel","Petrol","Electric","Hydrogen" };
