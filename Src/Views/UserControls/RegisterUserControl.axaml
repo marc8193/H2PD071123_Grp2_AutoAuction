@@ -27,7 +27,6 @@
 			<Setter Property="BorderThickness" Value="0 0 0 1"/>
 			<Setter Property="TextElement.Foreground" Value="Black"/>
 			<Setter Property="TextElement.FontWeight" Value="Bold"/>
-			<Setter Property="CornerRadius" Value="50" />
 		</Style>
 	
 		<Style Selector="TextBox:pressed">
