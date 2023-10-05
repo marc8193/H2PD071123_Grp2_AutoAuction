@@ -192,11 +192,50 @@ public partial class SetForSaleUserControl : UserControl
         // Bus, Truck, Private Car, Business Car
         if (selectedV == 0) //Bus
         {
-
+            //bus
+            var Bus = new Bus(
+            nameBox,
+          Convert.ToDouble(kmBox),
+          regBox,
+          Convert.ToInt32(year),
+          Convert.ToDecimal(newPrice),
+          Convert.ToBoolean(hasTowbarBox),
+          Convert.ToDouble(engineSizeBox),
+          Convert.ToDouble(kmPerLiterBox),
+          FuelType.Diesel,
+          Convert.ToUInt32(seats),
+          Convert.ToDouble(heavyHeight),
+          Convert.ToDouble(heavyWidth),
+          Convert.ToDouble(heavyLength),
+          Convert.ToUInt32(sleep),
+          Convert.ToBoolean(toilet)
+          );
+            int vhId = db.InsertBus(Bus);
+            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
         }
         else if (selectedV == 1) //Truck
         {
+            var Truck = new Truck(
+          nameBox,
+          Convert.ToDouble(kmBox),
+          regBox,
+          Convert.ToInt32(year),
+          Convert.ToDecimal(newPrice),
+          Convert.ToBoolean(hasTowbarBox),
+          Convert.ToDouble(engineSizeBox),
+          Convert.ToDouble(kmPerLiterBox),
+          FuelType.Diesel,
+          Convert.ToUInt32(seats),
+          Convert.ToDouble(heavyHeight),
+          Convert.ToDouble(heavyWidth),
+          Convert.ToDouble(heavyLength),
+          Convert.ToDouble(loadCapacity)
+          );
+            int vhId = db.InsertTruck(Truck);
+            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
 
+
+            //truck
         }
         else if (selectedV == 2) //Private Car
         {
@@ -222,7 +261,27 @@ public partial class SetForSaleUserControl : UserControl
         }
         else if (selectedV == 3) // Business Car
         {
+            var BusinessCar = new ProfessionalPersonalCar(
+                nameBox,
+                Convert.ToDouble(kmBox),
+                regBox,
+                Convert.ToInt32(year),
+                Convert.ToDecimal(newPrice),
+                Convert.ToDouble(engineSizeBox),
+                Convert.ToDouble(kmPerLiterBox),
+                FuelType.Diesel,
+                Convert.ToUInt32(lightSeats),
+                Convert.ToDouble(lightHeight),
+                Convert.ToDouble(lightWidth),
+                Convert.ToDouble(lightLength),
+                Convert.ToBoolean(safetyBar),
+                Convert.ToDouble(loadCapacity)
 
+
+                );
+            int vhId = db.InsertProfessionalPersonalCar(BusinessCar);
+            db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
+            //Business car
         }
 
 
