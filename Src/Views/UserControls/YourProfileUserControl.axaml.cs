@@ -22,6 +22,11 @@ public partial class YourProfileUserControl : UserControl
         InitializeComponent();
         this.HomeScreenUC = homeScreenUC;
         this.UserId = userId;
+
+        var db = Database.Instance;
+        var user = db.SelectUserById(this.UserId);
+
+        this.DataContext = new YourProfileUserControlViewModel(user.Username, user.Balance);
     }
     void BackBtn(object sender, RoutedEventArgs e)
     {
