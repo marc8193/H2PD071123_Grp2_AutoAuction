@@ -190,11 +190,11 @@ public partial class SetForSaleUserControl : UserControl
         // Bus, Truck, Private Car, Business Car
         if (selectedV == 0) //Bus
         {
-
+            //bus
         }
         else if (selectedV == 1) //Truck
         {
-
+            //truck
         }
         else if (selectedV == 2) //Private Car
         {
@@ -220,7 +220,25 @@ public partial class SetForSaleUserControl : UserControl
         }
         else if (selectedV == 3) // Business Car
         {
+            var BusinessCar = new ProfessionalPersonalCar(
+                nameBox,
+                Convert.ToDouble(kmBox),
+                regBox,
+                Convert.ToInt32(year),
+                Convert.ToDecimal(newPrice),
+                Convert.ToDouble(engineSizeBox),
+                Convert.ToDouble(kmPerLiterBox),
+                FuelType.Diesel,
+                Convert.ToUInt32(NumberOfSe),
+                Convert.ToDouble(lightHeight),
+                Convert.ToDouble(lightWidth),
+                Convert.ToDouble(lightLength),
+                Convert.ToBoolean(safetyBar)
+                Convert.ToDouble(loadCapacity
 
+
+                );
+            //Business car
         }
 
 
