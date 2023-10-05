@@ -3,6 +3,7 @@ using H2PD071123_Grp2_AutoAuction.ViewModels;
 using AutoAuctionProjekt;
 using AutoAuctionProjekt.Models;
 using System;
+using Avalonia.Interactivity;
 
 namespace H2PD071123_Grp2_AutoAuction.Views;
 
@@ -15,4 +16,5 @@ public partial class MainWindow : Window
         DataContext = new MainWindowViewModel();
         ContentAreaUserControl.Navigate(new LoginUserControl());
     }
+  
 }

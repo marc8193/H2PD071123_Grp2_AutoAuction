@@ -8,13 +8,15 @@
 		xmlns:uc="clr-namespace:H2PD071123_Grp2_AutoAuction.Views"
         x:DataType="vm:MainWindowViewModel"
         Width="1000" Height="650"
+		Background="Transparent"
         Title="H2PD071123_Grp2_AutoAuction">
-    <Design.DataContext>
+    <Design.DataContext >
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<!--<vm:MainWindowViewModel/>-->
 
     </Design.DataContext>
+	<Grid Name="MoveDrag">
 	<uc:ContentAreaUserControl Name="ContentArea"></uc:ContentAreaUserControl>
-
+	</Grid>
 </Window>
