@@ -32,7 +32,7 @@ public partial class BuyerOfAuctionUserControl : UserControl
 
     void BackBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
+        ContentAreaUserControl.Navigate(new HomeScreenUserControl(this.UserId));
     }
 
     private void MakeBidControl_BidAccepted(object sender, EventArgs e)
@@ -50,6 +50,8 @@ public partial class BuyerOfAuctionUserControl : UserControl
         }
 
         string bidValue = makeBidControl.BidTextValue;
+
+        Console.WriteLine("dasdasd");
 
         var db = Database.Instance;
         db.CreateBid(this.UserId, Convert.ToInt32(AucId), Convert.ToDecimal(bidValue));

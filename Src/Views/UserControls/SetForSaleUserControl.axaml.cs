@@ -14,6 +14,7 @@ public partial class SetForSaleUserControl : UserControl
 {
     public SellerOfAuctionUserControl? SellerOfAuctionUC { get; set; }
     public HomeScreenUserControl? HomeScreenUC { get; set; }
+    public int UserId { get; set; }
 
     public SetForSaleUserControl()
     {
@@ -22,11 +23,12 @@ public partial class SetForSaleUserControl : UserControl
         DataContext = new SetForSaleUserControlViewModel();
 
     }
-    public SetForSaleUserControl(HomeScreenUserControl homeScreenUC, SellerOfAuctionUserControl sellerOfAuctionUC)
+    public SetForSaleUserControl(HomeScreenUserControl homeScreenUC, SellerOfAuctionUserControl sellerOfAuctionUC, int userId)
     {
         InitializeComponent();
         this.HomeScreenUC = homeScreenUC;
         this.SellerOfAuctionUC = sellerOfAuctionUC;
+        this.UserId = userId;
     }
 
 
@@ -146,7 +148,7 @@ public partial class SetForSaleUserControl : UserControl
 
     void CancelBTN(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
+        ContentAreaUserControl.Navigate(new HomeScreenUserControl(this.UserId));
     }
 
     void CreateAuctionBTN(object sender, RoutedEventArgs e)
@@ -224,9 +226,6 @@ public partial class SetForSaleUserControl : UserControl
         }
 
 
-        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
-
-        // ContentAreaUserControl.Navigate(this.SellerOfAuctionUC!);
-
+        ContentAreaUserControl.Navigate(new HomeScreenUserControl(this.UserId));
     }
 }

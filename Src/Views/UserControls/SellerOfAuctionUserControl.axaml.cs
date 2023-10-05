@@ -11,14 +11,16 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 public partial class SellerOfAuctionUserControl : UserControl
 {
     HomeScreenUserControl? HomeScreenUC { get; set; }
+    public int UserId { get; set; }
 
     public SellerOfAuctionUserControl()
     {
         InitializeComponent();
     }
-    public SellerOfAuctionUserControl(int vehId)
+    public SellerOfAuctionUserControl(int vehId, int userId)
     {
         this.DataContext = new SellerOfAuctionUserControlViewModel(vehId);
+        this.UserId = userId;
 
         InitializeComponent();
     }
@@ -29,7 +31,7 @@ public partial class SellerOfAuctionUserControl : UserControl
     }
     void BackBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
+        ContentAreaUserControl.Navigate(new HomeScreenUserControl(this.UserId));
     }
 
 
