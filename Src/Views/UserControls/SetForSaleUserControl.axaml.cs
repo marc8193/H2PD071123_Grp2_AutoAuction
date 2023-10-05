@@ -194,6 +194,24 @@ public partial class SetForSaleUserControl : UserControl
         }
         else if (selectedV == 1) //Truck
         {
+            var Truck = new Truck(
+          nameBox,
+          Convert.ToDouble(kmBox),
+          regBox,
+          Convert.ToInt32(year),
+          Convert.ToDecimal(newPrice),
+          Convert.ToBoolean(HasTowBar)
+          Convert.ToDouble(engineSizeBox),
+          Convert.ToDouble(kmPerLiterBox),
+          FuelType.Diesel,
+          Convert.ToUInt32(lightSeats),
+          Convert.ToDouble(lightHeight),
+          Convert.ToDouble(lightWidth),
+          Convert.ToDouble(lightLength),
+          Convert.ToBoolean(safetyBar),
+          Convert.ToDouble(loadCapacity)
+
+
             //truck
         }
         else if (selectedV == 2) //Private Car
@@ -229,12 +247,12 @@ public partial class SetForSaleUserControl : UserControl
                 Convert.ToDouble(engineSizeBox),
                 Convert.ToDouble(kmPerLiterBox),
                 FuelType.Diesel,
-                Convert.ToUInt32(NumberOfSe),
+                Convert.ToUInt32(lightSeats),
                 Convert.ToDouble(lightHeight),
                 Convert.ToDouble(lightWidth),
                 Convert.ToDouble(lightLength),
-                Convert.ToBoolean(safetyBar)
-                Convert.ToDouble(loadCapacity
+                Convert.ToBoolean(safetyBar),
+                Convert.ToDouble(loadCapacity)
 
 
                 );
