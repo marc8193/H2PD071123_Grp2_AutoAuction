@@ -11,13 +11,14 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 public partial class SellerOfAuctionUserControl : UserControl
 {
     HomeScreenUserControl? HomeScreenUC { get; set; }
+
     public SellerOfAuctionUserControl()
     {
         InitializeComponent();
     }
-    public SellerOfAuctionUserControl(int id)
+    public SellerOfAuctionUserControl(int vehId)
     {
-        this.DataContext = new SellerOfAuctionUserControlViewModel(id);
+        this.DataContext = new SellerOfAuctionUserControlViewModel(vehId);
 
         InitializeComponent();
     }

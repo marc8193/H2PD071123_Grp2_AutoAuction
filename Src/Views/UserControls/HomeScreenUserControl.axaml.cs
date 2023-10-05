@@ -11,6 +11,11 @@ public partial class HomeScreenUserControl : UserControl
     HomeScreenUserControlViewModel HomeScreenVM { get; set; }
     public int UserId { get; set; }
 
+    public HomeScreenUserControl() 
+    {
+        InitializeComponent();
+    }
+
     public HomeScreenUserControl(int userId = -1)
     {
         this.HomeScreenVM = new HomeScreenUserControlViewModel();
@@ -33,7 +38,7 @@ public partial class HomeScreenUserControl : UserControl
     }
     void UserProfileBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new YourProfileUserControl(this));
+        ContentAreaUserControl.Navigate(new YourProfileUserControl(this, this.UserId));
     }
     void BidHistoryBtn(object sender, RoutedEventArgs e)
     {
@@ -42,7 +47,7 @@ public partial class HomeScreenUserControl : UserControl
 
     void CurrentClick(object sender, SelectionChangedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new BuyerOfAuctionUserControl(((DisplayAuction)e.AddedItems[0]!).VhId, ((DisplayAuction)e.AddedItems[0]!).AucID));
+        ContentAreaUserControl.Navigate(new BuyerOfAuctionUserControl(((DisplayAuction)e.AddedItems[0]!).VhId, ((DisplayAuction)e.AddedItems[0]!).AucID, this.UserId));
     }
 
     void YourAuctionClick(object sender, SelectionChangedEventArgs e)

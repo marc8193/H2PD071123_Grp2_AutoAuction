@@ -15,14 +15,16 @@ public partial class BuyerOfAuctionUserControl : UserControl
         InitializeComponent();
     }
 
-    public BuyerOfAuctionUserControl(int aucId, int vehId)
+    public BuyerOfAuctionUserControl(int aucId, int vehId, int userId)
     {
         this.DataContext = new BuyerOfAuctionUserControlViewModel(vehId);
         this.AucId = aucId;
+        this.UserId = userId;
         InitializeComponent();
     }
 
     public int AucId { get; set; }
+    public int UserId { get; set; }
     void MakeBidBtn(object sender, RoutedEventArgs e)
     {
         makeBidControl.IsVisible = true;
@@ -47,7 +49,7 @@ public partial class BuyerOfAuctionUserControl : UserControl
         string bidValue = makeBidControl.BidTextValue;
 
         var db = Database.Instance;
-        db.CreateBid(1, Convert.ToInt32(AucId), Convert.ToDecimal(bidValue));
+        db.CreateBid(this.UserId, Convert.ToInt32(AucId), Convert.ToDecimal(bidValue));
         makeBidControl.IsVisible = false;
         makeBidControl.BidTextValue = "";
     }

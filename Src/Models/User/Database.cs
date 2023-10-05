@@ -58,8 +58,28 @@ public partial class Database
 			{
 				return -1;
 			}
-			
+		}
+	}
 
+	public int SelectUserById(int userId)
+	{
+		string queryString =
+		$@"";
+
+		SqlCommand command = new SqlCommand(queryString, this.Connection);
+
+		using (SqlDataReader reader = command.ExecuteReader())
+		{
+			try
+			{
+				reader.Read();
+				return Convert.ToInt32(reader[0]);
+				
+			}
+			catch (System.InvalidOperationException)
+			{
+				return -1;
+			}
 		}
 	}
 }
