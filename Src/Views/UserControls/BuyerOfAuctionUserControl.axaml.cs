@@ -38,9 +38,12 @@ public partial class BuyerOfAuctionUserControl : UserControl
 
         var minBid = this.Find<LabelUserControl>("bidsText")?.Content;
 
+        int minimumbid = Convert.ToInt32(minBid);
+        int bid = Convert.ToInt32(makeBidControl.BidTextValue);
         //NEED TO GET USER ID AND AUCTION ID
-        if (Convert.ToInt32(minBid) <= Convert.ToInt32(makeBidControl.BidTextValue))
+        if (minimumbid >= bid)
         {
+            makeBidControl.BidTextValue = "To Low";
             return;
         }
 
