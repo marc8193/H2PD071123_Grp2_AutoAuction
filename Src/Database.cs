@@ -5,7 +5,7 @@ namespace H2PD071123_Grp2_AutoAuction;
 
 public partial class Database
 {
-    private static readonly Lazy<Database> lazy = 
+    private static readonly Lazy<Database> lazy =
     new Lazy<Database>(() => new Database());
 
     public static Database Instance { get; set; } = lazy.Value;

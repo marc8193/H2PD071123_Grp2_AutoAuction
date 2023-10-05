@@ -39,11 +39,11 @@ public partial class HomeScreenUserControl : UserControl
 
     void CurrentClick(object sender, SelectionChangedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new BuyerOfAuctionUserControl(((DisplayAuction)e.AddedItems[0]!).Id));
+        ContentAreaUserControl.Navigate(new BuyerOfAuctionUserControl(((DisplayAuction)e.AddedItems[0]!).VhId, ((DisplayAuction)e.AddedItems[0]!).AucID));
     }
 
     void YourAuctionClick(object sender, SelectionChangedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new SellerOfAuctionUserControl(((DisplayAuction)e.AddedItems[0]!).Id));
+        ContentAreaUserControl.Navigate(new SellerOfAuctionUserControl(((DisplayAuction)e.AddedItems[0]!).AucID));
     }
 }

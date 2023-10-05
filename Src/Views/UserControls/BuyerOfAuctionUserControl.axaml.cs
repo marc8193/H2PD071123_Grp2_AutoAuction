@@ -15,12 +15,14 @@ public partial class BuyerOfAuctionUserControl : UserControl
         InitializeComponent();
     }
 
-    public BuyerOfAuctionUserControl(int id)
+    public BuyerOfAuctionUserControl(int aucId, int vehId)
     {
-        this.DataContext = new BuyerOfAuctionUserControlViewModel(id);
-
+        this.DataContext = new BuyerOfAuctionUserControlViewModel(vehId);
+        this.AucId = aucId;
         InitializeComponent();
     }
+
+    public int AucId { get; set; }
     void MakeBidBtn(object sender, RoutedEventArgs e)
     {
         makeBidControl.IsVisible = true;
@@ -34,11 +36,19 @@ public partial class BuyerOfAuctionUserControl : UserControl
     private void MakeBidControl_BidAccepted(object sender, EventArgs e)
     {
 
+        var minBid = this.Find<LabelUserControl>("bidsText")?.Content;
+
         //NEED TO GET USER ID AND AUCTION ID
+        if (Convert.ToInt32(minBid) <= Convert.ToInt32(makeBidControl.BidTextValue))
+        {
+            return;
+        }
+
         string bidValue = makeBidControl.BidTextValue;
 
         var db = Database.Instance;
-        db.CreateBid(1, 1, Convert.ToDecimal(bidValue));
+        db.CreateBid(1, Convert.ToInt32(AucId), Convert.ToDecimal(bidValue));
+        makeBidControl.IsVisible = false;
         makeBidControl.BidTextValue = "";
     }
 
