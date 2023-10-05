@@ -1,4 +1,5 @@
 using System;
+using System.Data.Common;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -27,7 +28,13 @@ public partial class LoginUserControl : UserControl
     }
     void LoginBTN(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new HomeScreenUserControl());
+        var db = Database.Instance;
+        var userId = db.SelectUserId(this.LoginVM.Username);
+
+        if (userId >= 0)
+        {
+            ContentAreaUserControl.Navigate(new HomeScreenUserControl(userId));
+        }
     }
 
 }

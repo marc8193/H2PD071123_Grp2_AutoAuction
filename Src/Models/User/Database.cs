@@ -35,27 +35,31 @@ public partial class Database
 		}
 	}
 
-	public Boolean IsUserValid(string username, string password)
+	public int SelectUserId(string username)
 	{
 		string queryString =
 		$@"
-		SELECT
-			CASE WHEN EXISTS
-			(SELECT name
-			FROM sys.database_principals
-			WHERE name = '{username}')
-			THEN 1
-			ELSE 0
-		END
+		SELECT Id 
+		FROM Users 
+		WHERE Name = '{username}'
 		";
 
 		SqlCommand command = new SqlCommand(queryString, this.Connection);
 
 		using (SqlDataReader reader = command.ExecuteReader())
 		{
-			reader.Read();
+			try
+			{
+				reader.Read();
+				return Convert.ToInt32(reader[0]);
+				
+			}
+			catch (System.InvalidOperationException)
+			{
+				return -1;
+			}
+			
 
-			return Convert.ToBoolean(reader[0]);
 		}
 	}
 }

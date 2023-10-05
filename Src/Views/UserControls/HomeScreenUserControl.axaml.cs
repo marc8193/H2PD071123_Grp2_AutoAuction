@@ -9,8 +9,9 @@ namespace H2PD071123_Grp2_AutoAuction.Views;
 public partial class HomeScreenUserControl : UserControl
 {
     HomeScreenUserControlViewModel HomeScreenVM { get; set; }
+    public int UserId { get; set; }
 
-    public HomeScreenUserControl()
+    public HomeScreenUserControl(int userId = -1)
     {
         this.HomeScreenVM = new HomeScreenUserControlViewModel();
 
@@ -20,6 +21,8 @@ public partial class HomeScreenUserControl : UserControl
         this.HomeScreenVM.AddDataToYourAuctions(db.SelectYourAuctions(10));
 
         this.DataContext = this.HomeScreenVM;
+
+        this.UserId = userId;
 
         InitializeComponent();
     }
