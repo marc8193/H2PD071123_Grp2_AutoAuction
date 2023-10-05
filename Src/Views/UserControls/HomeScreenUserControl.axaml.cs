@@ -23,7 +23,7 @@ public partial class HomeScreenUserControl : UserControl
         var db = Database.Instance;
 
         this.HomeScreenVM.AddDataToAuctions(db.SelectAuctions());
-        this.HomeScreenVM.AddDataToYourAuctions(db.SelectYourAuctions(10));
+        this.HomeScreenVM.AddDataToYourAuctions(db.SelectYourAuctions(this.UserId));
 
         this.DataContext = this.HomeScreenVM;
 

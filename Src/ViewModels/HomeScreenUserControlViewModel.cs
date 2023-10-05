@@ -27,7 +27,7 @@ namespace H2PD071123_Grp2_AutoAuction.ViewModels
                 this.YourAuctions.Add(item);
             }
         }
-
+        
         public ObservableCollection<DisplayAuction> Auctions { get; set; }
         public ObservableCollection<DisplayAuction> YourAuctions { get; set; }
 

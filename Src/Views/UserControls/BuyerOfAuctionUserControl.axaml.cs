@@ -51,8 +51,6 @@ public partial class BuyerOfAuctionUserControl : UserControl
 
         string bidValue = makeBidControl.BidTextValue;
 
-        Console.WriteLine("dasdasd");
-
         var db = Database.Instance;
         db.CreateBid(this.UserId, Convert.ToInt32(AucId), Convert.ToDecimal(bidValue));
         makeBidControl.IsVisible = false;
