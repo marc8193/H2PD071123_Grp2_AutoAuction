@@ -16,7 +16,7 @@ public partial class YourBidHistoryUserControl : UserControl
     {
         InitializeComponent();
     }
-    public YourBidHistoryUserControl(HomeScreenUserControl homeScreenUC)
+    public YourBidHistoryUserControl(HomeScreenUserControl homeScreenUC, int userId)
     {
         InitializeComponent();
         this.HomeScreenUC = homeScreenUC;
@@ -24,7 +24,7 @@ public partial class YourBidHistoryUserControl : UserControl
         this.BidHistoryVM = new YourBidHistoryUserControlViewModel();
         var db = Database.Instance;
 
-        this.BidHistoryVM!.AddDataToYourBids(db.SelectYourBids(1));
+        this.BidHistoryVM!.AddDataToYourBids(db.SelectYourBids(userId));
 
         this.DataContext = this.BidHistoryVM;
     }

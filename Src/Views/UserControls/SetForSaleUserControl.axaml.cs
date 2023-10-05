@@ -27,8 +27,6 @@ public partial class SetForSaleUserControl : UserControl
     {
         InitializeComponent();
 
-        Database.Instance.SetForSale(1, 1, 1009);
-
         this.HomeScreenUC = homeScreenUC;
         this.SellerOfAuctionUC = sellerOfAuctionUC;
         this.UserId = userId;
@@ -195,7 +193,7 @@ public partial class SetForSaleUserControl : UserControl
         // Bus, Truck, Private Car, Business Car
         if (selectedV == 0) //Bus
         {
-            var Bus = new Bus(
+            var bus = new Bus(
           nameBox,
           Convert.ToDouble(kmBox),
           regBox,
@@ -212,12 +210,12 @@ public partial class SetForSaleUserControl : UserControl
           Convert.ToUInt32(sleep),
           Convert.ToBoolean(toilet)
           );
-            int vhId = db.InsertBus(Bus);
+            int vhId = db.InsertBus(bus);
             db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
         else if (selectedV == 1) //Truck
         {
-            var Truck = new Truck(
+            var truck = new Truck(
           nameBox,
           Convert.ToDouble(kmBox),
           regBox,
@@ -233,7 +231,7 @@ public partial class SetForSaleUserControl : UserControl
           Convert.ToDouble(heavyLength),
           Convert.ToDouble(loadCapacity)
           );
-            int vhId = db.InsertTruck(Truck);
+            int vhId = db.InsertTruck(truck);
             db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
         else if (selectedV == 2) //Private Car
@@ -259,7 +257,7 @@ public partial class SetForSaleUserControl : UserControl
         }
         else if (selectedV == 3) // Business Car
         {
-            var BusinessCar = new ProfessionalPersonalCar(
+            var businessCar = new ProfessionalPersonalCar(
                 nameBox,
                 Convert.ToDouble(kmBox),
                 regBox,
@@ -275,7 +273,7 @@ public partial class SetForSaleUserControl : UserControl
                 Convert.ToBoolean(safetyBar),
                 Convert.ToDouble(loadCapacity)
                 );
-            int vhId = db.InsertProfessionalPersonalCar(BusinessCar);
+            int vhId = db.InsertProfessionalPersonalCar(businessCar);
             db.SetForSale(vhId, UserId, Convert.ToDecimal(minBidBox));
         }
 

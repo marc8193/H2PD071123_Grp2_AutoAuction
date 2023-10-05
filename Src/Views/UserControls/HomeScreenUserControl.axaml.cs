@@ -11,13 +11,14 @@ public partial class HomeScreenUserControl : UserControl
     HomeScreenUserControlViewModel HomeScreenVM { get; set; }
     public int UserId { get; set; }
 
-    public HomeScreenUserControl() 
+    public HomeScreenUserControl()
     {
         InitializeComponent();
     }
 
     public HomeScreenUserControl(int userId)
     {
+        this.UserId = userId;
         this.HomeScreenVM = new HomeScreenUserControlViewModel();
 
         var db = Database.Instance;
@@ -27,7 +28,6 @@ public partial class HomeScreenUserControl : UserControl
 
         this.DataContext = this.HomeScreenVM;
 
-        this.UserId = userId;
 
         InitializeComponent();
     }
@@ -42,7 +42,7 @@ public partial class HomeScreenUserControl : UserControl
     }
     void BidHistoryBtn(object sender, RoutedEventArgs e)
     {
-        ContentAreaUserControl.Navigate(new YourBidHistoryUserControl(this));
+        ContentAreaUserControl.Navigate(new YourBidHistoryUserControl(this, this.UserId));
     }
 
     void CurrentClick(object sender, SelectionChangedEventArgs e)
