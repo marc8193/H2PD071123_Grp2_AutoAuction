@@ -30,7 +30,7 @@ namespace AutoAuctionProjekt.Models
 
             //TODO: V2 - Add to database and set ID
         }
-        
+
         public uint ID { get; private set; }
         public string Name { get; set; }
         public double Km { get; set; }
@@ -62,10 +62,10 @@ namespace AutoAuctionProjekt.Models
         public uint numberOfSeats { get; set; }
 
         private EnergyType _energyClass;
-        public EnergyType EnergyClass 
+        public EnergyType EnergyClass
         {
-            get { return _energyClass; } 
-            set { _energyClass = GetEnergyClass(); } 
+            get { return _energyClass; }
+            set { _energyClass = GetEnergyClass(); }
         }
         public enum EnergyType
         {
@@ -115,7 +115,7 @@ namespace AutoAuctionProjekt.Models
             {
                 switch (this.Fuel)
                 {
-                    
+
                     case FuelType.Diesel:
                         switch (this.KmPerLiter)
                         {
@@ -129,7 +129,7 @@ namespace AutoAuctionProjekt.Models
                                 return EnergyType.D;
                         }
 
-                    case FuelType.Petrol:    
+                    case FuelType.Petrol:
                         switch (this.KmPerLiter)
                         {
                             case var km when km >= 20:
@@ -143,7 +143,7 @@ namespace AutoAuctionProjekt.Models
                         }
                 }
             }
-                    
+
             return EnergyType.D;
         }
         public new virtual string ToString()

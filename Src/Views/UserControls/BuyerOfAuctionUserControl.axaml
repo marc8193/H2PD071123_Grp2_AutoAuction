@@ -61,11 +61,13 @@
 			<Grid Margin="50 20 0 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*">
 				<uc:LabelUserControl Padding="140 0 0 0" Grid.ColumnSpan="2" Grid.Column="0"
 					Grid.Row="0" FontWeight="Medium" FontSize="22">Closing</uc:LabelUserControl>
-				<uc:LabelUserControl FontSize="16" FontWeight="Medium" Margin="20 0 0 0"
+				<uc:LabelUserControl FontSize="16" FontWeight="Medium"
+					Margin="20 0 0 0"
 					Grid.Column="1" Grid.Row="0" Content="{Binding Seller.EndDate}"></uc:LabelUserControl>
 				<uc:LabelUserControl Margin="0 20 0 0" Padding="80 0 0 0" Grid.ColumnSpan="2"
 					Grid.Column="0" Grid.Row="1" FontWeight="Medium" FontSize="22">Current bid: </uc:LabelUserControl>
-				<uc:LabelUserControl Margin="20 20 0 0" FontSize="16" FontWeight="Medium"
+				<uc:LabelUserControl x:Name="bidsText" Margin="20 20 0 0" FontSize="16"
+					FontWeight="Medium"
 					Grid.Column="1" Grid.Row="1" Content="{Binding Seller.NewestBidAmount}"></uc:LabelUserControl>
 				<Button Name="MakeBid" Click="MakeBidBtn" FontSize="18" Padding="20 8 0 0"
 					Foreground="White" Background="#5CB85C" Content="Make a bid" Grid.Column="1"

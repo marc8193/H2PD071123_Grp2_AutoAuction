@@ -175,7 +175,7 @@ public partial class Database
 		{
 			while (reader.Read())
 			{
-				var obj = new DisplayAuction(Convert.ToInt32(reader[1]), Convert.ToString(reader[6])!, Convert.ToDecimal(reader[8]), Convert.ToDateTime(reader[5]));
+				var obj = new DisplayAuction(Convert.ToInt32(reader[0]), Convert.ToInt32(reader[1]), Convert.ToString(reader[6])!, Convert.ToDecimal(reader[8]), Convert.ToDateTime(reader[5]));
 
 				if (Convert.ToBoolean(reader[3]))
 				{
@@ -206,7 +206,7 @@ public partial class Database
 		{
 			while (reader.Read())
 			{
-				var obj = new DisplayAuction(Convert.ToInt32(reader[1]), Convert.ToString(reader[6])!, Convert.ToDecimal(reader[8]), Convert.ToDateTime(reader[5]));
+				var obj = new DisplayAuction(Convert.ToInt32(reader[0]), Convert.ToInt32(reader[1]), Convert.ToString(reader[6])!, Convert.ToDecimal(reader[8]), Convert.ToDateTime(reader[5]));
 
 				if (Convert.ToBoolean(reader[3]))
 				{

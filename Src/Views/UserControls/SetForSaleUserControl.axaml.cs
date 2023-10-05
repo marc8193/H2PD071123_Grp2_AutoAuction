@@ -162,12 +162,12 @@ public partial class SetForSaleUserControl : UserControl
         var regBox = this.Find<TextBox>("regBox")?.Text;
         var minBidBox = this.Find<TextBox>("minBidBox")?.Text;
         var newPrice = this.Find<TextBox>("newPrice")?.Text;
-        var hasTowbarBox = this.Find<CheckBox>("towbar")?.IsChecked;
+        var hasTowbarBox = this.Find<TextBox>("towbar")?.Text;
         var engineSizeBox = this.Find<TextBox>("enginSize")?.Text;
         var kmPerLiterBox = this.Find<TextBox>("kmPr")?.Text;
         var licensTypes = this.Find<TextBox>("licensTypes")?.Text;
         var energyClass = this.Find<TextBox>("energyClass")?.Text;
-        var fuelTypeBox = this.Find<ComboBox>("fuel");
+        // var fuelTypeBox = this.Find<ComboBox>("fuel");
         var heavyHeight = this.Find<TextBox>("heavyHeightTextBox")?.Text;
         var heavyWidth = this.Find<TextBox>("heavyWidthTextBox")?.Text;
         var heavyLength = this.Find<TextBox>("heavyLengthTextBox")?.Text;
@@ -188,37 +188,37 @@ public partial class SetForSaleUserControl : UserControl
         var db = Database.Instance;
 
         // Bus, Truck, Private Car, Business Car
-        if (selectedV == 0)
+        if (selectedV == 0) //Bus
         {
 
         }
-        else if (selectedV == 1)
+        else if (selectedV == 1) //Truck
         {
 
         }
-        else if (selectedV == 2)
+        else if (selectedV == 2) //Private Car
         {
             var privateCar = new PrivatePersonalCar(
                 nameBox,
                 Convert.ToDouble(kmBox),
                 regBox,
                 Convert.ToInt32(year),
-                Convert.ToDecimal(minBidBox),
-                Convert.ToBoolean(0),
-                Convert.ToDouble(1.2),
-                Convert.ToDouble(1.2),
+                Convert.ToDecimal(newPrice),
+                Convert.ToBoolean(hasTowbarBox),
+                Convert.ToDouble(engineSizeBox),
+                Convert.ToDouble(kmPerLiterBox),
                 FuelType.Diesel,
-                Convert.ToUInt32(5),
-                Convert.ToDouble(1.2),
-                Convert.ToDouble(1.2),
-                Convert.ToDouble(1.2),
-                Convert.ToBoolean(0)
+                Convert.ToUInt32(lightSeats),
+                Convert.ToDouble(lightHeight),
+                Convert.ToDouble(lightWidth),
+                Convert.ToDouble(lightLength),
+                Convert.ToBoolean(isoFix)
 
             );
             int vhId = db.InsertPrivatePersonalCar(privateCar);
             db.SetForSale(vhId, 1, Convert.ToDecimal(minBidBox));
         }
-        else if (selectedV == 3)
+        else if (selectedV == 3) // Business Car
         {
 
         }
