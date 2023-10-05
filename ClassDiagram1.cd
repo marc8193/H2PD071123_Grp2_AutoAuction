@@ -1,2 +1,350 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AutoAuctionProjekt.Models.Auction" Collapsed="true">
+    <Position X="36" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAgAAEAAAQgAAABAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Src\Models\Auction\Auction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.AuctionHouse" Collapsed="true">
+    <Position X="37.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAEAAAAAAAAAAAAQAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Auction\AuctionHouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.CorporateUser" Collapsed="true">
+    <Position X="1.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\User\CorporateUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.PrivateUser" Collapsed="true">
+    <Position X="3.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\User\PrivateUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.User" Collapsed="true">
+    <Position X="2.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAEAAgAAAAAAAAAAAACAQAAAQABAAA=</HashCode>
+      <FileName>Src\Models\User\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.PersonalCar" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAEAAAAAEBAAAgAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\Car\PersonalCar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.PrivatePersonalCar" Collapsed="true">
+    <Position X="8.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\Car\PrivatePersonalCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.ProfessionalPersonalCar" Collapsed="true">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAQCAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\Car\ProfessionalPersonalCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.Bus" Collapsed="true">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\HeavyVehicle\Bus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.HeavyVehicle" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAEAAAAAEBAACgAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\HeavyVehicle\HeavyVehicle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.Truck" Collapsed="true">
+    <Position X="3.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\HeavyVehicle\Truck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAuctionProjekt.Models.Vehicle" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAEBAAAgAgEAAAAAAQAAAgAiAAAAgQAAAAAUoA=</HashCode>
+      <FileName>Src\Models\Vehicle\Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Database" Collapsed="true">
+    <Position X="36" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAEIAgBEAAEAEIAAAAQAEAAAAAAKAARAAKABAAAAA=</HashCode>
+      <FileName>Src\Models\Auction\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.App" Collapsed="true">
+    <Position X="34.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\App.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Program" Collapsed="true">
+    <Position X="41.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Src\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewLocator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewLocator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.BusUserControl" Collapsed="true">
+    <Position X="39.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\BusUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.BuyerOfAuctionUserControl" Collapsed="true">
+    <Position X="41.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAgAAAAAAAQAAAAgAAEAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\BuyerOfAuctionUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.ContentAreaUserControl" Collapsed="true">
+    <Position X="34.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\ContentAreaUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.HomeScreenUserControl" Collapsed="true">
+    <Position X="37.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAQAAAAAgQADAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\HomeScreenUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.LabelUserControl" Collapsed="true">
+    <Position X="39.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\LabelUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.LoginUserControl" Collapsed="true">
+    <Position X="41.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\LoginUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.MakeBidUserControl" Collapsed="true">
+    <Position X="36" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAABAEAAAAAgAAAAAEACAAAAJAAAAIAA=</HashCode>
+      <FileName>Src\Views\UserControls\MakeBidUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.PrivateCarUserControl" Collapsed="true">
+    <Position X="37.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\PrivateCarUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.ProfessionallCarUserControl" Collapsed="true">
+    <Position X="39.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\ProfessionallCarUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.RegisterUserControl" Collapsed="true">
+    <Position X="34.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAABAAAAgABAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\RegisterUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.SellerOfAuctionUserControl" Collapsed="true">
+    <Position X="36" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Src\Views\UserControls\SellerOfAuctionUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.SetForSaleUserControl" Collapsed="true">
+    <Position X="37.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAQAAAAAAAAoAAQAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\SetForSaleUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.TextBoxUserControl" Collapsed="true">
+    <Position X="39.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\TextBoxUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.TruckUserControl" Collapsed="true">
+    <Position X="41.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\TruckUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.YourBidHistoryUserControl" Collapsed="true">
+    <Position X="36" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\YourBidHistoryUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.YourProfileUserControl" Collapsed="true">
+    <Position X="37.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\UserControls\YourProfileUserControl.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.Views.MainWindow" Collapsed="true">
+    <Position X="34.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Views\MainWindow.axaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.BusUserControlViewModel" Collapsed="true">
+    <Position X="27.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\BusUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.BuyerOfAuctionUserControlViewModel" Collapsed="true">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Src\ViewModels\BuyerOfAuctionUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.HomeScreenUserControlViewModel" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAIAAAAAAQBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\HomeScreenUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.LoginUserControlViewModel" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAIAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\LoginUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.MainWindowViewModel" Collapsed="true">
+    <Position X="16" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.MakeBidUserControlViewModel" Collapsed="true">
+    <Position X="20.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\MakeBidUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.PrivateCarUserControlViewModel" Collapsed="true">
+    <Position X="22.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\PrivateCarUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.ProfessionalUserControlViewModel" Collapsed="true">
+    <Position X="29.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\ProfessionalUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.RegisterUserControlViewModel" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\RegisterUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.SellerOfAuctionUserControlViewModel" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Src\ViewModels\SellerOfAuctionUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.SetForSaleUserControlViewModel" Collapsed="true">
+    <Position X="13.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAA=</HashCode>
+      <FileName>Src\ViewModels\SetForSaleUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.TruckUserControlViewModel" Collapsed="true">
+    <Position X="18.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\TruckUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.ViewModelBase" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.YourBidHistoryUserControlViewModel" Collapsed="true">
+    <Position X="25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\YourBidHistoryUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H2PD071123_Grp2_AutoAuction.ViewModels.YourProfileUserControlViewModel" Collapsed="true">
+    <Position X="31.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\ViewModels\YourProfileUserControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AutoAuctionProjekt.IDimensions" Collapsed="true">
+    <Position X="34.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEBAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Src\Models\Vehicle\Interface\Dimension.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
