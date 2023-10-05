@@ -1,4 +1,6 @@
-﻿using ReactiveUI;
+﻿using System;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using ReactiveUI;
 
 namespace H2PD071123_Grp2_AutoAuction.ViewModels
 {
